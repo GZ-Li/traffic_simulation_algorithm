@@ -1,0 +1,102 @@
+{
+  "fill_value_for_missing": 9999,
+  "hospitals": {
+    "Hospital_1": 200000480,
+    "Hospital_2": 200000154,
+    "Hospital_3": 200000033
+  },
+  "accidents": {
+    "Accident_1": 200000160,
+    "Accident_2": 200000549,
+    "Accident_3": 200000387,
+    "Accident_4": 200000601,
+    "Accident_5": 200007001,
+    "Accident_6": 200000823,
+    "Accident_7": 200000869,
+    "Accident_8": 200000575,
+    "Accident_9": 200000567,
+    "Accident_10": 200000396
+  },
+  "results_by_accident": {
+    "Accident_1": {
+      "accident_road": 200000160,
+      "hospitals": {
+        "Hospital_1": {"hospital_road": 200000480, "go_seconds": 90, "return_seconds": 60, "roundtrip_seconds": 150},
+        "Hospital_2": {"hospital_road": 200000154, "go_seconds": 30, "return_seconds": 30, "roundtrip_seconds": 60},
+        "Hospital_3": {"hospital_road": 200000033, "go_seconds": 9999, "return_seconds": 120, "roundtrip_seconds": 9999}
+      }
+    },
+    "Accident_2": {
+      "accident_road": 200000549,
+      "hospitals": {
+        "Hospital_1": {"hospital_road": 200000480, "go_seconds": 30, "return_seconds": 90, "roundtrip_seconds": 120},
+        "Hospital_2": {"hospital_road": 200000154, "go_seconds": 60, "return_seconds": 9999, "roundtrip_seconds": 9999},
+        "Hospital_3": {"hospital_road": 200000033, "go_seconds": 9999, "return_seconds": 180, "roundtrip_seconds": 9999}
+      }
+    },
+    "Accident_3": {
+      "accident_road": 200000387,
+      "hospitals": {
+        "Hospital_1": {"hospital_road": 200000480, "go_seconds": 90, "return_seconds": 90, "roundtrip_seconds": 180},
+        "Hospital_2": {"hospital_road": 200000154, "go_seconds": 90, "return_seconds": 30, "roundtrip_seconds": 120},
+        "Hospital_3": {"hospital_road": 200000033, "go_seconds": 120, "return_seconds": 240, "roundtrip_seconds": 360}
+      }
+    },
+    "Accident_4": {
+      "accident_road": 200000601,
+      "hospitals": {
+        "Hospital_1": {"hospital_road": 200000480, "go_seconds": 120, "return_seconds": 210, "roundtrip_seconds": 330},
+        "Hospital_2": {"hospital_road": 200000154, "go_seconds": 240, "return_seconds": 90, "roundtrip_seconds": 330},
+        "Hospital_3": {"hospital_road": 200000033, "go_seconds": 150, "return_seconds": 30, "roundtrip_seconds": 180}
+      }
+    },
+    "Accident_5": {
+      "accident_road": 200007001,
+      "hospitals": {
+        "Hospital_1": {"hospital_road": 200000480, "go_seconds": 60, "return_seconds": 60, "roundtrip_seconds": 120},
+        "Hospital_2": {"hospital_road": 200000154, "go_seconds": 30, "return_seconds": 60, "roundtrip_seconds": 90},
+        "Hospital_3": {"hospital_road": 200000033, "go_seconds": 60, "return_seconds": 60, "roundtrip_seconds": 120}
+      }
+    },
+    "Accident_6": {
+      "accident_road": 200000823,
+      "hospitals": {
+        "Hospital_1": {"hospital_road": 200000480, "go_seconds": 120, "return_seconds": 210, "roundtrip_seconds": 330},
+        "Hospital_2": {"hospital_road": 200000154, "go_seconds": 240, "return_seconds": 120, "roundtrip_seconds": 360},
+        "Hospital_3": {"hospital_road": 200000033, "go_seconds": 60, "return_seconds": 30, "roundtrip_seconds": 90}
+      }
+    },
+    "Accident_7": {
+      "accident_road": 200000869,
+      "hospitals": {
+        "Hospital_1": {"hospital_road": 200000480, "go_seconds": 30, "return_seconds": 150, "roundtrip_seconds": 180},
+        "Hospital_2": {"hospital_road": 200000154, "go_seconds": 30, "return_seconds": 120, "roundtrip_seconds": 150},
+        "Hospital_3": {"hospital_road": 200000033, "go_seconds": 90, "return_seconds": 9999, "roundtrip_seconds": 9999}
+      }
+    },
+    "Accident_8": {
+      "accident_road": 200000575,
+      "hospitals": {
+        "Hospital_1": {"hospital_road": 200000480, "go_seconds": 60, "return_seconds": 60, "roundtrip_seconds": 120},
+        "Hospital_2": {"hospital_road": 200000154, "go_seconds": 210, "return_seconds": 9999, "roundtrip_seconds": 9999},
+        "Hospital_3": {"hospital_road": 200000033, "go_seconds": 30, "return_seconds": 120, "roundtrip_seconds": 150}
+      }
+    },
+    "Accident_9": {
+      "accident_road": 200000567,
+      "hospitals": {
+        "Hospital_1": {"hospital_road": 200000480, "go_seconds": 150, "return_seconds": 30, "roundtrip_seconds": 180},
+        "Hospital_2": {"hospital_road": 200000154, "go_seconds": 30, "return_seconds": 30, "roundtrip_seconds": 60},
+        "Hospital_3": {"hospital_road": 200000033, "go_seconds": 9999, "return_seconds": 150, "roundtrip_seconds": 9999}
+      }
+    },
+    "Accident_10": {
+      "accident_road": 200000396,
+      "hospitals": {
+        "Hospital_1": {"hospital_road": 200000480, "go_seconds": 30, "return_seconds": 90, "roundtrip_seconds": 120},
+        "Hospital_2": {"hospital_road": 200000154, "go_seconds": 30, "return_seconds": 240, "roundtrip_seconds": 270},
+        "Hospital_3": {"hospital_road": 200000033, "go_seconds": 9999, "return_seconds": 30, "roundtrip_seconds": 9999}
+      }
+    }
+  }
+}

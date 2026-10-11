@@ -1,0 +1,9 @@
+1207.855 5154 1753232841.984
+
+
+get_departed_vehicle_average_traveling_time:  {'num_completed_trips': 5154, 'completed_total_travel_time': 4186847.0, 'completed_total_travel_distance': 22030310.39018141, 'completed_avg_travel_time': 812.3490491244957, 'completed_avg_v': 5.261790170545079, 'running_total_travel_time': 19874049.0, 'running_total_travel_distance': 43363512.44086744, 'running_avg_v': 2.1819163493491063, 'avg_v': 0.6303191616176997, 'num_vehicles': 11300, 'num_pedestrians': 19084, 'num_passengers': 0, 'num_subways': 0, 'num_taxis': 0, 'num_crowds': 0}
+get_finished_vehicle_average_traveling_time:  {'num_completed_trips': 5154, 'completed_total_travel_time': 4186847.0, 'completed_total_travel_distance': 22030310.39018141, 'completed_avg_travel_time': 812.3490491244957, 'completed_avg_v': 5.261790170545079, 'running_total_travel_time': 19874049.0, 'running_total_travel_distance': 43363512.44086744, 'running_avg_v': 2.1819163493491063, 'avg_v': 0.6303191616176997, 'num_vehicles': 11300, 'num_pedestrians': 19084, 'num_passengers': 0, 'num_subways': 0, 'num_taxis': 0, 'num_crowds': 0}
+get_finished_vehicle_count:  {'num_completed_trips': 5154, 'completed_total_travel_time': 4186847.0, 'completed_total_travel_distance': 22030310.39018141, 'completed_avg_travel_time': 812.3490491244957, 'completed_avg_v': 5.261790170545079, 'running_total_travel_time': 19874049.0, 'running_total_travel_distance': 43363512.44086744, 'running_avg_v': 2.1819163493491063, 'avg_v': 0.6303191616176997, 'num_vehicles': 11300, 'num_pedestrians': 19084, 'num_passengers': 0, 'num_subways': 0, 'num_taxis': 0, 'num_crowds': 0}
+平均旅行时间 (ATT): 1207.855
+完成车辆数 (Throughput): 5154
+已完成车辆平均旅行时间: 812.349

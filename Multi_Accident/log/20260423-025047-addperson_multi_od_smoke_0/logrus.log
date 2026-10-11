@@ -1,0 +1,14 @@
+[simulet] [2026-04-23 02:50:47.9661] [INFO] {Input:{URI:mongodb://root:qZ7ILv0Xs6VnJcPg12KU3AoYhWKb4Cla@172.16.40.166:27017 Map:{DB:tsingroc Col:map_pku_wuhan_demo_1015c_rl Cache: OnlyCache:false File:} Person:0xc00030cd20 RouteStatus:<nil>} Control:{Step:{Start:0 Total:8551 Interval:1 Subloop:<nil>} MicroscopicRange:<nil> NoSignalRanges:[] SkipOvertimeTripWhenInit:true EnablePlatoon:false EnableIndoor:false Dump:<nil> VehicleMicroStatistics:<nil> LaneStatistics:<nil> RoadStatistics:<nil> Stat:<nil> IndoorStroll:<nil> DisableIndoorAoiIDs:[] PreferFixedLight:false KeepAllRedWhenHasVehicle:false EnableCollisionAvoidance:false EnableGoAstray:false LaneChangeModel:0xc00037e180} Output:{Target:{SQL: CSV:} EnableCommon:false Simple:<nil>} TLS:<nil>}
+[input] [2026-04-23 02:50:47.9686] [ERROR] disable input cache because invalid dir data/ (not exist or file)
+[input] [2026-04-23 02:50:47.9843] [INFO] start fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2026-04-23 02:50:48.3320] [INFO] finish fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2026-04-23 02:50:48.3335] [INFO] start fetching from tsingroc.person_test_20250724_1015cc
+[input] [2026-04-23 02:50:48.5269] [INFO] finish fetching from tsingroc.person_test_20250724_1015cc
+[simulet/task] [2026-04-23 02:50:48.5462] [INFO] Lane: 16860
+[simulet/task] [2026-04-23 02:50:48.5463] [INFO] Road: 2634
+[simulet/task] [2026-04-23 02:50:48.5463] [INFO] Junction: 1588
+[simulet/task] [2026-04-23 02:50:48.5463] [INFO] AOI: 0
+[simulet/task] [2026-04-23 02:50:48.5464] [INFO] Person: 8783
+[sidecar] [2026-04-23 02:50:48.5462] [INFO] sidecar rpc listening at http://localhost:49829/
+[simulet/task] [2026-04-23 02:50:51.6142] [INFO] STEP: 100(0:1:40.00) #persons: (8785|0) avg v: 11.63 CPU: 97.28 MEM: 310.00MB
+[simulet/task] [2026-04-23 02:50:53.8838] [INFO] STEP: 200(0:3:20.00) #persons: (8785|0) avg v: 11.62 CPU: 118.50 MEM: 352.47MB

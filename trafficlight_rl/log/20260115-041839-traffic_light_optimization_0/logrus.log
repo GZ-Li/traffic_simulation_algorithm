@@ -1,0 +1,22 @@
+[simulet] [2026-01-15 04:18:39.1465] [INFO] {Input:{URI:mongodb://root:qZ7ILv0Xs6VnJcPg12KU3AoYhWKb4Cla@172.16.40.166:27017 Map:{DB:tsingroc Col:map_pku_wuhan_demo_1015c_rl Cache: OnlyCache:false File:} Person:0xc00030ad20 RouteStatus:<nil>} Control:{Step:{Start:0 Total:7 Interval:1 Subloop:<nil>} MicroscopicRange:0xc000049ec0 NoSignalRanges:[] SkipOvertimeTripWhenInit:true EnablePlatoon:false EnableIndoor:false Dump:<nil> VehicleMicroStatistics:<nil> LaneStatistics:<nil> RoadStatistics:<nil> Stat:<nil> IndoorStroll:<nil> DisableIndoorAoiIDs:[] PreferFixedLight:false KeepAllRedWhenHasVehicle:false EnableCollisionAvoidance:false EnableGoAstray:false LaneChangeModel:0xc00037c1c0} Output:{Target:{SQL:postgres://postgres:QSo084HA7Sji9jsm73KjRUcTGWynUsxu@172.16.40.166:5432/simulation CSV:} EnableCommon:false Simple:0xc00031cb58} TLS:<nil>}
+[input] [2026-01-15 04:18:39.1498] [ERROR] disable input cache because invalid dir data/ (not exist or file)
+[input] [2026-01-15 04:18:39.1663] [INFO] start fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2026-01-15 04:18:39.5751] [INFO] finish fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2026-01-15 04:18:39.5769] [INFO] start fetching from tsingroc.person_test_20250724_1015cc
+[input] [2026-01-15 04:18:39.7632] [INFO] finish fetching from tsingroc.person_test_20250724_1015cc
+[simulet/task] [2026-01-15 04:18:39.7819] [INFO] Lane: 16860
+[simulet/task] [2026-01-15 04:18:39.7820] [INFO] Road: 2634
+[simulet/task] [2026-01-15 04:18:39.7820] [INFO] Junction: 1588
+[simulet/task] [2026-01-15 04:18:39.7820] [INFO] AOI: 0
+[simulet/task] [2026-01-15 04:18:39.7820] [INFO] Person: 8783
+[sidecar] [2026-01-15 04:18:39.7819] [INFO] sidecar rpc listening at http://localhost:40263/
+[sidecar/pg] [2026-01-15 04:18:39.8871] [INFO] enable postgresql output to traffic_light_optimization_0_s_people with 4 workers
+[sidecar/pg] [2026-01-15 04:18:39.9131] [INFO] enable postgresql output to traffic_light_optimization_0_s_cars with 4 workers
+[sidecar/pg] [2026-01-15 04:18:39.9184] [INFO] enable postgresql output to traffic_light_optimization_0_s_traffic_light with 4 workers
+[sidecar/pg] [2026-01-15 04:18:39.9236] [INFO] enable postgresql output to traffic_light_optimization_0_s_road with 4 workers
+[sidecar/pg] [2026-01-15 04:18:39.9776] [INFO] enable postgresql output to traffic_light_optimization_0_s_junction with 4 workers
+[sidecar/pg] [2026-01-15 04:18:39.9831] [INFO] enable postgresql output to traffic_light_optimization_0_s_lane with 4 workers
+[sidecar/pg] [2026-01-15 04:18:39.9883] [INFO] enable postgresql output to traffic_light_optimization_0_s_aoi with 1 workers
+[sidecar/pg] [2026-01-15 04:18:39.9936] [INFO] enable postgresql output to traffic_light_optimization_0_s_global with 1 workers
+[simulet] [2026-01-15 04:19:01.0821] [INFO] stopping...
+[simulet/task] [2026-01-15 04:19:01.5711] [INFO] engine complete

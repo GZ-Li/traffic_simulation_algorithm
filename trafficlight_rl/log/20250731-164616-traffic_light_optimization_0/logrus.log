@@ -1,0 +1,22 @@
+[simulet] [2025-07-31 16:46:16.5535] [INFO] {Input:{URI:mongodb://root:qZ7ILv0Xs6VnJcPg12KU3AoYhWKb4Cla@172.16.40.166:27017 Map:{DB:tsingroc Col:map_pku_wuhan_demo_1015c_rl Cache: OnlyCache:false File:} Person:0xc00030c000 RouteStatus:<nil>} Control:{Step:{Start:0 Total:3631 Interval:1 Subloop:<nil>} MicroscopicRange:0xc000044e40 NoSignalRanges:[] SkipOvertimeTripWhenInit:true EnablePlatoon:false EnableIndoor:false Dump:<nil> VehicleMicroStatistics:<nil> LaneStatistics:<nil> RoadStatistics:<nil> Stat:<nil> IndoorStroll:<nil> DisableIndoorAoiIDs:[] PreferFixedLight:false KeepAllRedWhenHasVehicle:false EnableCollisionAvoidance:false EnableGoAstray:false LaneChangeModel:0xc00031e190} Output:{Target:{SQL:postgres://postgres:QSo084HA7Sji9jsm73KjRUcTGWynUsxu@172.16.40.166:5432/simulation CSV:} EnableCommon:false Simple:0xc0003244b0} TLS:<nil>}
+[input] [2025-07-31 16:46:16.5549] [ERROR] disable input cache because invalid dir data/ (not exist or file)
+[input] [2025-07-31 16:46:16.5613] [INFO] start fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2025-07-31 16:46:16.9175] [INFO] finish fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2025-07-31 16:46:16.9221] [INFO] start fetching from tsingroc.person_test_20250724_1015cc
+[input] [2025-07-31 16:46:17.1233] [INFO] finish fetching from tsingroc.person_test_20250724_1015cc
+[sidecar] [2025-07-31 16:46:17.1317] [INFO] sidecar rpc listening at http://localhost:38039/
+[simulet/task] [2025-07-31 16:46:17.1318] [INFO] Lane: 16860
+[simulet/task] [2025-07-31 16:46:17.1318] [INFO] Road: 2634
+[simulet/task] [2025-07-31 16:46:17.1318] [INFO] Junction: 1588
+[simulet/task] [2025-07-31 16:46:17.1318] [INFO] AOI: 0
+[simulet/task] [2025-07-31 16:46:17.1318] [INFO] Person: 8783
+[sidecar/pg] [2025-07-31 16:46:17.2104] [INFO] enable postgresql output to traffic_light_optimization_0_s_people with 4 workers
+[sidecar/pg] [2025-07-31 16:46:17.2209] [INFO] enable postgresql output to traffic_light_optimization_0_s_cars with 4 workers
+[sidecar/pg] [2025-07-31 16:46:17.2303] [INFO] enable postgresql output to traffic_light_optimization_0_s_traffic_light with 4 workers
+[sidecar/pg] [2025-07-31 16:46:17.2379] [INFO] enable postgresql output to traffic_light_optimization_0_s_road with 4 workers
+[sidecar/pg] [2025-07-31 16:46:17.2445] [INFO] enable postgresql output to traffic_light_optimization_0_s_junction with 4 workers
+[sidecar/pg] [2025-07-31 16:46:17.2697] [INFO] enable postgresql output to traffic_light_optimization_0_s_lane with 4 workers
+[sidecar/pg] [2025-07-31 16:46:17.2875] [INFO] enable postgresql output to traffic_light_optimization_0_s_aoi with 1 workers
+[sidecar/pg] [2025-07-31 16:46:17.2931] [INFO] enable postgresql output to traffic_light_optimization_0_s_global with 1 workers
+[simulet] [2025-07-31 16:47:39.2589] [INFO] stopping...
+[sidecar] [2025-07-31 16:47:40.2639] [PANIC] unavailable: unexpected EOF

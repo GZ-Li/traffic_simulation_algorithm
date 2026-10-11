@@ -1,0 +1,17 @@
+{
+    "Hospital_1": {
+        "Accident_1": 180,
+        "Accident_2": 120,
+        "Accident_3": 360
+    },
+    "Hospital_2": {
+        "Accident_1": 120,
+        "Accident_2": 90,
+        "Accident_3": 120
+    },
+    "Hospital_3": {
+        "Accident_1": 180,
+        "Accident_2": 150,
+        "Accident_3": 9999
+    }
+}

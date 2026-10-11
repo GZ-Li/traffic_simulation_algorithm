@@ -1,0 +1,23 @@
+control:
+  enable_collision_avoidance: false
+  enable_go_astray: false
+  enable_indoor: false
+  enable_platoon: false
+  lane_change_model: mobil
+  prefer_fixed_light: false
+  skip_overtime_trip_when_init: true
+  step:
+    interval: 1
+    start: 0
+    total: 12833
+input:
+  map:
+    file: /home/nkk/nkk/work/src/simulet-go/python/data/map_pku_wuhan_demo_1015c_rl.pb
+  person:
+    file: /home/nkk/nkk/work/src/simulet-go/python/data/person_test_20250724_1015cc.pb
+output:
+  simple:
+    road_status_interval: 1
+    road_status_v_min: 0
+  target:
+    sql: postgres://postgres:QSo084HA7Sji9jsm73KjRUcTGWynUsxu@172.16.40.166:5432/simulation

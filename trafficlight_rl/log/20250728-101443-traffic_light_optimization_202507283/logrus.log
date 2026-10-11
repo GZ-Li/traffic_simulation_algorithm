@@ -1,0 +1,37 @@
+[simulet] [2025-07-28 10:14:43.4563] [INFO] {Input:{URI:mongodb://root:qZ7ILv0Xs6VnJcPg12KU3AoYhWKb4Cla@172.16.40.166:27017 Map:{DB:tsingroc Col:map_pku_wuhan_demo_1015c Cache: OnlyCache:false File:} Person:0xc00030ceb0 RouteStatus:<nil>} Control:{Step:{Start:0 Total:3631 Interval:1 Subloop:<nil>} MicroscopicRange:0xc000045f80 NoSignalRanges:[] SkipOvertimeTripWhenInit:true EnablePlatoon:false EnableIndoor:false Dump:<nil> VehicleMicroStatistics:<nil> LaneStatistics:<nil> RoadStatistics:<nil> Stat:<nil> IndoorStroll:<nil> DisableIndoorAoiIDs:[] PreferFixedLight:true KeepAllRedWhenHasVehicle:false EnableCollisionAvoidance:false EnableGoAstray:false LaneChangeModel:0xc00031f200} Output:{Target:{SQL:postgres://postgres:QSo084HA7Sji9jsm73KjRUcTGWynUsxu@172.16.40.166:5432/simulation CSV:} EnableCommon:false Simple:0xc000324d08} TLS:<nil>}
+[input] [2025-07-28 10:14:43.4580] [ERROR] disable input cache because invalid dir data/ (not exist or file)
+[input] [2025-07-28 10:14:43.4628] [INFO] start fetching from tsingroc.map_pku_wuhan_demo_1015c
+[input] [2025-07-28 10:14:43.7967] [INFO] finish fetching from tsingroc.map_pku_wuhan_demo_1015c
+[input] [2025-07-28 10:14:43.7977] [INFO] start fetching from tsingroc.person_test_20250724_1015cc
+[input] [2025-07-28 10:14:43.9976] [INFO] finish fetching from tsingroc.person_test_20250724_1015cc
+[simulet/task] [2025-07-28 10:14:44.0060] [INFO] Lane: 16860
+[simulet/task] [2025-07-28 10:14:44.0060] [INFO] Road: 2634
+[sidecar] [2025-07-28 10:14:44.0060] [INFO] sidecar rpc listening at http://localhost:42631/
+[simulet/task] [2025-07-28 10:14:44.0060] [INFO] Junction: 1588
+[simulet/task] [2025-07-28 10:14:44.0061] [INFO] AOI: 281
+[simulet/task] [2025-07-28 10:14:44.0061] [INFO] Person: 8783
+[sidecar/pg] [2025-07-28 10:14:44.0839] [INFO] enable postgresql output to traffic_light_optimization_202507283_s_people with 4 workers
+[sidecar/pg] [2025-07-28 10:14:44.0942] [INFO] enable postgresql output to traffic_light_optimization_202507283_s_cars with 4 workers
+[sidecar/pg] [2025-07-28 10:14:44.1002] [INFO] enable postgresql output to traffic_light_optimization_202507283_s_traffic_light with 4 workers
+[sidecar/pg] [2025-07-28 10:14:44.1089] [INFO] enable postgresql output to traffic_light_optimization_202507283_s_road with 4 workers
+[sidecar/pg] [2025-07-28 10:14:44.1157] [INFO] enable postgresql output to traffic_light_optimization_202507283_s_junction with 4 workers
+[sidecar/pg] [2025-07-28 10:14:44.1218] [INFO] enable postgresql output to traffic_light_optimization_202507283_s_lane with 4 workers
+[sidecar/pg] [2025-07-28 10:14:44.1288] [INFO] enable postgresql output to traffic_light_optimization_202507283_s_aoi with 1 workers
+[sidecar/pg] [2025-07-28 10:14:44.1364] [INFO] enable postgresql output to traffic_light_optimization_202507283_s_global with 1 workers
+[simulet/task] [2025-07-28 10:14:54.9175] [INFO] STEP: 100(0:1:40.00) #persons: (8783|0) avg v: 11.71 CPU: 66.20 MEM: 442.58MB
+[simulet/task] [2025-07-28 10:15:01.8113] [INFO] STEP: 200(0:3:20.00) #persons: (8783|0) avg v: 11.68 CPU: 99.85 MEM: 481.00MB
+[simulet/task] [2025-07-28 10:15:10.0571] [INFO] STEP: 300(0:5:0.00) #persons: (8783|0) avg v: 11.63 CPU: 92.36 MEM: 470.14MB
+[simulet/task] [2025-07-28 10:15:19.5776] [INFO] STEP: 400(0:6:40.00) #persons: (8783|0) avg v: 11.58 CPU: 85.82 MEM: 482.89MB
+[simulet/task] [2025-07-28 10:15:27.0537] [INFO] STEP: 500(0:8:20.00) #persons: (8783|0) avg v: 11.52 CPU: 108.70 MEM: 491.88MB
+[simulet/task] [2025-07-28 10:15:35.7726] [INFO] STEP: 600(0:10:0.00) #persons: (8783|0) avg v: 11.46 CPU: 97.94 MEM: 481.67MB
+[simulet/task] [2025-07-28 10:15:45.9854] [INFO] STEP: 700(0:11:40.00) #persons: (8783|0) avg v: 11.40 CPU: 87.48 MEM: 481.35MB
+[simulet/task] [2025-07-28 10:15:56.9373] [INFO] STEP: 800(0:13:20.00) #persons: (8783|0) avg v: 11.34 CPU: 77.63 MEM: 518.03MB
+[simulet/task] [2025-07-28 10:16:05.2529] [INFO] STEP: 900(0:15:0.00) #persons: (8783|0) avg v: 11.29 CPU: 113.24 MEM: 536.89MB
+[simulet/task] [2025-07-28 10:16:14.9528] [INFO] STEP: 1000(0:16:40.00) #persons: (8783|0) avg v: 11.23 CPU: 101.96 MEM: 507.00MB
+[simulet/task] [2025-07-28 10:16:24.6019] [INFO] STEP: 1100(0:18:20.00) #persons: (8783|0) avg v: 11.18 CPU: 101.66 MEM: 534.94MB
+[simulet/task] [2025-07-28 10:16:32.9932] [INFO] STEP: 1200(0:20:0.00) #persons: (8783|0) avg v: 11.13 CPU: 120.62 MEM: 532.26MB
+[simulet/task] [2025-07-28 10:16:42.6624] [INFO] STEP: 1300(0:21:40.00) #persons: (8783|0) avg v: 11.09 CPU: 105.58 MEM: 536.57MB
+[simulet/task] [2025-07-28 10:16:51.6619] [INFO] STEP: 1400(0:23:20.00) #persons: (8783|0) avg v: 11.05 CPU: 108.33 MEM: 563.89MB
+[simulet/task] [2025-07-28 10:17:00.7176] [INFO] STEP: 1500(0:25:0.00) #persons: (8783|0) avg v: 11.01 CPU: 110.38 MEM: 592.80MB
+[simulet/task] [2025-07-28 10:17:10.7747] [INFO] STEP: 1600(0:26:40.00) #persons: (8783|0) avg v: 10.98 CPU: 106.26 MEM: 566.82MB
+[simulet] [2025-07-28 10:17:19.3759] [INFO] stopping...

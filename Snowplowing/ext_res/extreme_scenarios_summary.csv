@@ -1,0 +1,3 @@
+﻿scenario,baseline_snowed_speed,raised_cleaned_speed,cleaned_lane_count,global_avg_speed,filled_weighted_avg_speed,speed_sample_count,ATT,Throughput,road_count,lane_count
+all_snowed,3.0,20.0,0,3.2014014549058962,3.2489192305118717,1,867.5517022626348,894,2634,7119
+all_cleaned,3.0,20.0,7119,17.9439430049577,18.064251226226038,1,561.4343412983718,2613,2634,7119

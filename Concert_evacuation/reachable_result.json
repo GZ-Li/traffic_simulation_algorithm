@@ -1,0 +1,60 @@
+{
+  "script_version": "filter_reachable_destinations_3600_20260423",
+  "od_generation": {
+    "mode": "filter_destinations_from_csv",
+    "destination_csv": "/home/nkk/work/src/python/concert_evacuation/result/smart_od_trips.csv",
+    "origin_road": "200002061",
+    "max_destinations": 30,
+    "total_destination_count": 28,
+    "batch_size": 10,
+    "batch_count": 3,
+    "max_batch_index": 2,
+    "tracking_config": {
+      "interval": 1,
+      "max_probe_steps": 4260,
+      "tracking_horizon_seconds": 4260,
+      "query_concurrency": 50,
+      "track_every_steps": 10,
+      "vehicle_timeout_seconds": 3600
+    },
+    "dispatch_config": {
+      "batch_size": 10,
+      "headway_seconds": 30,
+      "departure_delay_steps": 1,
+      "first_departure_time": 12,
+      "last_planned_departure_time": 72
+    }
+  },
+  "summary": {
+    "total_ods": 0,
+    "total_vehicles": 0,
+    "hub_count": 0,
+    "injected_ok": 0,
+    "all_arrived_count": 0,
+    "reachable_within_threshold_count": 0,
+    "vehicle_timeout_count": 0,
+    "eta_available": 0,
+    "timeout_no_eta": 0,
+    "inject_failures": 0,
+    "tracking_error_ods": 0,
+    "max_vehicle_eta_seconds": null,
+    "total_eta_seconds": 0,
+    "last_arrived_time": null,
+    "evacuation_duration_seconds": null,
+    "eta_available_count": 0,
+    "missing_eta_count": 0,
+    "eta_sum_by_origin": {},
+    "fatal_error": "<_InactiveRpcError of RPC that terminated with:\n\tstatus = StatusCode.INTERNAL\n\tdetails = \"Exception deserializing response!\"\n\tdebug_error_string = \"None\"\n>"
+  },
+  "runtime_diagnostics": {
+    "sim_steps_executed": 0,
+    "tracking_ticks_executed": 0,
+    "vehicle_query_count": 0,
+    "early_stop_reason": null,
+    "track_every_steps": 10,
+    "max_probe_steps": 4260,
+    "vehicle_timeout_seconds": 3600,
+    "last_sim_time": null
+  },
+  "rows": []
+}

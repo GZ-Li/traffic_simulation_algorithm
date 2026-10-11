@@ -1,0 +1,46 @@
+[simulet] [2025-07-23 10:49:49.4137] [INFO] {Input:{URI: Map:{DB: Col: Cache: OnlyCache:false File:/home/nkk/nkk/work/src/simulet-go/python/data/map_pku_wuhan_demo_1015c_rl.pb} Person:0xc0003fa000 RouteStatus:<nil>} Control:{Step:{Start:0 Total:3631 Interval:1 Subloop:<nil>} MicroscopicRange:<nil> NoSignalRanges:[] SkipOvertimeTripWhenInit:true EnablePlatoon:false EnableIndoor:false Dump:<nil> VehicleMicroStatistics:<nil> LaneStatistics:<nil> RoadStatistics:<nil> Stat:<nil> IndoorStroll:<nil> DisableIndoorAoiIDs:[] PreferFixedLight:true KeepAllRedWhenHasVehicle:false EnableCollisionAvoidance:false EnableGoAstray:false LaneChangeModel:0xc0003821a0} Output:{Target:{SQL: CSV:} EnableCommon:false Simple:<nil>} TLS:<nil>}
+[input] [2025-07-23 10:49:49.4149] [ERROR] disable input cache because invalid dir data/ (not exist or file)
+[sidecar] [2025-07-23 10:49:49.7625] [INFO] sidecar rpc listening at http://localhost:37523/
+[simulet/task] [2025-07-23 10:49:49.7626] [INFO] Lane: 16860
+[simulet/task] [2025-07-23 10:49:49.7626] [INFO] Road: 2634
+[simulet/task] [2025-07-23 10:49:49.7626] [INFO] Junction: 1588
+[simulet/task] [2025-07-23 10:49:49.7626] [INFO] AOI: 0
+[simulet/task] [2025-07-23 10:49:49.7626] [INFO] Person: 99715
+[simulet/task] [2025-07-23 10:50:19.5718] [INFO] STEP: 100(0:1:40.00) #persons: (99715|0) avg v: 11.58 CPU: 75.84 MEM: 1513.21MB
+[simulet/task] [2025-07-23 10:50:26.5334] [INFO] STEP: 200(0:3:20.00) #persons: (99715|0) avg v: 11.43 CPU: 340.75 MEM: 1677.27MB
+[simulet/task] [2025-07-23 10:50:33.5690] [INFO] STEP: 300(0:5:0.00) #persons: (99715|0) avg v: 11.24 CPU: 383.64 MEM: 1885.27MB
+[simulet/task] [2025-07-23 10:50:41.6041] [INFO] STEP: 400(0:6:40.00) #persons: (99715|0) avg v: 11.02 CPU: 301.74 MEM: 1944.52MB
+[simulet/task] [2025-07-23 10:50:48.3064] [INFO] STEP: 500(0:8:20.00) #persons: (99715|0) avg v: 10.78 CPU: 397.46 MEM: 1997.27MB
+[simulet/task] [2025-07-23 10:50:54.9295] [INFO] STEP: 600(0:10:0.00) #persons: (99715|0) avg v: 10.53 CPU: 401.06 MEM: 2013.02MB
+[simulet/task] [2025-07-23 10:51:03.1303] [INFO] STEP: 700(0:11:40.00) #persons: (99715|0) avg v: 10.27 CPU: 374.88 MEM: 2051.27MB
+[simulet/task] [2025-07-23 10:51:10.1167] [INFO] STEP: 800(0:13:20.00) #persons: (99715|0) avg v: 10.00 CPU: 467.24 MEM: 2066.02MB
+[simulet/task] [2025-07-23 10:51:16.5463] [INFO] STEP: 900(0:15:0.00) #persons: (99715|0) avg v: 9.73 CPU: 439.50 MEM: 2119.77MB
+[simulet/task] [2025-07-23 10:51:24.8062] [INFO] STEP: 1000(0:16:40.00) #persons: (99715|0) avg v: 9.46 CPU: 400.12 MEM: 2128.52MB
+[simulet/task] [2025-07-23 10:51:31.7751] [INFO] STEP: 1100(0:18:20.00) #persons: (99715|0) avg v: 9.20 CPU: 498.42 MEM: 2172.69MB
+[simulet/task] [2025-07-23 10:51:38.9125] [INFO] STEP: 1200(0:20:0.00) #persons: (99715|0) avg v: 8.94 CPU: 518.63 MEM: 2214.44MB
+[simulet/task] [2025-07-23 10:51:47.3824] [INFO] STEP: 1300(0:21:40.00) #persons: (99715|0) avg v: 8.69 CPU: 453.84 MEM: 2234.19MB
+[simulet/task] [2025-07-23 10:51:54.4571] [INFO] STEP: 1400(0:23:20.00) #persons: (99715|0) avg v: 8.44 CPU: 535.22 MEM: 2268.94MB
+[simulet/task] [2025-07-23 10:52:01.7906] [INFO] STEP: 1500(0:25:0.00) #persons: (99715|0) avg v: 8.20 CPU: 562.48 MEM: 2310.94MB
+[simulet/task] [2025-07-23 10:52:10.3034] [INFO] STEP: 1600(0:26:40.00) #persons: (99715|0) avg v: 7.96 CPU: 479.46 MEM: 2316.44MB
+[simulet/task] [2025-07-23 10:52:17.7936] [INFO] STEP: 1700(0:28:20.00) #persons: (99715|0) avg v: 7.72 CPU: 587.72 MEM: 2381.44MB
+[simulet/task] [2025-07-23 10:52:25.0082] [INFO] STEP: 1800(0:30:0.00) #persons: (99715|0) avg v: 7.49 CPU: 568.79 MEM: 2388.94MB
+[simulet/task] [2025-07-23 10:52:34.0081] [INFO] STEP: 1900(0:31:40.00) #persons: (99715|0) avg v: 7.26 CPU: 532.78 MEM: 2424.94MB
+[simulet/task] [2025-07-23 10:52:41.2680] [INFO] STEP: 2000(0:33:20.00) #persons: (99715|0) avg v: 7.04 CPU: 601.38 MEM: 2456.44MB
+[simulet/task] [2025-07-23 10:52:48.7775] [INFO] STEP: 2100(0:35:0.00) #persons: (99715|0) avg v: 6.82 CPU: 619.44 MEM: 2489.94MB
+[simulet/task] [2025-07-23 10:52:58.1173] [INFO] STEP: 2200(0:36:40.00) #persons: (99715|0) avg v: 6.62 CPU: 565.10 MEM: 2525.94MB
+[simulet/task] [2025-07-23 10:53:06.7436] [INFO] STEP: 2300(0:38:20.00) #persons: (99715|0) avg v: 6.42 CPU: 713.21 MEM: 2562.19MB
+[simulet/task] [2025-07-23 10:53:15.3562] [INFO] STEP: 2400(0:40:0.00) #persons: (99715|0) avg v: 6.23 CPU: 737.05 MEM: 2580.19MB
+[simulet/task] [2025-07-23 10:53:25.2385] [INFO] STEP: 2500(0:41:40.00) #persons: (99715|0) avg v: 6.05 CPU: 628.14 MEM: 2610.44MB
+[simulet/task] [2025-07-23 10:53:33.7446] [INFO] STEP: 2600(0:43:20.00) #persons: (99715|0) avg v: 5.87 CPU: 733.25 MEM: 2617.19MB
+[simulet/task] [2025-07-23 10:53:42.1405] [INFO] STEP: 2700(0:45:0.00) #persons: (99715|0) avg v: 5.71 CPU: 717.16 MEM: 2678.69MB
+[simulet/task] [2025-07-23 10:53:52.7434] [INFO] STEP: 2800(0:46:40.00) #persons: (99715|0) avg v: 5.55 CPU: 684.54 MEM: 2714.44MB
+[simulet/task] [2025-07-23 10:54:02.2218] [INFO] STEP: 2900(0:48:20.00) #persons: (99715|0) avg v: 5.40 CPU: 802.01 MEM: 2736.69MB
+[simulet/task] [2025-07-23 10:54:11.3200] [INFO] STEP: 3000(0:50:0.00) #persons: (99715|0) avg v: 5.26 CPU: 800.11 MEM: 2755.69MB
+[simulet/task] [2025-07-23 10:54:21.8329] [INFO] STEP: 3100(0:51:40.00) #persons: (99715|0) avg v: 5.13 CPU: 686.60 MEM: 2791.44MB
+[simulet/task] [2025-07-23 10:54:30.7904] [INFO] STEP: 3200(0:53:20.00) #persons: (99715|0) avg v: 5.00 CPU: 810.73 MEM: 2844.44MB
+[simulet/task] [2025-07-23 10:54:40.0191] [INFO] STEP: 3300(0:55:0.00) #persons: (99715|0) avg v: 4.88 CPU: 819.39 MEM: 2857.19MB
+[simulet/task] [2025-07-23 10:54:51.1090] [INFO] STEP: 3400(0:56:40.00) #persons: (99715|0) avg v: 4.77 CPU: 752.84 MEM: 2919.33MB
+[simulet/task] [2025-07-23 10:55:00.5618] [INFO] STEP: 3500(0:58:20.00) #persons: (99715|0) avg v: 4.66 CPU: 831.85 MEM: 2928.83MB
+[simulet/task] [2025-07-23 10:55:10.0624] [INFO] STEP: 3600(1:0:0.00) #persons: (99715|0) avg v: 4.55 CPU: 853.31 MEM: 2970.58MB
+[simulet] [2025-07-23 10:55:12.4978] [INFO] stopping...
+[sidecar] [2025-07-23 10:55:12.5329] [PANIC] unavailable: dial tcp 127.0.0.1:38697: connect: connection refused

@@ -1,0 +1,10 @@
+4458.129 6912 1753263362.220
+
+
+[simulet/task] [2025-07-23 17:36:02.1977] [INFO] STEP: 9000(2:30:0.00) #persons: (39586|0) avg v: 9.95 CPU: 893.52 MEM: 1478.02MB
+get_departed_vehicle_average_traveling_time:  {'num_completed_trips': 6912, 'completed_total_travel_time': 8941705.0, 'completed_total_travel_distance': 30471111.888029777, 'completed_avg_travel_time': 1293.6494500443214, 'completed_avg_v': 3.4077518647759426, 'running_total_travel_time': 73362967.0, 'running_total_travel_distance': 52078637.570962645, 'running_avg_v': 0.709876381784858, 'num_vehicles': 9544, 'num_pedestrians': 2601, 'avg_v': 0.0, 'num_passengers': 0, 'num_subways': 0, 'num_taxis': 0, 'num_crowds': 0}
+get_finished_vehicle_average_traveling_time:  {'num_completed_trips': 6912, 'completed_total_travel_time': 8941705.0, 'completed_total_travel_distance': 30471111.888029777, 'completed_avg_travel_time': 1293.6494500443214, 'completed_avg_v': 3.4077518647759426, 'running_total_travel_time': 73362967.0, 'running_total_travel_distance': 52078637.570962645, 'running_avg_v': 0.709876381784858, 'num_vehicles': 9544, 'num_pedestrians': 2601, 'avg_v': 0.0, 'num_passengers': 0, 'num_subways': 0, 'num_taxis': 0, 'num_crowds': 0}
+get_finished_vehicle_count:  {'num_completed_trips': 6912, 'completed_total_travel_time': 8941705.0, 'completed_total_travel_distance': 30471111.888029777, 'completed_avg_travel_time': 1293.6494500443214, 'completed_avg_v': 3.4077518647759426, 'running_total_travel_time': 73362967.0, 'running_total_travel_distance': 52078637.570962645, 'running_avg_v': 0.709876381784858, 'num_vehicles': 9544, 'num_pedestrians': 2601, 'avg_v': 0.0, 'num_passengers': 0, 'num_subways': 0, 'num_taxis': 0, 'num_crowds': 0}
+平均旅行时间 (ATT): 4458.129
+完成车辆数 (Throughput): 6912
+已完成车辆平均旅行时间: 1293.649

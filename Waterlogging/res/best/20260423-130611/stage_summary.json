@@ -1,0 +1,23 @@
+[
+  {
+    "stage_index": 0,
+    "stage_name": "stage_0",
+    "cleaned_points": "",
+    "flooded_points": "300000545,300001682,300001249,300001252",
+    "flooded_avg_speed": 1.3317860401921873
+  },
+  {
+    "stage_index": 1,
+    "stage_name": "stage_1",
+    "cleaned_points": "300000545,300001682",
+    "flooded_points": "300001249,300001252",
+    "flooded_avg_speed": 3.906917404596514
+  },
+  {
+    "stage_index": 2,
+    "stage_name": "stage_2",
+    "cleaned_points": "300000545,300001682,300001249,300001252",
+    "flooded_points": "",
+    "flooded_avg_speed": 4.99472380981766
+  }
+]

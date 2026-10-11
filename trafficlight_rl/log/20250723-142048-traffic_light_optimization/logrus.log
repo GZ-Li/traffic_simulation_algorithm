@@ -1,0 +1,19 @@
+[simulet] [2025-07-23 14:20:48.7850] [INFO] {Input:{URI: Map:{DB: Col: Cache: OnlyCache:false File:/home/nkk/nkk/work/src/simulet-go/python/data/map_pku_wuhan_demo_1015c_rl.pb} Person:0xc00038ceb0 RouteStatus:<nil>} Control:{Step:{Start:0 Total:931 Interval:1 Subloop:<nil>} MicroscopicRange:<nil> NoSignalRanges:[] SkipOvertimeTripWhenInit:true EnablePlatoon:false EnableIndoor:false Dump:<nil> VehicleMicroStatistics:<nil> LaneStatistics:<nil> RoadStatistics:<nil> Stat:<nil> IndoorStroll:<nil> DisableIndoorAoiIDs:[] PreferFixedLight:false KeepAllRedWhenHasVehicle:false EnableCollisionAvoidance:false EnableGoAstray:false LaneChangeModel:0xc00039f1c0} Output:{Target:{SQL: CSV:} EnableCommon:false Simple:<nil>} TLS:<nil>}
+[input] [2025-07-23 14:20:48.7866] [ERROR] disable input cache because invalid dir data/ (not exist or file)
+[sidecar] [2025-07-23 14:20:49.0530] [INFO] sidecar rpc listening at http://localhost:60705/
+[simulet/task] [2025-07-23 14:20:49.0532] [INFO] Lane: 16860
+[simulet/task] [2025-07-23 14:20:49.0532] [INFO] Road: 2634
+[simulet/task] [2025-07-23 14:20:49.0532] [INFO] Junction: 1588
+[simulet/task] [2025-07-23 14:20:49.0532] [INFO] AOI: 0
+[simulet/task] [2025-07-23 14:20:49.0532] [INFO] Person: 39586
+[simulet/task] [2025-07-23 14:20:52.4850] [INFO] STEP: 100(0:1:40.00) #persons: (39586|0) avg v: 11.63 CPU: 173.60 MEM: 920.73MB
+[simulet/task] [2025-07-23 14:20:53.3137] [INFO] STEP: 200(0:3:20.00) #persons: (39586|0) avg v: 11.60 CPU: 780.72 MEM: 1017.23MB
+[simulet/task] [2025-07-23 14:20:54.0730] [INFO] STEP: 300(0:5:0.00) #persons: (39586|0) avg v: 11.56 CPU: 776.32 MEM: 1031.73MB
+[simulet/task] [2025-07-23 14:20:54.8813] [INFO] STEP: 400(0:6:40.00) #persons: (39586|0) avg v: 11.51 CPU: 818.75 MEM: 1038.23MB
+[simulet/task] [2025-07-23 14:20:55.7105] [INFO] STEP: 500(0:8:20.00) #persons: (39586|0) avg v: 11.45 CPU: 801.20 MEM: 1133.68MB
+[simulet/task] [2025-07-23 14:20:56.5465] [INFO] STEP: 600(0:10:0.00) #persons: (39586|0) avg v: 11.38 CPU: 802.38 MEM: 1148.18MB
+[simulet/task] [2025-07-23 14:20:57.4726] [INFO] STEP: 700(0:11:40.00) #persons: (39586|0) avg v: 11.32 CPU: 815.05 MEM: 1160.43MB
+[simulet/task] [2025-07-23 14:20:58.3200] [INFO] STEP: 800(0:13:20.00) #persons: (39586|0) avg v: 11.26 CPU: 829.76 MEM: 1164.43MB
+[simulet/task] [2025-07-23 14:20:59.2277] [INFO] STEP: 900(0:15:0.00) #persons: (39586|0) avg v: 11.19 CPU: 876.92 MEM: 1173.93MB
+[simulet] [2025-07-23 17:32:18.2160] [INFO] stopping...
+[sidecar] [2025-07-23 17:32:19.2172] [PANIC] unavailable: unexpected EOF

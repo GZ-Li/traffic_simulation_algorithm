@@ -1,0 +1,35 @@
+{
+  "Hospital 200000480": {
+    "Accident 200000160": 150,
+    "Accident 200000387": 180,
+    "Accident 200000601": 330,
+    "Accident 200007001": 120,
+    "Accident 200000823": 330,
+    "Accident 200000869": 180,
+    "Accident 200000575": 120,
+    "Accident 200000567": 180,
+    "Accident 200000396": 120
+  },
+  "Hospital 200000154": {
+    "Accident 200000160": 60,
+    "Accident 200000387": 120,
+    "Accident 200000601": 330,
+    "Accident 200007001": 90,
+    "Accident 200000823": 360,
+    "Accident 200000869": 150,
+    "Accident 200000575": 9999,
+    "Accident 200000567": 60,
+    "Accident 200000396": 270
+  },
+  "Hospital 200000033": {
+    "Accident 200000160": 9999,
+    "Accident 200000387": 360,
+    "Accident 200000601": 180,
+    "Accident 200007001": 120,
+    "Accident 200000823": 90,
+    "Accident 200000869": 9999,
+    "Accident 200000575": 150,
+    "Accident 200000567": 9999,
+    "Accident 200000396": 9999
+  }
+}

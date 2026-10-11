@@ -1,0 +1,10 @@
+[simulet] [2025-07-23 10:04:11.2065] [INFO] {Input:{URI: Map:{DB: Col: Cache: OnlyCache:false File:/home/nkk/nkk/work/src/simulet-go/python/data/map_pku_wuhan_demo_1015c_rl.pb} Person:0xc000434000 RouteStatus:<nil>} Control:{Step:{Start:0 Total:3631 Interval:1 Subloop:<nil>} MicroscopicRange:<nil> NoSignalRanges:[] SkipOvertimeTripWhenInit:true EnablePlatoon:false EnableIndoor:false Dump:<nil> VehicleMicroStatistics:<nil> LaneStatistics:<nil> RoadStatistics:<nil> Stat:<nil> IndoorStroll:<nil> DisableIndoorAoiIDs:[] PreferFixedLight:false KeepAllRedWhenHasVehicle:false EnableCollisionAvoidance:false EnableGoAstray:false LaneChangeModel:0xc0003921a0} Output:{Target:{SQL: CSV:} EnableCommon:false Simple:<nil>} TLS:<nil>}
+[input] [2025-07-23 10:04:11.2088] [ERROR] disable input cache because invalid dir data/ (not exist or file)
+[sidecar] [2025-07-23 10:04:11.4965] [INFO] sidecar rpc listening at http://localhost:60973/
+[simulet/task] [2025-07-23 10:04:11.4965] [INFO] Lane: 16860
+[simulet/task] [2025-07-23 10:04:11.4965] [INFO] Road: 2634
+[simulet/task] [2025-07-23 10:04:11.4965] [INFO] Junction: 1588
+[simulet/task] [2025-07-23 10:04:11.4965] [INFO] AOI: 0
+[simulet/task] [2025-07-23 10:04:11.4965] [INFO] Person: 39586
+[simulet] [2025-07-23 10:04:55.1214] [INFO] stopping...
+[sidecar] [2025-07-23 10:04:56.1229] [PANIC] unavailable: unexpected EOF

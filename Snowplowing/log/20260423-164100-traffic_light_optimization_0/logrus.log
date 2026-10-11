@@ -1,0 +1,32 @@
+[simulet] [2026-04-23 16:41:00.0669] [INFO] {Input:{URI:mongodb://root:qZ7ILv0Xs6VnJcPg12KU3AoYhWKb4Cla@172.16.40.166:27017 Map:{DB:tsingroc Col:map_pku_wuhan_demo_1015c_rl Cache: OnlyCache:false File:} Person:0xc0002e0cd0 RouteStatus:<nil>} Control:{Step:{Start:0 Total:1981 Interval:1 Subloop:<nil>} MicroscopicRange:<nil> NoSignalRanges:[] SkipOvertimeTripWhenInit:true EnablePlatoon:false EnableIndoor:false Dump:<nil> VehicleMicroStatistics:<nil> LaneStatistics:<nil> RoadStatistics:<nil> Stat:<nil> IndoorStroll:<nil> DisableIndoorAoiIDs:[] PreferFixedLight:false KeepAllRedWhenHasVehicle:false EnableCollisionAvoidance:false EnableGoAstray:false LaneChangeModel:0xc000352140} Output:{Target:{SQL: CSV:} EnableCommon:false Simple:<nil>} TLS:<nil>}
+[input] [2026-04-23 16:41:00.0693] [ERROR] disable input cache because invalid dir data/ (not exist or file)
+[input] [2026-04-23 16:41:00.0852] [INFO] start fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2026-04-23 16:41:00.4295] [INFO] finish fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2026-04-23 16:41:00.4314] [INFO] start fetching from tsingroc.person_test_20250724_1015cc
+[input] [2026-04-23 16:41:00.6189] [INFO] finish fetching from tsingroc.person_test_20250724_1015cc
+[sidecar] [2026-04-23 16:41:00.6391] [INFO] sidecar rpc listening at http://localhost:35797/
+[simulet/task] [2026-04-23 16:41:00.6391] [INFO] Lane: 16860
+[simulet/task] [2026-04-23 16:41:00.6394] [INFO] Road: 2634
+[simulet/task] [2026-04-23 16:41:00.6394] [INFO] Junction: 1588
+[simulet/task] [2026-04-23 16:41:00.6394] [INFO] AOI: 0
+[simulet/task] [2026-04-23 16:41:00.6395] [INFO] Person: 8783
+[simulet/task] [2026-04-23 16:41:03.5412] [INFO] STEP: 100(0:1:40.00) #persons: (8783|0) avg v: 11.63 CPU: 125.21 MEM: 295.36MB
+[simulet/task] [2026-04-23 16:41:07.2543] [INFO] STEP: 200(0:3:20.00) #persons: (8783|0) avg v: 11.43 CPU: 143.28 MEM: 338.26MB
+[simulet/task] [2026-04-23 16:41:07.8101] [INFO] STEP: 300(0:5:0.00) #persons: (8783|0) avg v: 11.07 CPU: 649.09 MEM: 342.22MB
+[simulet/task] [2026-04-23 16:41:08.4115] [INFO] STEP: 400(0:6:40.00) #persons: (8783|0) avg v: 10.76 CPU: 705.00 MEM: 369.17MB
+[simulet/task] [2026-04-23 16:41:08.9989] [INFO] STEP: 500(0:8:20.00) #persons: (8783|0) avg v: 10.49 CPU: 693.22 MEM: 371.98MB
+[simulet/task] [2026-04-23 16:41:09.6448] [INFO] STEP: 600(0:10:0.00) #persons: (8783|0) avg v: 10.25 CPU: 666.15 MEM: 375.78MB
+[simulet/task] [2026-04-23 16:41:10.3295] [INFO] STEP: 700(0:11:40.00) #persons: (8783|0) avg v: 10.05 CPU: 505.88 MEM: 375.78MB
+[simulet/task] [2026-04-23 16:41:10.9775] [INFO] STEP: 800(0:13:20.00) #persons: (8783|0) avg v: 9.88 CPU: 730.77 MEM: 377.05MB
+[simulet/task] [2026-04-23 16:41:11.6196] [INFO] STEP: 900(0:15:0.00) #persons: (8783|0) avg v: 9.73 CPU: 750.00 MEM: 380.72MB
+[simulet/task] [2026-04-23 16:41:12.3310] [INFO] STEP: 1000(0:16:40.00) #persons: (8783|0) avg v: 9.60 CPU: 785.92 MEM: 388.03MB
+[simulet/task] [2026-04-23 16:41:13.0642] [INFO] STEP: 1100(0:18:20.00) #persons: (8783|0) avg v: 9.49 CPU: 754.05 MEM: 391.28MB
+[simulet/task] [2026-04-23 16:41:13.8046] [INFO] STEP: 1200(0:20:0.00) #persons: (8783|0) avg v: 9.39 CPU: 794.59 MEM: 393.57MB
+[simulet/task] [2026-04-23 16:41:14.5778] [INFO] STEP: 1300(0:21:40.00) #persons: (8783|0) avg v: 9.30 CPU: 805.19 MEM: 395.58MB
+[simulet/task] [2026-04-23 16:41:15.3550] [INFO] STEP: 1400(0:23:20.00) #persons: (8783|0) avg v: 9.22 CPU: 829.49 MEM: 396.59MB
+[simulet/task] [2026-04-23 16:41:16.1607] [INFO] STEP: 1500(0:25:0.00) #persons: (8783|0) avg v: 9.15 CPU: 856.25 MEM: 402.74MB
+[simulet/task] [2026-04-23 16:41:16.9230] [INFO] STEP: 1600(0:26:40.00) #persons: (8783|0) avg v: 9.09 CPU: 797.40 MEM: 404.03MB
+[simulet/task] [2026-04-23 16:41:17.7140] [INFO] STEP: 1700(0:28:20.00) #persons: (8783|0) avg v: 9.03 CPU: 817.72 MEM: 405.30MB
+[simulet/task] [2026-04-23 16:41:18.5595] [INFO] STEP: 1800(0:30:0.00) #persons: (8783|0) avg v: 8.99 CPU: 726.19 MEM: 407.62MB
+[simulet/task] [2026-04-23 16:41:19.3456] [INFO] STEP: 1900(0:31:40.00) #persons: (8783|0) avg v: 8.94 CPU: 815.19 MEM: 415.80MB
+[simulet/task] [2026-04-23 16:41:21.6451] [INFO] engine complete

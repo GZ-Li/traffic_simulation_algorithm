@@ -1,0 +1,38 @@
+[simulet] [2026-04-23 18:14:36.5641] [INFO] {Input:{URI:mongodb://root:qZ7ILv0Xs6VnJcPg12KU3AoYhWKb4Cla@172.16.40.166:27017 Map:{DB:tsingroc Col:map_pku_wuhan_demo_1015c_rl Cache: OnlyCache:false File:} Person:0xc0002decd0 RouteStatus:<nil>} Control:{Step:{Start:0 Total:3361 Interval:1 Subloop:<nil>} MicroscopicRange:<nil> NoSignalRanges:[] SkipOvertimeTripWhenInit:true EnablePlatoon:false EnableIndoor:false Dump:<nil> VehicleMicroStatistics:<nil> LaneStatistics:<nil> RoadStatistics:<nil> Stat:<nil> IndoorStroll:<nil> DisableIndoorAoiIDs:[] PreferFixedLight:false KeepAllRedWhenHasVehicle:false EnableCollisionAvoidance:false EnableGoAstray:false LaneChangeModel:0xc000352140} Output:{Target:{SQL: CSV:} EnableCommon:false Simple:<nil>} TLS:<nil>}
+[input] [2026-04-23 18:14:36.5664] [INFO] enable input cache at data/
+[input] [2026-04-23 18:14:36.5823] [INFO] start fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2026-04-23 18:14:36.6495] [INFO] finish fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2026-04-23 18:14:36.6511] [INFO] start fetching from tsingroc.person_test_20250724_1015cc
+[input] [2026-04-23 18:14:36.7011] [INFO] finish fetching from tsingroc.person_test_20250724_1015cc
+[simulet/task] [2026-04-23 18:14:36.7217] [INFO] Lane: 16860
+[simulet/task] [2026-04-23 18:14:36.7218] [INFO] Road: 2634
+[simulet/task] [2026-04-23 18:14:36.7219] [INFO] Junction: 1588
+[simulet/task] [2026-04-23 18:14:36.7220] [INFO] AOI: 0
+[simulet/task] [2026-04-23 18:14:36.7221] [INFO] Person: 8783
+[sidecar] [2026-04-23 18:14:36.7218] [INFO] sidecar rpc listening at http://localhost:41609/
+[simulet/task] [2026-04-23 18:14:40.1438] [INFO] STEP: 100(0:1:40.00) #persons: (8783|0) avg v: 11.63 CPU: 112.22 MEM: 292.12MB
+[simulet/task] [2026-04-23 18:14:40.7766] [INFO] STEP: 200(0:3:20.00) #persons: (8783|0) avg v: 11.62 CPU: 501.59 MEM: 331.66MB
+[simulet/task] [2026-04-23 18:14:41.3923] [INFO] STEP: 300(0:5:0.00) #persons: (8783|0) avg v: 11.59 CPU: 543.55 MEM: 334.48MB
+[schedule] [2026-04-23 18:14:41.5268] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:71053 s:1}}, lane 71053 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 18:14:41.5275] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17240 s:1}}, lane 17240 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 18:14:41.5277] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17240 s:1}}, lane 17240 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 18:14:41.5280] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16398 s:1}}, lane 16398 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 18:14:41.5281] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17447 s:1}}, lane 17447 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 18:14:41.5285] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15529 s:1}}, lane 15529 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 18:14:41.5286] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15582 s:1}}, lane 15582 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 18:14:41.5287] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15582 s:1}}, lane 15582 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 18:14:41.5287] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15582 s:1}}, lane 15582 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 18:14:41.5288] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15529 s:1}}, lane 15529 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 18:14:41.5288] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17447 s:1}}, lane 17447 is not driving lane, skip it, skip it
+[simulet/task] [2026-04-23 18:15:28.4601] [INFO] STEP: 400(0:6:40.00) #persons: (8843|0) avg v: 11.56 CPU: 16.70 MEM: 396.73MB
+[simulet/task] [2026-04-23 18:16:09.6642] [INFO] STEP: 500(0:8:20.00) #persons: (8843|0) avg v: 11.53 CPU: 21.21 MEM: 409.35MB
+[simulet/task] [2026-04-23 18:16:45.8063] [INFO] STEP: 600(0:10:0.00) #persons: (8843|0) avg v: 11.49 CPU: 23.60 MEM: 409.86MB
+[simulet/task] [2026-04-23 18:17:19.3616] [INFO] STEP: 700(0:11:40.00) #persons: (8843|0) avg v: 11.45 CPU: 24.59 MEM: 410.11MB
+[simulet/task] [2026-04-23 18:17:39.4084] [INFO] STEP: 800(0:13:20.00) #persons: (8843|0) avg v: 11.42 CPU: 34.86 MEM: 410.37MB
+[simulet/task] [2026-04-23 18:17:53.7263] [INFO] STEP: 900(0:15:0.00) #persons: (8843|0) avg v: 11.39 CPU: 44.20 MEM: 413.36MB
+[simulet/task] [2026-04-23 18:18:10.2613] [INFO] STEP: 1000(0:16:40.00) #persons: (8843|0) avg v: 11.35 CPU: 33.45 MEM: 416.87MB
+[simulet/task] [2026-04-23 18:18:22.6115] [INFO] STEP: 1100(0:18:20.00) #persons: (8843|0) avg v: 11.33 CPU: 53.44 MEM: 421.65MB
+[simulet/task] [2026-04-23 18:18:34.8077] [INFO] STEP: 1200(0:20:0.00) #persons: (8843|0) avg v: 11.30 CPU: 54.59 MEM: 424.11MB
+[simulet/task] [2026-04-23 18:18:39.4876] [INFO] STEP: 1300(0:21:40.00) #persons: (8843|0) avg v: 11.27 CPU: 116.45 MEM: 430.26MB
+[simulet] [2026-04-23 18:18:39.8919] [INFO] stopping...
+[sidecar] [2026-04-23 18:18:39.8990] [PANIC] unavailable: dial tcp 127.0.0.1:36385: connect: connection refused

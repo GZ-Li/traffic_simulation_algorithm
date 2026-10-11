@@ -1,0 +1,262 @@
+diff --git a/python/trafficlight_rl/engine.py b/python/trafficlight_rl/engine.py
+index 6df56c5..e220e98 100644
+--- a/python/trafficlight_rl/engine.py
++++ b/python/trafficlight_rl/engine.py
+@@ -215,7 +215,7 @@ class Engine:
+         config_base64 = encode_to_base64(self.config.to_yaml())
+ 
+         # Start syncer (if available)
+-        syncer_path = os.path.expanduser("~/.local/bin/syncer")
++        syncer_path = os.path.expanduser("/home/nkk/nkk/work/src/syncer/syncer")
+         if os.path.exists(syncer_path):
+             self.syncer_proc = Popen(
+                 [
+@@ -232,7 +232,7 @@ class Engine:
+             time.sleep(1)
+ 
+         # Start simulet-go
+-        simulet_path = os.path.expanduser("~/.local/bin/simulet-go")
++        simulet_path = os.path.expanduser("/home/nkk/nkk/work/src/simulet-go/simulet-go")
+         if not os.path.exists(simulet_path):
+             simulet_path = "./simulet-go"  # Try relative path
+ 
+@@ -305,7 +305,7 @@ class Engine:
+         """Get the map data from the simulator."""
+         return self.map_data
+ 
+-    def get_junction_phase_lanes(self) -> List[List[Tuple[List[int], List[int]]]]:
++    def get_junction_phase_lanes(self, junction_ids) -> List[List[Tuple[List[int], List[int]]]]:
+         """
+         Get the `index` of the `in` and `out` lanes of each phase of each junction
+         """
+@@ -315,6 +315,10 @@ class Engine:
+         result = []
+ 
+         for junction in self.map_data.junctions:
++            if len(junction_ids) > 0:
++                if junction.id not in junction_ids:
++                    continue
++
+             junction_phases = []
+ 
+             # Get phases - prioritize fixed_program.phases over phases
+@@ -373,7 +377,7 @@ class Engine:
+ 
+         return result
+ 
+-    def get_junction_inout_lanes(self) -> Tuple[List[List[int]], List[List[int]]]:
++    def get_junction_inout_lanes(self, junction_ids) -> Tuple[List[List[int]], List[List[int]]]:
+         """
+         Get the `index` of the `in` and `out` lanes of each junction
+         """
+@@ -386,6 +390,9 @@ class Engine:
+             junction_in_lanes = []
+             junction_out_lanes = []
+ 
++            if len(junction_ids) > 0:
++                if junction.id not in junction_ids:
++                    continue
+             # 遍历junction的所有车道
+             for lane_id in junction.lane_ids:
+                 # 在map_data.lanes中找到对应的lane
+@@ -419,45 +426,115 @@ class Engine:
+ 
+         return (in_lanes, out_lanes)
+ 
+-    def get_lane_lengths(self) -> List[float]:
++    def get_lane_lengths(self, junction_ids) -> List[float]:
+         """Get the length of each lane."""
+-        return [l.length for l in self.map_data.lanes]
++        from pycityproto.city.map.v2.map_pb2 import LaneType
++        lanes = self.get_junction_lanes(junction_ids)
++        lane_lengths = []
++        for lane_index in lanes:
++            lane = self.map_data.lanes[lane_index]
++
++            lane_lengths.append(lane.length)
+ 
+-    def get_junction_phase_counts(self) -> List[int]:
++        return lane_lengths
++
++    def get_junction_phase_counts(self, _junction_ids) -> List[int]:
+         """Get the number of phases for each junction."""
+         if not self.is_running:
+             raise RuntimeError("Simulator not running")
+ 
+         phase_counts = []
+         for j in self.map_data.junctions:
++            if len(_junction_ids) > 0:
++                if j.id not in _junction_ids:
++                    continue
+             phase_counts.append(len(j.phases))
+ 
+         return phase_counts
+ 
+-    async def get_lane_vehicle_counts(self) -> np.ndarray:
++
++    def get_junction_lanes(self, junction_ids):
+         """Get the number of waiting vehicles for each lane."""
+         if not self.is_running:
+             raise RuntimeError("Simulator not running")
++        from pycityproto.city.map.v2.map_pb2 import LaneType
++        lanes = [ ]
++        for junction in self.map_data.junctions:
++            junction_in_lanes = [ ]
++            junction_out_lanes = [ ]
++
++            if len(junction_ids) > 0:
++                if junction.id not in junction_ids:
++                    continue
++            # 遍历junction的所有车道
++            for lane_id in junction.lane_ids:
++                # 在map_data.lanes中找到对应的lane
++                lane = None
++                for l in self.map_data.lanes:
++                    if l.id == lane_id:
++                        lane = l
++                        break
++                if self.lane_id2index[ lane.id ] in lanes:
++                    continue
++
++                if lane is not None and lane.type == LaneType.LANE_TYPE_DRIVING:
++                    lanes.append(self.lane_id2index[ lane.id ])
++                    # 获取前驱车道 (进入车道)
++                    for pred_conn in lane.predecessors:
++                        pred_lane_id = pred_conn.id
++                        if pred_lane_id in self.lane_id2index:
++                            pred_index = self.lane_id2index[ pred_lane_id ]
++                            lanes.append(pred_index)
++
++                    # 获取后继车道 (离开车道)
++                    for succ_conn in lane.successors:
++                        succ_lane_id = succ_conn.id
++                        if succ_lane_id in self.lane_id2index:
++                            succ_index = self.lane_id2index[ succ_lane_id ]
++                            lanes.append(succ_index)
++
++            # 去重并排序
++            lanes = sorted(list(set(lanes)))
++
++        return lanes
++    async def get_lane_vehicle_counts(self, junction_ids) -> np.ndarray:
++        """Get the number of waiting vehicles for each lane."""
++        if not self.is_running:
++            raise RuntimeError("Simulator not running")
++
++        lanes = self.get_junction_lanes(junction_ids)
++
+ 
+         assert self.client is not None
+         res = await self.client.lane_service.GetLane({"exclude_person": True})
+         assert isinstance(res, dict)
+-        arr = np.zeros(len(self.map_data.lanes), dtype=np.int32)
+-        for lane in res["states"]:
+-            arr[self.lane_id2index[lane["id"]]] = lane["vehicle_cnt"]
++        arr = np.zeros(len(lanes), dtype=np.int32)
++        i = 0
++        for lane_index in lanes:
++            for lane in res["states"]:
++                if self.lane_id2index[lane["id"]] != lane_index:
++                    continue
++                arr[i] = lane["vehicle_cnt"]
++            i += 1
+         return arr
+ 
+-    async def get_lane_waiting_vehicle_counts(self) -> np.ndarray:
++    async def get_lane_waiting_vehicle_counts(self, junction_ids) -> np.ndarray:
+         """Get the number of waiting vehicles for each lane."""
+         if not self.is_running:
+             raise RuntimeError("Simulator not running")
+ 
++        lanes = self.get_junction_lanes(junction_ids)
+         assert self.client is not None
+         res = await self.client.lane_service.GetLane({"exclude_person": True})
+         assert isinstance(res, dict)
+-        arr = np.zeros(len(self.map_data.lanes), dtype=np.int32)
+-        for lane in res["states"]:
+-            arr[self.lane_id2index[lane["id"]]] = lane["total_queuing_vehicle_cnt"]
++        arr = np.zeros(len(lanes), dtype=np.int32)
++        i = 0
++        for lane_index in lanes:
++            for lane in res[ "states" ]:
++                if self.lane_id2index[ lane[ "id" ] ] != lane_index:
++                    continue
++                arr[i] = lane["total_queuing_vehicle_cnt"]
++            i += 1
+         return arr
+ 
+     async def set_tl_phase_batch(self, junction_indices: List[int], actions: List[int]):
+diff --git a/python/trafficlight_rl/run_ppo.py b/python/trafficlight_rl/run_ppo.py
+index d7494be..46e27e5 100644
+--- a/python/trafficlight_rl/run_ppo.py
++++ b/python/trafficlight_rl/run_ppo.py
+@@ -123,6 +123,7 @@ def pad(arr, value):
+ class Env:
+     def __init__(
+         self,
++        junction_ids,
+         mongo_uri: str,
+         map_db: str,
+         map_coll: str,
+@@ -151,15 +152,17 @@ class Env:
+             output_job_prefix=output_job_prefix,
+             output_bbox=output_bbox,
+         )
++        self.junction_ids = junction_ids
+         self.j_ids = j_ids = [
+-            i for i, j in enumerate(eng.get_junction_phase_counts()) if j > 1
++            i for i, j in enumerate(eng.get_junction_phase_counts(junction_ids)) if j > 1
+         ]
+-        l = eng.get_junction_inout_lanes()[0]
+-        self.in_lanes = [l[i] for i in j_ids]
+-        self.lane_lengths = np.maximum(1, eng.get_lane_lengths())
++        l_in, l_out = eng.get_junction_inout_lanes(junction_ids)
++        self.in_lanes = [l_in[i] for i in j_ids]
++        self.out_lanes = [ l_out[ i ] for i in j_ids ]
++        self.lane_lengths = np.maximum(1, eng.get_lane_lengths(junction_ids))
+ 
+         # 计算观测车道
+-        jpl = eng.get_junction_phase_lanes()
++        jpl = eng.get_junction_phase_lanes(junction_ids)
+         jpl = [jpl[j] for j in j_ids]
+         l_ids = {l for i in jpl for j in i for k in j for l in k}
+         self.l_ids = l_ids = sorted(l_ids)
+@@ -197,8 +200,8 @@ class Env:
+         self.eng._start_simulator()
+ 
+     async def observe(self):
+-        c1 = await self.eng.get_lane_vehicle_counts()
+-        c2 = await self.eng.get_lane_waiting_vehicle_counts()
++        c1 = await self.eng.get_lane_vehicle_counts(self.junction_ids)
++        c2 = await self.eng.get_lane_waiting_vehicle_counts(self.junction_ids)
+         obs = np.stack(
+             [
+                 self._clip_veh_cnt(c1),
+@@ -208,14 +211,14 @@ class Env:
+                 # np.zeros_like(c1)+self.eng.get_current_time()/(self.step_size*self.step_count)*NN_INPUT_SCALER,
+             ]
+         ).T
+-        obs = obs[self.l_ids]
++        #obs = obs[self.l_ids]
+         return obs
+ 
+     async def step(self, action):
+         await self.eng.set_tl_phase_batch(self.j_ids, action)
+         self.eng.next_step(self.step_size)
+         s = await self.observe()
+-        cnt = self._clip_veh_cnt(await self.eng.get_lane_waiting_vehicle_counts())
++        cnt = self._clip_veh_cnt(await self.eng.get_lane_waiting_vehicle_counts(self.junction_ids))
+         r = np.array([-np.mean(cnt[i]) for i in self.in_lanes])
+         self.info["reward"] = np.mean(r)
+         self._step += 1
+@@ -387,7 +390,9 @@ async def main():
+     torch.set_float32_matmul_precision("medium")
+     device = torch.device("cuda")
+ 
+-    env = Env(
++    junction_ids = [300000026]
++    args.output_job_prefix += "20250728"
++    env = Env(junction_ids = junction_ids,
+         mongo_uri=args.mongo_uri,
+         map_db=args.map_db,
+         map_coll=args.map_coll,

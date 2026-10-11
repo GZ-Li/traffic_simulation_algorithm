@@ -1,0 +1,21 @@
+[simulet] [2026-04-23 09:51:15.8541] [INFO] {Input:{URI:mongodb://root:qZ7ILv0Xs6VnJcPg12KU3AoYhWKb4Cla@172.16.40.166:27017 Map:{DB:tsingroc Col:map_pku_wuhan_demo_1015c_rl Cache: OnlyCache:false File:} Person:0xc00030cd20 RouteStatus:<nil>} Control:{Step:{Start:0 Total:3961 Interval:1 Subloop:<nil>} MicroscopicRange:<nil> NoSignalRanges:[] SkipOvertimeTripWhenInit:true EnablePlatoon:false EnableIndoor:false Dump:<nil> VehicleMicroStatistics:<nil> LaneStatistics:<nil> RoadStatistics:<nil> Stat:<nil> IndoorStroll:<nil> DisableIndoorAoiIDs:[] PreferFixedLight:false KeepAllRedWhenHasVehicle:false EnableCollisionAvoidance:false EnableGoAstray:false LaneChangeModel:0xc000400180} Output:{Target:{SQL: CSV:} EnableCommon:false Simple:<nil>} TLS:<nil>}
+[input] [2026-04-23 09:51:15.8562] [ERROR] disable input cache because invalid dir data/ (not exist or file)
+[input] [2026-04-23 09:51:15.8726] [INFO] start fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2026-04-23 09:51:16.2236] [INFO] finish fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2026-04-23 09:51:16.2254] [INFO] start fetching from tsingroc.person_test_20250724_1015cc
+[input] [2026-04-23 09:51:16.4173] [INFO] finish fetching from tsingroc.person_test_20250724_1015cc
+[simulet/task] [2026-04-23 09:51:16.4373] [INFO] Lane: 16860
+[simulet/task] [2026-04-23 09:51:16.4374] [INFO] Road: 2634
+[simulet/task] [2026-04-23 09:51:16.4374] [INFO] Junction: 1588
+[simulet/task] [2026-04-23 09:51:16.4374] [INFO] AOI: 0
+[simulet/task] [2026-04-23 09:51:16.4374] [INFO] Person: 8783
+[sidecar] [2026-04-23 09:51:16.4374] [INFO] sidecar rpc listening at http://localhost:42391/
+[simulet/task] [2026-04-23 09:51:19.5371] [INFO] STEP: 100(0:1:40.00) #persons: (8783|0) avg v: 11.63 CPU: 108.11 MEM: 289.81MB
+[simulet/task] [2026-04-23 09:51:20.2070] [INFO] STEP: 200(0:3:20.00) #persons: (8783|0) avg v: 11.62 CPU: 458.21 MEM: 323.23MB
+[simulet/task] [2026-04-23 09:51:20.7459] [INFO] STEP: 300(0:5:0.00) #persons: (8783|0) avg v: 11.59 CPU: 672.22 MEM: 341.58MB
+[schedule] [2026-04-23 09:51:20.8718] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16520 s:1}}, lane 16520 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 09:51:20.8723] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:45028 s:1}}, lane 45028 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 09:51:20.8728] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15563 s:1}}, lane 15563 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 09:51:20.8732] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16152 s:1}}, lane 16152 is not driving lane, skip it, skip it
+[simulet] [2026-04-23 09:52:42.9688] [INFO] stopping...
+[sidecar] [2026-04-23 09:52:43.9731] [PANIC] unavailable: unexpected EOF

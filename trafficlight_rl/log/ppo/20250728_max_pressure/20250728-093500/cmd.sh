@@ -1,0 +1,2 @@
+python /home/nkk/nkk/work/src/simulet-go/python/trafficlight_rl/run_ppo.py --exp 20250728_max_pressure --mongo_uri mongodb://root:qZ7ILv0Xs6VnJcPg12KU3AoYhWKb4Cla@172.16.40.166:27017 --map_db tsingroc --map_coll map_pku_wuhan_demo_1015c --agent_db tsingroc --agent_coll person_test_20250724_1015cc
+tensorboard --port 8888 --logdir /home/nkk/nkk/work/src/simulet-go/python/trafficlight_rl/log/ppo/20250728_max_pressure/20250728-093500

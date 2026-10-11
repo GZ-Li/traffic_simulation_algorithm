@@ -1,0 +1,36 @@
+[simulet] [2026-04-23 08:12:29.3124] [INFO] {Input:{URI:mongodb://root:qZ7ILv0Xs6VnJcPg12KU3AoYhWKb4Cla@172.16.40.166:27017 Map:{DB:tsingroc Col:map_pku_wuhan_demo_1015c_rl Cache: OnlyCache:false File:} Person:0xc0002e0cd0 RouteStatus:<nil>} Control:{Step:{Start:0 Total:3961 Interval:1 Subloop:<nil>} MicroscopicRange:<nil> NoSignalRanges:[] SkipOvertimeTripWhenInit:true EnablePlatoon:false EnableIndoor:false Dump:<nil> VehicleMicroStatistics:<nil> LaneStatistics:<nil> RoadStatistics:<nil> Stat:<nil> IndoorStroll:<nil> DisableIndoorAoiIDs:[] PreferFixedLight:false KeepAllRedWhenHasVehicle:false EnableCollisionAvoidance:false EnableGoAstray:false LaneChangeModel:0xc000354140} Output:{Target:{SQL: CSV:} EnableCommon:false Simple:<nil>} TLS:<nil>}
+[input] [2026-04-23 08:12:29.3150] [ERROR] disable input cache because invalid dir data/ (not exist or file)
+[input] [2026-04-23 08:12:29.3313] [INFO] start fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2026-04-23 08:12:29.7225] [INFO] finish fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2026-04-23 08:12:29.7243] [INFO] start fetching from tsingroc.person_test_20250724_1015cc
+[input] [2026-04-23 08:12:29.9301] [INFO] finish fetching from tsingroc.person_test_20250724_1015cc
+[sidecar] [2026-04-23 08:12:29.9499] [INFO] sidecar rpc listening at http://localhost:44703/
+[simulet/task] [2026-04-23 08:12:29.9500] [INFO] Lane: 16860
+[simulet/task] [2026-04-23 08:12:29.9501] [INFO] Road: 2634
+[simulet/task] [2026-04-23 08:12:29.9501] [INFO] Junction: 1588
+[simulet/task] [2026-04-23 08:12:29.9501] [INFO] AOI: 0
+[simulet/task] [2026-04-23 08:12:29.9502] [INFO] Person: 8783
+[simulet/task] [2026-04-23 08:12:33.0045] [INFO] STEP: 100(0:1:40.00) #persons: (8783|0) avg v: 11.63 CPU: 101.35 MEM: 305.09MB
+[simulet/task] [2026-04-23 08:12:33.7092] [INFO] STEP: 200(0:3:20.00) #persons: (8783|0) avg v: 11.62 CPU: 401.43 MEM: 349.41MB
+[simulet/task] [2026-04-23 08:12:34.5308] [INFO] STEP: 300(0:5:0.00) #persons: (8783|0) avg v: 11.59 CPU: 362.20 MEM: 353.17MB
+[schedule] [2026-04-23 08:12:34.6056] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17447 s:1}}, lane 17447 is not driving lane, skip it, skip it
+[simulet/task] [2026-04-23 08:12:49.8876] [INFO] STEP: 400(0:6:40.00) #persons: (8801|0) avg v: 11.56 CPU: 30.99 MEM: 395.25MB
+[simulet/task] [2026-04-23 08:13:00.1159] [INFO] STEP: 500(0:8:20.00) #persons: (8801|0) avg v: 11.53 CPU: 42.03 MEM: 403.71MB
+[simulet/task] [2026-04-23 08:13:05.0400] [INFO] STEP: 600(0:10:0.00) #persons: (8801|0) avg v: 11.49 CPU: 85.37 MEM: 405.95MB
+[simulet/task] [2026-04-23 08:13:08.3173] [INFO] STEP: 700(0:11:40.00) #persons: (8801|0) avg v: 11.45 CPU: 114.94 MEM: 405.95MB
+[simulet/task] [2026-04-23 08:13:10.1311] [INFO] STEP: 800(0:13:20.00) #persons: (8801|0) avg v: 11.42 CPU: 182.87 MEM: 405.95MB
+[simulet/task] [2026-04-23 08:13:11.8395] [INFO] STEP: 900(0:15:0.00) #persons: (8801|0) avg v: 11.38 CPU: 226.32 MEM: 405.95MB
+[simulet/task] [2026-04-23 08:13:14.0544] [INFO] STEP: 1000(0:16:40.00) #persons: (8801|0) avg v: 11.35 CPU: 187.39 MEM: 406.44MB
+[simulet/task] [2026-04-23 08:13:15.8952] [INFO] STEP: 1100(0:18:20.00) #persons: (8801|0) avg v: 11.32 CPU: 236.41 MEM: 406.70MB
+[simulet/task] [2026-04-23 08:13:17.7595] [INFO] STEP: 1200(0:20:0.00) #persons: (8801|0) avg v: 11.30 CPU: 222.04 MEM: 412.61MB
+[simulet/task] [2026-04-23 08:13:20.0525] [INFO] STEP: 1300(0:21:40.00) #persons: (8801|0) avg v: 11.27 CPU: 194.78 MEM: 412.61MB
+[simulet/task] [2026-04-23 08:13:22.1197] [INFO] STEP: 1400(0:23:20.00) #persons: (8801|0) avg v: 11.25 CPU: 233.50 MEM: 413.37MB
+[simulet/task] [2026-04-23 08:13:24.0823] [INFO] STEP: 1500(0:25:0.00) #persons: (8801|0) avg v: 11.23 CPU: 237.56 MEM: 417.97MB
+[simulet/task] [2026-04-23 08:13:26.4598] [INFO] STEP: 1600(0:26:40.00) #persons: (8801|0) avg v: 11.20 CPU: 203.80 MEM: 420.71MB
+[simulet/task] [2026-04-23 08:13:28.2548] [INFO] STEP: 1700(0:28:20.00) #persons: (8801|0) avg v: 11.19 CPU: 264.44 MEM: 420.71MB
+[simulet/task] [2026-04-23 08:13:30.1987] [INFO] STEP: 1800(0:30:0.00) #persons: (8801|0) avg v: 11.17 CPU: 251.55 MEM: 423.23MB
+[simulet/task] [2026-04-23 08:13:32.5772] [INFO] STEP: 1900(0:31:40.00) #persons: (8801|0) avg v: 11.15 CPU: 213.03 MEM: 427.93MB
+[simulet/task] [2026-04-23 08:13:34.4922] [INFO] STEP: 2000(0:33:20.00) #persons: (8801|0) avg v: 11.13 CPU: 248.44 MEM: 435.75MB
+[simulet/task] [2026-04-23 08:13:36.6519] [INFO] STEP: 2100(0:35:0.00) #persons: (8801|0) avg v: 11.12 CPU: 231.16 MEM: 437.78MB
+[simulet/task] [2026-04-23 08:13:37.9795] [INFO] STEP: 2200(0:36:40.00) #persons: (8801|0) avg v: 11.10 CPU: 366.17 MEM: 438.04MB
+[sidecar] [2026-04-23 08:13:37.9908] [PANIC] unavailable: unexpected EOF

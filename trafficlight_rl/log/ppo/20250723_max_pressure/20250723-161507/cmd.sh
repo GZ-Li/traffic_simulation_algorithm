@@ -1,0 +1,2 @@
+python /home/nkk/nkk/work/src/simulet-go/python/trafficlight_rl/run_ppo.py --exp 20250723_max_pressure --map ../data/map_pku_wuhan_demo_1015c_rl.pb --agent ../data/person_test_20250717_1015c.pb
+tensorboard --port 8888 --logdir /home/nkk/nkk/work/src/simulet-go/python/trafficlight_rl/log/ppo/20250723_max_pressure/20250723-161507

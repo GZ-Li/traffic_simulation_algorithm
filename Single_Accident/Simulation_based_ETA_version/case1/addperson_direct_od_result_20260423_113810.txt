@@ -1,0 +1,9 @@
+=== AddPerson direct-OD smoke test result ===
+start_road:    200000033
+end_road:      200007001
+person_id:     180499
+departure_time:331
+started_time:  421
+arrived_time:  451
+arrival_reason:disappeared_after_departure
+eta_seconds:   30

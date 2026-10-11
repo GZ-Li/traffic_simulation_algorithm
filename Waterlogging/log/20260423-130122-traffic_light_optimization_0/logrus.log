@@ -1,0 +1,16 @@
+[simulet] [2026-04-23 13:01:22.0901] [INFO] {Input:{URI:mongodb://root:qZ7ILv0Xs6VnJcPg12KU3AoYhWKb4Cla@172.16.40.166:27017 Map:{DB:tsingroc Col:map_pku_wuhan_demo_1015c_rl Cache: OnlyCache:false File:} Person:0xc00030cd20 RouteStatus:<nil>} Control:{Step:{Start:0 Total:311 Interval:1 Subloop:<nil>} MicroscopicRange:<nil> NoSignalRanges:[] SkipOvertimeTripWhenInit:true EnablePlatoon:false EnableIndoor:false Dump:<nil> VehicleMicroStatistics:<nil> LaneStatistics:<nil> RoadStatistics:<nil> Stat:<nil> IndoorStroll:<nil> DisableIndoorAoiIDs:[] PreferFixedLight:false KeepAllRedWhenHasVehicle:false EnableCollisionAvoidance:false EnableGoAstray:false LaneChangeModel:0xc000380180} Output:{Target:{SQL: CSV:} EnableCommon:false Simple:<nil>} TLS:<nil>}
+[input] [2026-04-23 13:01:22.0925] [ERROR] disable input cache because invalid dir data/ (not exist or file)
+[input] [2026-04-23 13:01:22.1090] [INFO] start fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2026-04-23 13:01:22.4688] [INFO] finish fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2026-04-23 13:01:22.4707] [INFO] start fetching from tsingroc.person_test_20250724_1015cc
+[input] [2026-04-23 13:01:22.6651] [INFO] finish fetching from tsingroc.person_test_20250724_1015cc
+[sidecar] [2026-04-23 13:01:22.6851] [INFO] sidecar rpc listening at http://localhost:33933/
+[simulet/task] [2026-04-23 13:01:22.6851] [INFO] Lane: 16860
+[simulet/task] [2026-04-23 13:01:22.6853] [INFO] Road: 2634
+[simulet/task] [2026-04-23 13:01:22.6853] [INFO] Junction: 1588
+[simulet/task] [2026-04-23 13:01:22.6853] [INFO] AOI: 0
+[simulet/task] [2026-04-23 13:01:22.6853] [INFO] Person: 8783
+[simulet/task] [2026-04-23 13:01:26.4342] [INFO] STEP: 100(0:1:40.00) #persons: (8783|0) avg v: 11.65 CPU: 99.31 MEM: 328.00MB
+[simulet/task] [2026-04-23 13:01:27.6833] [INFO] STEP: 200(0:3:20.00) #persons: (8783|0) avg v: 11.65 CPU: 264.00 MEM: 389.44MB
+[simulet/task] [2026-04-23 13:01:29.0713] [INFO] STEP: 300(0:5:0.00) #persons: (8783|0) avg v: 11.64 CPU: 244.93 MEM: 418.98MB
+[simulet/task] [2026-04-23 13:01:29.2245] [INFO] engine complete

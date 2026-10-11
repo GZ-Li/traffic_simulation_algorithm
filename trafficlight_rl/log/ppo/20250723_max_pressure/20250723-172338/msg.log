@@ -1,0 +1,5 @@
+global_step: 128 loss:0.196 ATT: inf TP: 0 reward:-0.029211855015501192 
+global_step: 256 loss:0.199 ATT: inf TP: 0 reward:-0.02346845942303718 
+global_step: 384 loss:0.144 ATT: 4911.8 TP: 5912 reward:-0.024655826965693704 
+global_step: 512 loss:0.219 ATT: 4911.8 TP: 5912 reward:-0.0266845172831706 
+global_step: 640 loss:0.160 ATT: 4999.3 TP: 5620 reward:-0.018572814598990007 

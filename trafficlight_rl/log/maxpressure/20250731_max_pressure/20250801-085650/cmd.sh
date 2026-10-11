@@ -1,0 +1,1 @@
+./simulate_speed.py --exp 20250731_max_pressure --mongo_uri mongodb://root:qZ7ILv0Xs6VnJcPg12KU3AoYhWKb4Cla@172.16.40.166:27017 --map_db tsingroc --map_coll map_pku_wuhan_demo_1015c_rl --agent_db tsingroc --agent_coll person_test_20250724_1015cc --output_sql_dsn postgres://postgres:QSo084HA7Sji9jsm73KjRUcTGWynUsxu@172.16.40.166:5432/simulation --output_bbox 114,30.3,115,30.7

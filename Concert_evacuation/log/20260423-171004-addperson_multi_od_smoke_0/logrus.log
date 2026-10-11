@@ -1,0 +1,17 @@
+[simulet] [2026-04-23 17:10:04.8328] [INFO] {Input:{URI:mongodb://root:qZ7ILv0Xs6VnJcPg12KU3AoYhWKb4Cla@172.16.40.166:27017 Map:{DB:tsingroc Col:map_pku_wuhan_demo_1015c_rl Cache: OnlyCache:false File:} Person:0xc00030ed20 RouteStatus:<nil>} Control:{Step:{Start:0 Total:4333 Interval:1 Subloop:<nil>} MicroscopicRange:<nil> NoSignalRanges:[] SkipOvertimeTripWhenInit:true EnablePlatoon:false EnableIndoor:false Dump:<nil> VehicleMicroStatistics:<nil> LaneStatistics:<nil> RoadStatistics:<nil> Stat:<nil> IndoorStroll:<nil> DisableIndoorAoiIDs:[] PreferFixedLight:false KeepAllRedWhenHasVehicle:false EnableCollisionAvoidance:false EnableGoAstray:false LaneChangeModel:0xc00037c180} Output:{Target:{SQL: CSV:} EnableCommon:false Simple:<nil>} TLS:<nil>}
+[input] [2026-04-23 17:10:04.8349] [INFO] enable input cache at data/
+[input] [2026-04-23 17:10:04.8503] [INFO] start fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2026-04-23 17:10:04.9120] [INFO] finish fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2026-04-23 17:10:04.9140] [INFO] start fetching from tsingroc.person_test_20250724_1015cc
+[input] [2026-04-23 17:10:04.9560] [INFO] finish fetching from tsingroc.person_test_20250724_1015cc
+[simulet/task] [2026-04-23 17:10:04.9761] [INFO] Lane: 16860
+[simulet/task] [2026-04-23 17:10:04.9762] [INFO] Road: 2634
+[simulet/task] [2026-04-23 17:10:04.9762] [INFO] Junction: 1588
+[simulet/task] [2026-04-23 17:10:04.9763] [INFO] AOI: 0
+[simulet/task] [2026-04-23 17:10:04.9763] [INFO] Person: 8783
+[sidecar] [2026-04-23 17:10:04.9762] [INFO] sidecar rpc listening at http://localhost:39551/
+[simulet/task] [2026-04-23 17:10:35.1817] [INFO] STEP: 100(0:1:40.00) #persons: (8813|0) avg v: 11.63 CPU: 18.68 MEM: 464.28MB
+[simulet/task] [2026-04-23 17:10:55.1759] [INFO] STEP: 200(0:3:20.00) #persons: (8813|0) avg v: 11.62 CPU: 22.10 MEM: 445.07MB
+[simulet/task] [2026-04-23 17:10:57.5964] [INFO] STEP: 300(0:5:0.00) #persons: (8813|0) avg v: 11.59 CPU: 146.28 MEM: 385.17MB
+[simulet] [2026-04-23 17:10:58.0084] [INFO] stopping...
+[sidecar] [2026-04-23 17:10:58.0124] [PANIC] unavailable: dial tcp 127.0.0.1:42217: connect: connection refused

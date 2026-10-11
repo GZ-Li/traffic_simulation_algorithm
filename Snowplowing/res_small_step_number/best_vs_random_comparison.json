@@ -1,0 +1,102 @@
+[
+  {
+    "interval_name": "interval_1",
+    "best_global_avg_speed": 9.790506746240018,
+    "random_global_avg_speed": 9.818132023591264,
+    "delta_global_avg_speed": -0.027625277351246424,
+    "union_road_count": 261,
+    "best_union_avg_speed": 11.877560366577198,
+    "random_union_avg_speed": 12.156607068802543,
+    "delta_union_avg_speed": -0.27904670222534556
+  },
+  {
+    "interval_name": "interval_2",
+    "best_global_avg_speed": 10.035970648390233,
+    "random_global_avg_speed": 10.036112844445123,
+    "delta_global_avg_speed": -0.00014219605488996478,
+    "union_road_count": 437,
+    "best_union_avg_speed": 12.309034677947423,
+    "random_union_avg_speed": 12.309306265888141,
+    "delta_union_avg_speed": -0.00027158794071802106
+  },
+  {
+    "interval_name": "interval_3",
+    "best_global_avg_speed": 10.229527433735477,
+    "random_global_avg_speed": 10.217737566697368,
+    "delta_global_avg_speed": 0.011789867038109136,
+    "union_road_count": 578,
+    "best_union_avg_speed": 12.508502154946166,
+    "random_union_avg_speed": 12.454232957761528,
+    "delta_union_avg_speed": 0.054269197184638074
+  },
+  {
+    "interval_name": "interval_4",
+    "best_global_avg_speed": 10.38691917271215,
+    "random_global_avg_speed": 10.38054632296007,
+    "delta_global_avg_speed": 0.0063728497520791905,
+    "union_road_count": 709,
+    "best_union_avg_speed": 12.503074692388962,
+    "random_union_avg_speed": 12.479208323203796,
+    "delta_union_avg_speed": 0.023866369185165937
+  },
+  {
+    "interval_name": "interval_5",
+    "best_global_avg_speed": 10.555234568409297,
+    "random_global_avg_speed": 10.489694717953316,
+    "delta_global_avg_speed": 0.06553985045598054,
+    "union_road_count": 825,
+    "best_union_avg_speed": 12.594718944378585,
+    "random_union_avg_speed": 12.38560788334819,
+    "delta_union_avg_speed": 0.209111061030395
+  },
+  {
+    "interval_name": "interval_6",
+    "best_global_avg_speed": 10.685336585369228,
+    "random_global_avg_speed": 10.58777235318014,
+    "delta_global_avg_speed": 0.09756423218908772,
+    "union_road_count": 901,
+    "best_union_avg_speed": 12.81100715845653,
+    "random_union_avg_speed": 12.52574889726619,
+    "delta_union_avg_speed": 0.28525826119033937
+  },
+  {
+    "interval_name": "interval_7",
+    "best_global_avg_speed": 10.824621427134408,
+    "random_global_avg_speed": 10.667093116254668,
+    "delta_global_avg_speed": 0.15752831087974073,
+    "union_road_count": 977,
+    "best_union_avg_speed": 13.05611911805005,
+    "random_union_avg_speed": 12.631459367708768,
+    "delta_union_avg_speed": 0.42465975034128256
+  },
+  {
+    "interval_name": "interval_8",
+    "best_global_avg_speed": 11.016694777889347,
+    "random_global_avg_speed": 10.750460890348656,
+    "delta_global_avg_speed": 0.2662338875406913,
+    "union_road_count": 1103,
+    "best_union_avg_speed": 13.13287608116415,
+    "random_union_avg_speed": 12.496687782666877,
+    "delta_union_avg_speed": 0.6361882984972738
+  },
+  {
+    "interval_name": "interval_9",
+    "best_global_avg_speed": 11.13435297047347,
+    "random_global_avg_speed": 10.83136027084022,
+    "delta_global_avg_speed": 0.3029926996332506,
+    "union_road_count": 1174,
+    "best_union_avg_speed": 13.21407710932745,
+    "random_union_avg_speed": 12.534126725156282,
+    "delta_union_avg_speed": 0.6799503841711676
+  },
+  {
+    "interval_name": "interval_10",
+    "best_global_avg_speed": 11.234603845691133,
+    "random_global_avg_speed": 10.904062134733037,
+    "delta_global_avg_speed": 0.33054171095809615,
+    "union_road_count": 1248,
+    "best_union_avg_speed": 13.232116488533574,
+    "random_union_avg_speed": 12.534204795722705,
+    "delta_union_avg_speed": 0.6979116928108695
+  }
+]

@@ -1,0 +1,45 @@
+[simulet] [2025-07-22 17:19:16.2621] [INFO] {Input:{URI: Map:{DB: Col: Cache: OnlyCache:false File:/home/nkk/nkk/work/src/simulet-go/python/data/map_pku_wuhan_demo_1015c_rl.pb} Person:0xc000152000 RouteStatus:<nil>} Control:{Step:{Start:0 Total:3631 Interval:1 Subloop:<nil>} MicroscopicRange:<nil> NoSignalRanges:[] SkipOvertimeTripWhenInit:true EnablePlatoon:false EnableIndoor:false Dump:<nil> VehicleMicroStatistics:<nil> LaneStatistics:<nil> RoadStatistics:<nil> Stat:<nil> IndoorStroll:<nil> DisableIndoorAoiIDs:[] PreferFixedLight:true KeepAllRedWhenHasVehicle:false EnableCollisionAvoidance:false EnableGoAstray:false LaneChangeModel:0xc000134150} Output:{Target:{SQL: CSV:} EnableCommon:false Simple:<nil>} TLS:<nil>}
+[input] [2025-07-22 17:19:16.2643] [ERROR] disable input cache because invalid dir data/ (not exist or file)
+[sidecar] [2025-07-22 17:19:16.5626] [INFO] sidecar rpc listening at http://localhost:58941/
+[simulet/task] [2025-07-22 17:19:16.5628] [INFO] Lane: 16860
+[simulet/task] [2025-07-22 17:19:16.5628] [INFO] Road: 2634
+[simulet/task] [2025-07-22 17:19:16.5628] [INFO] Junction: 1588
+[simulet/task] [2025-07-22 17:19:16.5628] [INFO] AOI: 0
+[simulet/task] [2025-07-22 17:19:16.5628] [INFO] Person: 39586
+[simulet/task] [2025-07-22 17:19:27.9489] [INFO] STEP: 100(0:1:40.00) #persons: (39586|0) avg v: 11.62 CPU: 75.40 MEM: 899.73MB
+[simulet/task] [2025-07-22 17:19:35.2828] [INFO] STEP: 200(0:3:20.00) #persons: (39586|0) avg v: 11.59 CPU: 114.19 MEM: 1012.48MB
+[simulet/task] [2025-07-22 17:19:42.6442] [INFO] STEP: 300(0:5:0.00) #persons: (39586|0) avg v: 11.54 CPU: 94.29 MEM: 1032.48MB
+[simulet/task] [2025-07-22 17:19:52.4017] [INFO] STEP: 400(0:6:40.00) #persons: (39586|0) avg v: 11.48 CPU: 78.48 MEM: 1052.73MB
+[simulet/task] [2025-07-22 17:19:59.7987] [INFO] STEP: 500(0:8:20.00) #persons: (39586|0) avg v: 11.41 CPU: 98.38 MEM: 1175.48MB
+[simulet/task] [2025-07-22 17:20:07.4156] [INFO] STEP: 600(0:10:0.00) #persons: (39586|0) avg v: 11.34 CPU: 123.78 MEM: 1204.48MB
+[simulet/task] [2025-07-22 17:20:16.9963] [INFO] STEP: 700(0:11:40.00) #persons: (39586|0) avg v: 11.27 CPU: 91.35 MEM: 1227.48MB
+[simulet/task] [2025-07-22 17:20:24.5988] [INFO] STEP: 800(0:13:20.00) #persons: (39586|0) avg v: 11.20 CPU: 114.61 MEM: 1243.23MB
+[simulet/task] [2025-07-22 17:20:32.3645] [INFO] STEP: 900(0:15:0.00) #persons: (39586|0) avg v: 11.13 CPU: 122.42 MEM: 1252.98MB
+[simulet/task] [2025-07-22 17:20:42.1846] [INFO] STEP: 1000(0:16:40.00) #persons: (39586|0) avg v: 11.06 CPU: 107.13 MEM: 1257.48MB
+[simulet/task] [2025-07-22 17:20:49.9048] [INFO] STEP: 1100(0:18:20.00) #persons: (39586|0) avg v: 10.99 CPU: 145.08 MEM: 1271.73MB
+[simulet/task] [2025-07-22 17:20:57.5920] [INFO] STEP: 1200(0:20:0.00) #persons: (39586|0) avg v: 10.93 CPU: 126.40 MEM: 1278.73MB
+[simulet/task] [2025-07-22 17:21:07.5121] [INFO] STEP: 1300(0:21:40.00) #persons: (39586|0) avg v: 10.87 CPU: 102.52 MEM: 1280.23MB
+[simulet/task] [2025-07-22 17:21:15.3999] [INFO] STEP: 1400(0:23:20.00) #persons: (39586|0) avg v: 10.82 CPU: 162.10 MEM: 1291.98MB
+[simulet/task] [2025-07-22 17:21:23.1194] [INFO] STEP: 1500(0:25:0.00) #persons: (39586|0) avg v: 10.76 CPU: 143.91 MEM: 1295.23MB
+[simulet/task] [2025-07-22 17:21:33.1234] [INFO] STEP: 1600(0:26:40.00) #persons: (39586|0) avg v: 10.71 CPU: 122.20 MEM: 1313.73MB
+[simulet/task] [2025-07-22 17:21:42.0164] [INFO] STEP: 1700(0:28:20.00) #persons: (39586|0) avg v: 10.66 CPU: 131.80 MEM: 1315.98MB
+[simulet/task] [2025-07-22 17:21:49.7518] [INFO] STEP: 1800(0:30:0.00) #persons: (39586|0) avg v: 10.61 CPU: 140.23 MEM: 1331.23MB
+[simulet/task] [2025-07-22 17:21:59.6599] [INFO] STEP: 1900(0:31:40.00) #persons: (39586|0) avg v: 10.57 CPU: 117.05 MEM: 1338.73MB
+[simulet/task] [2025-07-22 17:22:07.5964] [INFO] STEP: 2000(0:33:20.00) #persons: (39586|0) avg v: 10.52 CPU: 165.37 MEM: 1355.98MB
+[simulet/task] [2025-07-22 17:22:15.5912] [INFO] STEP: 2100(0:35:0.00) #persons: (39586|0) avg v: 10.48 CPU: 190.36 MEM: 1363.48MB
+[simulet/task] [2025-07-22 17:22:25.6491] [INFO] STEP: 2200(0:36:40.00) #persons: (39586|0) avg v: 10.43 CPU: 124.75 MEM: 1380.23MB
+[simulet/task] [2025-07-22 17:22:33.7129] [INFO] STEP: 2300(0:38:20.00) #persons: (39586|0) avg v: 10.39 CPU: 198.39 MEM: 1395.98MB
+[simulet/task] [2025-07-22 17:22:41.6663] [INFO] STEP: 2400(0:40:0.00) #persons: (39586|0) avg v: 10.34 CPU: 193.09 MEM: 1399.48MB
+[simulet/task] [2025-07-22 17:22:51.7483] [INFO] STEP: 2500(0:41:40.00) #persons: (39586|0) avg v: 10.31 CPU: 135.52 MEM: 1400.73MB
+[simulet/task] [2025-07-22 17:22:59.7374] [INFO] STEP: 2600(0:43:20.00) #persons: (39586|0) avg v: 10.27 CPU: 179.85 MEM: 1440.23MB
+[simulet/task] [2025-07-22 17:23:07.7248] [INFO] STEP: 2700(0:45:0.00) #persons: (39586|0) avg v: 10.22 CPU: 154.76 MEM: 1443.98MB
+[simulet/task] [2025-07-22 17:23:17.9527] [INFO] STEP: 2800(0:46:40.00) #persons: (39586|0) avg v: 10.18 CPU: 149.85 MEM: 1448.73MB
+[simulet/task] [2025-07-22 17:23:26.0350] [INFO] STEP: 2900(0:48:20.00) #persons: (39586|0) avg v: 10.14 CPU: 189.23 MEM: 1455.73MB
+[simulet/task] [2025-07-22 17:23:34.1021] [INFO] STEP: 3000(0:50:0.00) #persons: (39586|0) avg v: 10.09 CPU: 202.60 MEM: 1467.33MB
+[simulet/task] [2025-07-22 17:23:44.3008] [INFO] STEP: 3100(0:51:40.00) #persons: (39586|0) avg v: 10.05 CPU: 158.24 MEM: 1483.58MB
+[simulet/task] [2025-07-22 17:23:52.2673] [INFO] STEP: 3200(0:53:20.00) #persons: (39586|0) avg v: 10.00 CPU: 180.43 MEM: 1493.08MB
+[simulet/task] [2025-07-22 17:24:00.3902] [INFO] STEP: 3300(0:55:0.00) #persons: (39586|0) avg v: 9.95 CPU: 211.33 MEM: 1504.58MB
+[simulet/task] [2025-07-22 17:24:10.6458] [INFO] STEP: 3400(0:56:40.00) #persons: (39586|0) avg v: 9.90 CPU: 167.54 MEM: 1509.08MB
+[simulet/task] [2025-07-22 17:24:18.7485] [INFO] STEP: 3500(0:58:20.00) #persons: (39586|0) avg v: 9.84 CPU: 211.73 MEM: 1513.58MB
+[simulet/task] [2025-07-22 17:24:26.8464] [INFO] STEP: 3600(1:0:0.00) #persons: (39586|0) avg v: 9.79 CPU: 204.20 MEM: 1532.83MB
+[simulet/task] [2025-07-22 17:24:29.5455] [INFO] engine complete

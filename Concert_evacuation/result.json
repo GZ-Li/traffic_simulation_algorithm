@@ -1,0 +1,37 @@
+{
+  "origin_road": "200000480",
+  "destination_road": "200000160",
+  "origin_lane_candidates": [
+    1705,
+    1706,
+    15582
+  ],
+  "destination_lane_candidates": [
+    1383,
+    1384,
+    1385,
+    1386
+  ],
+  "origin_lane_id": 1705,
+  "destination_lane_id": 1383,
+  "person_id": 180499,
+  "departure_time": 6,
+  "started_time": 11,
+  "arrived_time": 16,
+  "travel_time_seconds": 5,
+  "status": "disappeared_after_departure",
+  "trace": [
+    {
+      "t": 6,
+      "road": null
+    },
+    {
+      "t": 11,
+      "road": "200000480"
+    },
+    {
+      "t": 16,
+      "road": null
+    }
+  ]
+}

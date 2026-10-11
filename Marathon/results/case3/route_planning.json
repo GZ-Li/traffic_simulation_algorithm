@@ -1,0 +1,1819 @@
+{
+  "input": {
+    "start_location": null,
+    "end_location": null,
+    "intermediate_locations": [],
+    "target_distance": 5,
+    "city": "Net Network",
+    "margin_km": 1.0,
+    "local_xml_file": null,
+    "data_dir": "data",
+    "net_file": "data/wuhan_core.net.xml",
+    "start_lat": 30.4907,
+    "start_lon": 114.5452,
+    "end_lat": 30.4852,
+    "end_lon": 114.4758,
+    "intermediate_lats": [
+      30.489
+    ],
+    "intermediate_lons": [
+      114.5
+    ]
+  },
+  "route": {
+    "nodes": [
+      "300001361",
+      "300001337",
+      "300011023",
+      "300000173",
+      "300001438",
+      "300001308",
+      "300001355",
+      "300001303",
+      "300001306",
+      "300001393",
+      "300001511",
+      "300001016",
+      "300001017",
+      "300000693",
+      "300000745",
+      "300000079",
+      "300000744",
+      "300000694",
+      "300000743",
+      "300000695",
+      "300000742",
+      "300000741",
+      "300000696",
+      "300000740",
+      "300000080",
+      "300000739",
+      "300000697",
+      "300000844",
+      "300000872",
+      "300000847",
+      "300000845",
+      "300000846",
+      "300000871",
+      "300000848",
+      "300000850",
+      "300000851",
+      "300000852",
+      "300000849",
+      "300000870",
+      "300000853",
+      "300000404",
+      "300000408",
+      "300000403",
+      "300002046",
+      "300001685",
+      "300001684",
+      "300001686",
+      "300000026",
+      "300000030",
+      "300001526",
+      "300001527",
+      "300001528",
+      "300001529",
+      "300001530",
+      "300000437",
+      "300001635",
+      "300001533",
+      "300001532",
+      "300000442",
+      "300001534",
+      "300001535",
+      "300001536",
+      "300001538",
+      "300001682",
+      "300000213",
+      "300000215",
+      "300000216",
+      "300000230",
+      "300000226",
+      "300000233"
+    ],
+    "edge_count": 69,
+    "total_distance": 5346.67,
+    "total_distance_km": 5.3466700000000005,
+    "congestion_percentage": 47.23107092826005,
+    "avg_congestion_score": 0.4723107092826005,
+    "edge_ids": [
+      "200002534",
+      "200012025",
+      "200012023",
+      "200002538",
+      "200002631",
+      "200002621",
+      "200002457",
+      "200002458",
+      "200002462",
+      "200000010",
+      "200001196",
+      "200001195",
+      "200000524",
+      "200000525",
+      "200000528",
+      "200000526",
+      "200000527",
+      "200000529",
+      "200000533",
+      "200000530",
+      "200000531",
+      "200000532",
+      "200000535",
+      "200000537",
+      "200000534",
+      "200000536",
+      "200000538",
+      "200000820",
+      "200000823",
+      "200000824",
+      "200000821",
+      "200000822",
+      "200000825",
+      "200000827",
+      "200000828",
+      "200000829",
+      "200000905",
+      "200000826",
+      "200000831",
+      "200000830",
+      "200001827",
+      "200002213",
+      "200003007",
+      "200001829",
+      "200001806",
+      "200001807",
+      "200000058",
+      "200000085",
+      "200000115",
+      "200001661",
+      "200001664",
+      "200001665",
+      "200001668",
+      "200001669",
+      "200001801",
+      "200001703",
+      "200001704",
+      "200001674",
+      "200001788",
+      "200001706",
+      "200001707",
+      "200001781",
+      "200001676",
+      "200002018",
+      "200002019",
+      "200002020",
+      "200002022",
+      "200002024",
+      "200002025"
+    ]
+  },
+  "optimization": {
+    "algorithm": "OR-Tools + Genetic Algorithm",
+    "generations": 200,
+    "final_fitness": 0.70607228781731,
+    "history": [
+      {
+        "generation": 0,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67,
+        "detailed_path": {
+          "nodes": [
+            "300001361",
+            "300001337",
+            "300011023",
+            "300000173",
+            "300001438",
+            "300001308",
+            "300001355",
+            "300001303",
+            "300001306",
+            "300001393",
+            "300001511",
+            "300001016",
+            "300001017",
+            "300000693",
+            "300000745",
+            "300000079",
+            "300000744",
+            "300000694",
+            "300000743",
+            "300000695",
+            "300000742",
+            "300000741",
+            "300000696",
+            "300000740",
+            "300000080",
+            "300000739",
+            "300000697",
+            "300000844",
+            "300000872",
+            "300000847",
+            "300000845",
+            "300000846",
+            "300000871",
+            "300000848",
+            "300000850",
+            "300000851",
+            "300000852",
+            "300000849",
+            "300000870",
+            "300000853",
+            "300000404",
+            "300000408",
+            "300000403",
+            "300002046",
+            "300001685",
+            "300001684",
+            "300001686",
+            "300000026",
+            "300000030",
+            "300001526",
+            "300001527",
+            "300001528",
+            "300001529",
+            "300001530",
+            "300000437",
+            "300001635",
+            "300001533",
+            "300001532",
+            "300000442",
+            "300001534",
+            "300001535",
+            "300001536",
+            "300001538",
+            "300001682",
+            "300000213",
+            "300000215",
+            "300000216",
+            "300000230",
+            "300000226",
+            "300000233"
+          ],
+          "node_count": 70,
+          "edge_count": 69,
+          "total_distance_m": 5346.67,
+          "total_distance_km": 5.347,
+          "congestion_percentage": 47.23,
+          "avg_congestion_score": 0.4723,
+          "coordinates": [
+            {
+              "node_id": "300001361",
+              "lat": 2019.73,
+              "lon": 10666.14
+            },
+            {
+              "node_id": "300001337",
+              "lat": 1754.16,
+              "lon": 10673.93
+            },
+            {
+              "node_id": "300011023",
+              "lat": 1712.18,
+              "lon": 10681.17
+            },
+            {
+              "node_id": "300000173",
+              "lat": 1691.24,
+              "lon": 10579.84
+            },
+            {
+              "node_id": "300001438",
+              "lat": 1689.25,
+              "lon": 10336.8
+            },
+            {
+              "node_id": "300001308",
+              "lat": 1691.32,
+              "lon": 10231.1
+            },
+            {
+              "node_id": "300001355",
+              "lat": 1695.23,
+              "lon": 10122.22
+            },
+            {
+              "node_id": "300001303",
+              "lat": 1697.1,
+              "lon": 9939.96
+            },
+            {
+              "node_id": "300001306",
+              "lat": 1705.8,
+              "lon": 9585.59
+            },
+            {
+              "node_id": "300001393",
+              "lat": 1674.37,
+              "lon": 9450.89
+            },
+            {
+              "node_id": "300001511",
+              "lat": 1709.96,
+              "lon": 9378.77
+            },
+            {
+              "node_id": "300001016",
+              "lat": 1713.42,
+              "lon": 9367.31
+            },
+            {
+              "node_id": "300001017",
+              "lat": 1715.11,
+              "lon": 9008.23
+            },
+            {
+              "node_id": "300000693",
+              "lat": 1722.77,
+              "lon": 8881.0
+            },
+            {
+              "node_id": "300000745",
+              "lat": 1731.06,
+              "lon": 8795.14
+            },
+            {
+              "node_id": "300000079",
+              "lat": 1725.28,
+              "lon": 8659.29
+            },
+            {
+              "node_id": "300000744",
+              "lat": 1739.11,
+              "lon": 8415.19
+            },
+            {
+              "node_id": "300000694",
+              "lat": 1734.22,
+              "lon": 8251.16
+            },
+            {
+              "node_id": "300000743",
+              "lat": 1748.42,
+              "lon": 8137.47
+            },
+            {
+              "node_id": "300000695",
+              "lat": 1739.51,
+              "lon": 8035.73
+            },
+            {
+              "node_id": "300000742",
+              "lat": 1751.25,
+              "lon": 7951.66
+            },
+            {
+              "node_id": "300000741",
+              "lat": 1757.06,
+              "lon": 7745.26
+            },
+            {
+              "node_id": "300000696",
+              "lat": 1747.29,
+              "lon": 7645.32
+            },
+            {
+              "node_id": "300000740",
+              "lat": 1762.04,
+              "lon": 7598.37
+            },
+            {
+              "node_id": "300000080",
+              "lat": 1748.51,
+              "lon": 7509.1
+            },
+            {
+              "node_id": "300000739",
+              "lat": 1755.3,
+              "lon": 7440.52
+            },
+            {
+              "node_id": "300000697",
+              "lat": 1750.79,
+              "lon": 7375.35
+            },
+            {
+              "node_id": "300000844",
+              "lat": 1753.14,
+              "lon": 7264.73
+            },
+            {
+              "node_id": "300000872",
+              "lat": 1718.7,
+              "lon": 7195.16
+            },
+            {
+              "node_id": "300000847",
+              "lat": 1773.42,
+              "lon": 7078.14
+            },
+            {
+              "node_id": "300000845",
+              "lat": 1756.94,
+              "lon": 7056.79
+            },
+            {
+              "node_id": "300000846",
+              "lat": 1763.49,
+              "lon": 6976.95
+            },
+            {
+              "node_id": "300000871",
+              "lat": 1738.98,
+              "lon": 6934.53
+            },
+            {
+              "node_id": "300000848",
+              "lat": 1766.3,
+              "lon": 6932.0
+            },
+            {
+              "node_id": "300000850",
+              "lat": 1780.85,
+              "lon": 6719.67
+            },
+            {
+              "node_id": "300000851",
+              "lat": 1782.85,
+              "lon": 6602.74
+            },
+            {
+              "node_id": "300000852",
+              "lat": 1767.65,
+              "lon": 6531.88
+            },
+            {
+              "node_id": "300000849",
+              "lat": 1773.46,
+              "lon": 6499.6
+            },
+            {
+              "node_id": "300000870",
+              "lat": 1749.02,
+              "lon": 6488.06
+            },
+            {
+              "node_id": "300000853",
+              "lat": 1769.74,
+              "lon": 6434.81
+            },
+            {
+              "node_id": "300000404",
+              "lat": 1754.27,
+              "lon": 6168.48
+            },
+            {
+              "node_id": "300000408",
+              "lat": 1899.91,
+              "lon": 6133.34
+            },
+            {
+              "node_id": "300000403",
+              "lat": 2000.05,
+              "lon": 6149.0
+            },
+            {
+              "node_id": "300002046",
+              "lat": 2074.02,
+              "lon": 6178.36
+            },
+            {
+              "node_id": "300001685",
+              "lat": 2192.06,
+              "lon": 6188.52
+            },
+            {
+              "node_id": "300001684",
+              "lat": 2202.9,
+              "lon": 6254.32
+            },
+            {
+              "node_id": "300001686",
+              "lat": 2187.1,
+              "lon": 6299.48
+            },
+            {
+              "node_id": "300000026",
+              "lat": 2272.31,
+              "lon": 6462.36
+            },
+            {
+              "node_id": "300000030",
+              "lat": 2233.01,
+              "lon": 6396.37
+            },
+            {
+              "node_id": "300001526",
+              "lat": 2266.93,
+              "lon": 6013.99
+            },
+            {
+              "node_id": "300001527",
+              "lat": 2278.09,
+              "lon": 5903.03
+            },
+            {
+              "node_id": "300001528",
+              "lat": 2275.29,
+              "lon": 5697.65
+            },
+            {
+              "node_id": "300001529",
+              "lat": 2281.03,
+              "lon": 5639.82
+            },
+            {
+              "node_id": "300001530",
+              "lat": 2265.31,
+              "lon": 5508.99
+            },
+            {
+              "node_id": "300000437",
+              "lat": 2209.18,
+              "lon": 5477.22
+            },
+            {
+              "node_id": "300001635",
+              "lat": 2232.49,
+              "lon": 5402.11
+            },
+            {
+              "node_id": "300001533",
+              "lat": 2222.1,
+              "lon": 5346.02
+            },
+            {
+              "node_id": "300001532",
+              "lat": 2237.99,
+              "lon": 5344.35
+            },
+            {
+              "node_id": "300000442",
+              "lat": 2161.07,
+              "lon": 5046.32
+            },
+            {
+              "node_id": "300001534",
+              "lat": 2158.13,
+              "lon": 5041.13
+            },
+            {
+              "node_id": "300001535",
+              "lat": 2079.5,
+              "lon": 4545.36
+            },
+            {
+              "node_id": "300001536",
+              "lat": 2093.8,
+              "lon": 4521.99
+            },
+            {
+              "node_id": "300001538",
+              "lat": 2099.77,
+              "lon": 4353.35
+            },
+            {
+              "node_id": "300001682",
+              "lat": 2038.54,
+              "lon": 4306.13
+            },
+            {
+              "node_id": "300000213",
+              "lat": 1958.71,
+              "lon": 4335.11
+            },
+            {
+              "node_id": "300000215",
+              "lat": 1817.38,
+              "lon": 4354.67
+            },
+            {
+              "node_id": "300000216",
+              "lat": 1736.51,
+              "lon": 4347.25
+            },
+            {
+              "node_id": "300000230",
+              "lat": 1556.77,
+              "lon": 4363.08
+            },
+            {
+              "node_id": "300000226",
+              "lat": 1524.6,
+              "lon": 4370.66
+            },
+            {
+              "node_id": "300000233",
+              "lat": 1414.88,
+              "lon": 4369.39
+            }
+          ]
+        }
+      },
+      {
+        "generation": 1,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 2,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 3,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 4,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 5,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 6,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 7,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 8,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 9,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 10,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 11,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 12,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 13,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 14,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 15,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.6861582112765242,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 16,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.6979413068556991,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 17,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.6956603700465308,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 18,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.6617077384079516,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 19,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7058108183220625,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 20,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 21,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 22,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 23,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 24,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 25,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 26,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 27,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 28,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 29,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 30,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 31,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 32,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 33,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 34,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 35,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 36,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 37,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 38,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 39,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 40,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 41,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 42,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 43,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 44,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 45,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 46,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 47,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 48,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 49,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      },
+      {
+        "generation": 50,
+        "best_fitness": 0.70607228781731,
+        "avg_fitness": 0.7060722878173099,
+        "best_distance": 5346.67
+      }
+    ]
+  },
+  "details": [
+    {
+      "from_node": "300001361",
+      "to_node": "300001337",
+      "distance": 215.16,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        2019.73,
+        10666.14,
+        1754.16,
+        10673.93
+      ]
+    },
+    {
+      "from_node": "300001337",
+      "to_node": "300011023",
+      "distance": 42.62,
+      "highway_type": "unknown",
+      "congestion_score": 0.25,
+      "coordinates": [
+        1754.16,
+        10673.93,
+        1712.18,
+        10681.17
+      ]
+    },
+    {
+      "from_node": "300011023",
+      "to_node": "300000173",
+      "distance": 80.11,
+      "highway_type": "unknown",
+      "congestion_score": 0.25,
+      "coordinates": [
+        1712.18,
+        10681.17,
+        1691.24,
+        10579.84
+      ]
+    },
+    {
+      "from_node": "300000173",
+      "to_node": "300001438",
+      "distance": 155.06,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1691.24,
+        10579.84,
+        1689.25,
+        10336.8
+      ]
+    },
+    {
+      "from_node": "300001438",
+      "to_node": "300001308",
+      "distance": 105.72,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1689.25,
+        10336.8,
+        1691.32,
+        10231.1
+      ]
+    },
+    {
+      "from_node": "300001308",
+      "to_node": "300001355",
+      "distance": 70.53,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1691.32,
+        10231.1,
+        1695.23,
+        10122.22
+      ]
+    },
+    {
+      "from_node": "300001355",
+      "to_node": "300001303",
+      "distance": 95.63,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1695.23,
+        10122.22,
+        1697.1,
+        9939.96
+      ]
+    },
+    {
+      "from_node": "300001303",
+      "to_node": "300001306",
+      "distance": 315.37,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1697.1,
+        9939.96,
+        1705.8,
+        9585.59
+      ]
+    },
+    {
+      "from_node": "300001306",
+      "to_node": "300001393",
+      "distance": 88.51,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1705.8,
+        9585.59,
+        1674.37,
+        9450.89
+      ]
+    },
+    {
+      "from_node": "300001393",
+      "to_node": "300001511",
+      "distance": 10.67,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1674.37,
+        9450.89,
+        1709.96,
+        9378.77
+      ]
+    },
+    {
+      "from_node": "300001511",
+      "to_node": "300001016",
+      "distance": 11.56,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1709.96,
+        9378.77,
+        1713.42,
+        9367.31
+      ]
+    },
+    {
+      "from_node": "300001016",
+      "to_node": "300001017",
+      "distance": 315.79,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1713.42,
+        9367.31,
+        1715.11,
+        9008.23
+      ]
+    },
+    {
+      "from_node": "300001017",
+      "to_node": "300000693",
+      "distance": 49.88,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1715.11,
+        9008.23,
+        1722.77,
+        8881.0
+      ]
+    },
+    {
+      "from_node": "300000693",
+      "to_node": "300000745",
+      "distance": 70.96,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1722.77,
+        8881.0,
+        1731.06,
+        8795.14
+      ]
+    },
+    {
+      "from_node": "300000745",
+      "to_node": "300000079",
+      "distance": 102.99,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1731.06,
+        8795.14,
+        1725.28,
+        8659.29
+      ]
+    },
+    {
+      "from_node": "300000079",
+      "to_node": "300000744",
+      "distance": 163.65,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1725.28,
+        8659.29,
+        1739.11,
+        8415.19
+      ]
+    },
+    {
+      "from_node": "300000744",
+      "to_node": "300000694",
+      "distance": 107.44,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1739.11,
+        8415.19,
+        1734.22,
+        8251.16
+      ]
+    },
+    {
+      "from_node": "300000694",
+      "to_node": "300000743",
+      "distance": 82.24,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1734.22,
+        8251.16,
+        1748.42,
+        8137.47
+      ]
+    },
+    {
+      "from_node": "300000743",
+      "to_node": "300000695",
+      "distance": 87.72,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1748.42,
+        8137.47,
+        1739.51,
+        8035.73
+      ]
+    },
+    {
+      "from_node": "300000695",
+      "to_node": "300000742",
+      "distance": 32.1,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1739.51,
+        8035.73,
+        1751.25,
+        7951.66
+      ]
+    },
+    {
+      "from_node": "300000742",
+      "to_node": "300000741",
+      "distance": 150.48,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1751.25,
+        7951.66,
+        1757.06,
+        7745.26
+      ]
+    },
+    {
+      "from_node": "300000741",
+      "to_node": "300000696",
+      "distance": 26.6,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1757.06,
+        7745.26,
+        1747.29,
+        7645.32
+      ]
+    },
+    {
+      "from_node": "300000696",
+      "to_node": "300000740",
+      "distance": 30.73,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1747.29,
+        7645.32,
+        1762.04,
+        7598.37
+      ]
+    },
+    {
+      "from_node": "300000740",
+      "to_node": "300000080",
+      "distance": 21.38,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1762.04,
+        7598.37,
+        1748.51,
+        7509.1
+      ]
+    },
+    {
+      "from_node": "300000080",
+      "to_node": "300000739",
+      "distance": 29.03,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1748.51,
+        7509.1,
+        1755.3,
+        7440.52
+      ]
+    },
+    {
+      "from_node": "300000739",
+      "to_node": "300000697",
+      "distance": 0.2,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1755.3,
+        7440.52,
+        1750.79,
+        7375.35
+      ]
+    },
+    {
+      "from_node": "300000697",
+      "to_node": "300000844",
+      "distance": 83.59,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1750.79,
+        7375.35,
+        1753.14,
+        7264.73
+      ]
+    },
+    {
+      "from_node": "300000844",
+      "to_node": "300000872",
+      "distance": 42.63,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1753.14,
+        7264.73,
+        1718.7,
+        7195.16
+      ]
+    },
+    {
+      "from_node": "300000872",
+      "to_node": "300000847",
+      "distance": 84.39,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1718.7,
+        7195.16,
+        1773.42,
+        7078.14
+      ]
+    },
+    {
+      "from_node": "300000847",
+      "to_node": "300000845",
+      "distance": 5.7,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1773.42,
+        7078.14,
+        1756.94,
+        7056.79
+      ]
+    },
+    {
+      "from_node": "300000845",
+      "to_node": "300000846",
+      "distance": 17.29,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1756.94,
+        7056.79,
+        1763.49,
+        6976.95
+      ]
+    },
+    {
+      "from_node": "300000846",
+      "to_node": "300000871",
+      "distance": 7.5,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1763.49,
+        6976.95,
+        1738.98,
+        6934.53
+      ]
+    },
+    {
+      "from_node": "300000871",
+      "to_node": "300000848",
+      "distance": 6.76,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1738.98,
+        6934.53,
+        1766.3,
+        6932.0
+      ]
+    },
+    {
+      "from_node": "300000848",
+      "to_node": "300000850",
+      "distance": 159.78,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1766.3,
+        6932.0,
+        1780.85,
+        6719.67
+      ]
+    },
+    {
+      "from_node": "300000850",
+      "to_node": "300000851",
+      "distance": 69.81,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1780.85,
+        6719.67,
+        1782.85,
+        6602.74
+      ]
+    },
+    {
+      "from_node": "300000851",
+      "to_node": "300000852",
+      "distance": 27.33,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1782.85,
+        6602.74,
+        1767.65,
+        6531.88
+      ]
+    },
+    {
+      "from_node": "300000852",
+      "to_node": "300000849",
+      "distance": 3.23,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1767.65,
+        6531.88,
+        1773.46,
+        6499.6
+      ]
+    },
+    {
+      "from_node": "300000849",
+      "to_node": "300000870",
+      "distance": 9.79,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1773.46,
+        6499.6,
+        1749.02,
+        6488.06
+      ]
+    },
+    {
+      "from_node": "300000870",
+      "to_node": "300000853",
+      "distance": 8.57,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1749.02,
+        6488.06,
+        1769.74,
+        6434.81
+      ]
+    },
+    {
+      "from_node": "300000853",
+      "to_node": "300000404",
+      "distance": 230.48,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1769.74,
+        6434.81,
+        1754.27,
+        6168.48
+      ]
+    },
+    {
+      "from_node": "300000404",
+      "to_node": "300000408",
+      "distance": 69.49,
+      "highway_type": "unknown",
+      "congestion_score": 0.25,
+      "coordinates": [
+        1754.27,
+        6168.48,
+        1899.91,
+        6133.34
+      ]
+    },
+    {
+      "from_node": "300000408",
+      "to_node": "300000403",
+      "distance": 60.83,
+      "highway_type": "unknown",
+      "congestion_score": 0.25,
+      "coordinates": [
+        1899.91,
+        6133.34,
+        2000.05,
+        6149.0
+      ]
+    },
+    {
+      "from_node": "300000403",
+      "to_node": "300002046",
+      "distance": 80.26,
+      "highway_type": "unknown",
+      "congestion_score": 0.25,
+      "coordinates": [
+        2000.05,
+        6149.0,
+        2074.02,
+        6178.36
+      ]
+    },
+    {
+      "from_node": "300002046",
+      "to_node": "300001685",
+      "distance": 92.72,
+      "highway_type": "unknown",
+      "congestion_score": 0.25,
+      "coordinates": [
+        2074.02,
+        6178.36,
+        2192.06,
+        6188.52
+      ]
+    },
+    {
+      "from_node": "300001685",
+      "to_node": "300001684",
+      "distance": 3.75,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        2192.06,
+        6188.52,
+        2202.9,
+        6254.32
+      ]
+    },
+    {
+      "from_node": "300001684",
+      "to_node": "300001686",
+      "distance": 29.08,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        2202.9,
+        6254.32,
+        2187.1,
+        6299.48
+      ]
+    },
+    {
+      "from_node": "300001686",
+      "to_node": "300000026",
+      "distance": 107.17,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        2187.1,
+        6299.48,
+        2272.31,
+        6462.36
+      ]
+    },
+    {
+      "from_node": "300000026",
+      "to_node": "300000030",
+      "distance": 25.01,
+      "highway_type": "unknown",
+      "congestion_score": 0.65,
+      "coordinates": [
+        2272.31,
+        6462.36,
+        2233.01,
+        6396.37
+      ]
+    },
+    {
+      "from_node": "300000030",
+      "to_node": "300001526",
+      "distance": 115.32,
+      "highway_type": "unknown",
+      "congestion_score": 0.65,
+      "coordinates": [
+        2233.01,
+        6396.37,
+        2266.93,
+        6013.99
+      ]
+    },
+    {
+      "from_node": "300001526",
+      "to_node": "300001527",
+      "distance": 78.08,
+      "highway_type": "unknown",
+      "congestion_score": 0.65,
+      "coordinates": [
+        2266.93,
+        6013.99,
+        2278.09,
+        5903.03
+      ]
+    },
+    {
+      "from_node": "300001527",
+      "to_node": "300001528",
+      "distance": 172.02,
+      "highway_type": "unknown",
+      "congestion_score": 0.65,
+      "coordinates": [
+        2278.09,
+        5903.03,
+        2275.29,
+        5697.65
+      ]
+    },
+    {
+      "from_node": "300001528",
+      "to_node": "300001529",
+      "distance": 8.37,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        2275.29,
+        5697.65,
+        2281.03,
+        5639.82
+      ]
+    },
+    {
+      "from_node": "300001529",
+      "to_node": "300001530",
+      "distance": 84.25,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        2281.03,
+        5639.82,
+        2265.31,
+        5508.99
+      ]
+    },
+    {
+      "from_node": "300001530",
+      "to_node": "300000437",
+      "distance": 15.78,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        2265.31,
+        5508.99,
+        2209.18,
+        5477.22
+      ]
+    },
+    {
+      "from_node": "300000437",
+      "to_node": "300001635",
+      "distance": 32.08,
+      "highway_type": "unknown",
+      "congestion_score": 0.65,
+      "coordinates": [
+        2209.18,
+        5477.22,
+        2232.49,
+        5402.11
+      ]
+    },
+    {
+      "from_node": "300001635",
+      "to_node": "300001533",
+      "distance": 5.69,
+      "highway_type": "unknown",
+      "congestion_score": 0.65,
+      "coordinates": [
+        2232.49,
+        5402.11,
+        2222.1,
+        5346.02
+      ]
+    },
+    {
+      "from_node": "300001533",
+      "to_node": "300001532",
+      "distance": 3.27,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        2222.1,
+        5346.02,
+        2237.99,
+        5344.35
+      ]
+    },
+    {
+      "from_node": "300001532",
+      "to_node": "300000442",
+      "distance": 243.49,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        2237.99,
+        5344.35,
+        2161.07,
+        5046.32
+      ]
+    },
+    {
+      "from_node": "300000442",
+      "to_node": "300001534",
+      "distance": 5.97,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        2161.07,
+        5046.32,
+        2158.13,
+        5041.13
+      ]
+    },
+    {
+      "from_node": "300001534",
+      "to_node": "300001535",
+      "distance": 405.72,
+      "highway_type": "unknown",
+      "congestion_score": 0.65,
+      "coordinates": [
+        2158.13,
+        5041.13,
+        2079.5,
+        4545.36
+      ]
+    },
+    {
+      "from_node": "300001535",
+      "to_node": "300001536",
+      "distance": 0.1,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        2079.5,
+        4545.36,
+        2093.8,
+        4521.99
+      ]
+    },
+    {
+      "from_node": "300001536",
+      "to_node": "300001538",
+      "distance": 98.64,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        2093.8,
+        4521.99,
+        2099.77,
+        4353.35
+      ]
+    },
+    {
+      "from_node": "300001538",
+      "to_node": "300001682",
+      "distance": 0.2,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        2099.77,
+        4353.35,
+        2038.54,
+        4306.13
+      ]
+    },
+    {
+      "from_node": "300001682",
+      "to_node": "300000213",
+      "distance": 15.19,
+      "highway_type": "unknown",
+      "congestion_score": 0.65,
+      "coordinates": [
+        2038.54,
+        4306.13,
+        1958.71,
+        4335.11
+      ]
+    },
+    {
+      "from_node": "300000213",
+      "to_node": "300000215",
+      "distance": 103.49,
+      "highway_type": "unknown",
+      "congestion_score": 0.65,
+      "coordinates": [
+        1958.71,
+        4335.11,
+        1817.38,
+        4354.67
+      ]
+    },
+    {
+      "from_node": "300000215",
+      "to_node": "300000216",
+      "distance": 51.67,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1817.38,
+        4354.67,
+        1736.51,
+        4347.25
+      ]
+    },
+    {
+      "from_node": "300000216",
+      "to_node": "300000230",
+      "distance": 136.8,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1736.51,
+        4347.25,
+        1556.77,
+        4363.08
+      ]
+    },
+    {
+      "from_node": "300000230",
+      "to_node": "300000226",
+      "distance": 13.38,
+      "highway_type": "unknown",
+      "congestion_score": 0.45,
+      "coordinates": [
+        1556.77,
+        4363.08,
+        1524.6,
+        4370.66
+      ]
+    },
+    {
+      "from_node": "300000226",
+      "to_node": "300000233",
+      "distance": 69.87,
+      "highway_type": "unknown",
+      "congestion_score": 0.65,
+      "coordinates": [
+        1524.6,
+        4370.66,
+        1414.88,
+        4369.39
+      ]
+    }
+  ],
+  "graph_type": "net",
+  "timestamp": "2026-01-16T12:16:51.008031"
+}

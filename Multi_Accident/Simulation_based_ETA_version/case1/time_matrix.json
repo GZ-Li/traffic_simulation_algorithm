@@ -1,0 +1,17 @@
+{
+  "Hospital 200000480": {
+    "Accident 200000387": 300,
+    "Accident 200007001": 120,
+    "Accident 200000869": 390
+  },
+  "Hospital 200000154": {
+    "Accident 200000387": 240,
+    "Accident 200007001": 120,
+    "Accident 200000869": 330
+  },
+  "Hospital 200000033": {
+    "Accident 200000387": 90,
+    "Accident 200007001": 90,
+    "Accident 200000869": 210
+  }
+}

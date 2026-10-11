@@ -1,0 +1,34 @@
+diff --git a/python/trafficlight_rl/engine.py b/python/trafficlight_rl/engine.py
+index 6df56c5..c0297c4 100644
+--- a/python/trafficlight_rl/engine.py
++++ b/python/trafficlight_rl/engine.py
+@@ -215,7 +215,7 @@ class Engine:
+         config_base64 = encode_to_base64(self.config.to_yaml())
+ 
+         # Start syncer (if available)
+-        syncer_path = os.path.expanduser("~/.local/bin/syncer")
++        syncer_path = os.path.expanduser("/home/nkk/nkk/work/src/syncer/syncer")
+         if os.path.exists(syncer_path):
+             self.syncer_proc = Popen(
+                 [
+@@ -232,7 +232,7 @@ class Engine:
+             time.sleep(1)
+ 
+         # Start simulet-go
+-        simulet_path = os.path.expanduser("~/.local/bin/simulet-go")
++        simulet_path = os.path.expanduser("/home/nkk/nkk/work/src/simulet-go/simulet-go")
+         if not os.path.exists(simulet_path):
+             simulet_path = "./simulet-go"  # Try relative path
+ 
+diff --git a/python/trafficlight_rl/run_ppo.py b/python/trafficlight_rl/run_ppo.py
+index d7494be..31a00fd 100644
+--- a/python/trafficlight_rl/run_ppo.py
++++ b/python/trafficlight_rl/run_ppo.py
+@@ -387,6 +387,7 @@ async def main():
+     torch.set_float32_matmul_precision("medium")
+     device = torch.device("cuda")
+ 
++    args.output_job_prefix += "20250728"
+     env = Env(
+         mongo_uri=args.mongo_uri,
+         map_db=args.map_db,

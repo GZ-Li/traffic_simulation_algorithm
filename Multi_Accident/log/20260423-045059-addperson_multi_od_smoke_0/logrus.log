@@ -1,0 +1,17 @@
+[simulet] [2026-04-23 04:50:59.5664] [INFO] {Input:{URI:mongodb://root:qZ7ILv0Xs6VnJcPg12KU3AoYhWKb4Cla@172.16.40.166:27017 Map:{DB:tsingroc Col:map_pku_wuhan_demo_1015c_rl Cache: OnlyCache:false File:} Person:0xc0003c4000 RouteStatus:<nil>} Control:{Step:{Start:0 Total:8551 Interval:1 Subloop:<nil>} MicroscopicRange:<nil> NoSignalRanges:[] SkipOvertimeTripWhenInit:true EnablePlatoon:false EnableIndoor:false Dump:<nil> VehicleMicroStatistics:<nil> LaneStatistics:<nil> RoadStatistics:<nil> Stat:<nil> IndoorStroll:<nil> DisableIndoorAoiIDs:[] PreferFixedLight:false KeepAllRedWhenHasVehicle:false EnableCollisionAvoidance:false EnableGoAstray:false LaneChangeModel:0xc000382170} Output:{Target:{SQL: CSV:} EnableCommon:false Simple:<nil>} TLS:<nil>}
+[input] [2026-04-23 04:50:59.5688] [ERROR] disable input cache because invalid dir data/ (not exist or file)
+[input] [2026-04-23 04:50:59.5837] [INFO] start fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2026-04-23 04:50:59.9417] [INFO] finish fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2026-04-23 04:50:59.9433] [INFO] start fetching from tsingroc.person_test_20250724_1015cc
+[input] [2026-04-23 04:51:00.1377] [INFO] finish fetching from tsingroc.person_test_20250724_1015cc
+[sidecar] [2026-04-23 04:51:00.1568] [INFO] sidecar rpc listening at http://localhost:36945/
+[simulet/task] [2026-04-23 04:51:00.1568] [INFO] Lane: 16860
+[simulet/task] [2026-04-23 04:51:00.1570] [INFO] Road: 2634
+[simulet/task] [2026-04-23 04:51:00.1571] [INFO] Junction: 1588
+[simulet/task] [2026-04-23 04:51:00.1571] [INFO] AOI: 0
+[simulet/task] [2026-04-23 04:51:00.1571] [INFO] Person: 8783
+[simulet/task] [2026-04-23 04:51:03.2477] [INFO] STEP: 100(0:1:40.00) #persons: (8786|0) avg v: 11.63 CPU: 100.81 MEM: 307.75MB
+[simulet/task] [2026-04-23 04:51:06.3012] [INFO] STEP: 200(0:3:20.00) #persons: (8786|0) avg v: 11.62 CPU: 94.10 MEM: 349.43MB
+[simulet/task] [2026-04-23 04:51:08.4370] [INFO] STEP: 300(0:5:0.00) #persons: (8786|0) avg v: 11.59 CPU: 144.39 MEM: 362.78MB
+[simulet] [2026-04-23 04:51:09.1924] [INFO] stopping...
+[sidecar] [2026-04-23 04:51:09.1924] [PANIC] unavailable: dial tcp 127.0.0.1:59033: connect: connection refused

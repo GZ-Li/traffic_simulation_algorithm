@@ -1,0 +1,22 @@
+control:
+  enable_collision_avoidance: false
+  enable_go_astray: false
+  enable_indoor: false
+  enable_platoon: false
+  lane_change_model: mobil
+  microscopic_range: null
+  prefer_fixed_light: false
+  skip_overtime_trip_when_init: true
+  step:
+    interval: 1
+    start: 0
+    total: 5143
+input:
+  map:
+    col: map_pku_wuhan_demo_1015c_rl
+    db: tsingroc
+  person:
+    col: person_test_20250724_1015cc
+    db: tsingroc
+  uri: mongodb://root:qZ7ILv0Xs6VnJcPg12KU3AoYhWKb4Cla@172.16.40.166:27017
+output: {}

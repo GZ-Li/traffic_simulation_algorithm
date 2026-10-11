@@ -1,0 +1,18 @@
+control:
+  enable_collision_avoidance: false
+  enable_go_astray: false
+  enable_indoor: false
+  enable_platoon: false
+  lane_change_model: mobil
+  prefer_fixed_light: true
+  skip_overtime_trip_when_init: true
+  step:
+    interval: 1
+    start: 0
+    total: 931
+input:
+  map:
+    file: /home/nkk/nkk/work/src/simulet-go/python/data/map_pku_wuhan_demo_1015c_rl.pb
+  person:
+    file: /home/nkk/nkk/work/src/simulet-go/python/data/person_test_20250717_1015c.pb
+output: {}

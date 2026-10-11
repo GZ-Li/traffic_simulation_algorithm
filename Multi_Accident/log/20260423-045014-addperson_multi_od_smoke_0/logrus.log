@@ -1,0 +1,17 @@
+[simulet] [2026-04-23 04:50:14.6920] [INFO] {Input:{URI:mongodb://root:qZ7ILv0Xs6VnJcPg12KU3AoYhWKb4Cla@172.16.40.166:27017 Map:{DB:tsingroc Col:map_pku_wuhan_demo_1015c_rl Cache: OnlyCache:false File:} Person:0xc0002e0cd0 RouteStatus:<nil>} Control:{Step:{Start:0 Total:8551 Interval:1 Subloop:<nil>} MicroscopicRange:<nil> NoSignalRanges:[] SkipOvertimeTripWhenInit:true EnablePlatoon:false EnableIndoor:false Dump:<nil> VehicleMicroStatistics:<nil> LaneStatistics:<nil> RoadStatistics:<nil> Stat:<nil> IndoorStroll:<nil> DisableIndoorAoiIDs:[] PreferFixedLight:false KeepAllRedWhenHasVehicle:false EnableCollisionAvoidance:false EnableGoAstray:false LaneChangeModel:0xc000352140} Output:{Target:{SQL: CSV:} EnableCommon:false Simple:<nil>} TLS:<nil>}
+[input] [2026-04-23 04:50:14.6946] [ERROR] disable input cache because invalid dir data/ (not exist or file)
+[input] [2026-04-23 04:50:14.7099] [INFO] start fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2026-04-23 04:50:15.0556] [INFO] finish fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2026-04-23 04:50:15.0571] [INFO] start fetching from tsingroc.person_test_20250724_1015cc
+[input] [2026-04-23 04:50:15.2447] [INFO] finish fetching from tsingroc.person_test_20250724_1015cc
+[sidecar] [2026-04-23 04:50:15.2631] [INFO] sidecar rpc listening at http://localhost:50141/
+[simulet/task] [2026-04-23 04:50:15.2631] [INFO] Lane: 16860
+[simulet/task] [2026-04-23 04:50:15.2633] [INFO] Road: 2634
+[simulet/task] [2026-04-23 04:50:15.2633] [INFO] Junction: 1588
+[simulet/task] [2026-04-23 04:50:15.2633] [INFO] AOI: 0
+[simulet/task] [2026-04-23 04:50:15.2634] [INFO] Person: 8783
+[simulet/task] [2026-04-23 04:50:18.2284] [INFO] STEP: 100(0:1:40.00) #persons: (8786|0) avg v: 11.63 CPU: 130.99 MEM: 294.12MB
+[simulet/task] [2026-04-23 04:50:21.2291] [INFO] STEP: 200(0:3:20.00) #persons: (8786|0) avg v: 11.62 CPU: 111.00 MEM: 331.45MB
+[simulet/task] [2026-04-23 04:50:23.1763] [INFO] STEP: 300(0:5:0.00) #persons: (8786|0) avg v: 11.59 CPU: 149.23 MEM: 364.63MB
+[simulet/task] [2026-04-23 04:50:24.3881] [INFO] STEP: 400(0:6:40.00) #persons: (8786|0) avg v: 11.56 CPU: 253.72 MEM: 376.89MB
+[sidecar] [2026-04-23 04:50:24.8789] [PANIC] unavailable: read tcp 127.0.0.1:38130->127.0.0.1:44771: read: connection reset by peer

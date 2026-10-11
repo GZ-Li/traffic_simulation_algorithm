@@ -1,0 +1,1681 @@
+diff --git a/.dockerignore b/.dockerignore
+old mode 100644
+new mode 100755
+diff --git a/.gitignore b/.gitignore
+old mode 100644
+new mode 100755
+diff --git a/Dockerfile b/Dockerfile
+old mode 100644
+new mode 100755
+diff --git a/README.md b/README.md
+old mode 100644
+new mode 100755
+diff --git a/clock/clock.go b/clock/clock.go
+old mode 100644
+new mode 100755
+diff --git a/clock/doc.go b/clock/doc.go
+old mode 100644
+new mode 100755
+diff --git a/clock/rpc.go b/clock/rpc.go
+old mode 100644
+new mode 100755
+diff --git a/configs/.gitignore b/configs/.gitignore
+old mode 100644
+new mode 100755
+diff --git a/doc.go b/doc.go
+old mode 100644
+new mode 100755
+diff --git a/docs/DESIGN_DOC.md b/docs/DESIGN_DOC.md
+old mode 100644
+new mode 100755
+diff --git a/docs/POSTGRESQL.md b/docs/POSTGRESQL.md
+old mode 100644
+new mode 100755
+diff --git a/entity/aoi/aoi.go b/entity/aoi/aoi.go
+old mode 100644
+new mode 100755
+index 79bce5d..3bcb116
+--- a/entity/aoi/aoi.go
++++ b/entity/aoi/aoi.go
+@@ -78,10 +78,6 @@ type Aoi struct {
+ 	crowdList           []entity.IPerson // 用于输出
+ }
+ 
+-// newAoi 创建并初始化一个新的AOI实例
+-// 功能：根据基础数据创建AOI对象，初始化边界、POI、车道连接、室内模拟等配置
+-// 参数：ctx-任务上下文，base-基础AOI数据，poiManager-POI管理器，laneManager-车道管理器
+-// 返回：初始化完成的AOI实例
+ func newAoi(ctx entity.ITaskContext, base *mapv2.Aoi, _ *AoiManager, poiManager entity.IPoiManager, laneManager entity.ILaneManager) *Aoi {
+ 	a := &Aoi{
+ 		ctx:  ctx,
+@@ -167,10 +163,6 @@ func newAoi(ctx entity.ITaskContext, base *mapv2.Aoi, _ *AoiManager, poiManager
+ 	return a
+ }
+ 
+-// prepareCrowdSnapshot 准备室内行人的快照数据
+-// 功能：为室内行人模拟准备快照数据，用于记录行人在AOI内的状态
+-// 参数：shouldClear-是否清空现有快照
+-// 说明：仅在启用室内模拟时执行，用于支持室内行人行为计算
+ func (a *Aoi) prepareCrowdSnapshot(shouldClear bool) {
+ 	if !a.enableIndoor {
+ 		return
+@@ -183,9 +175,6 @@ func (a *Aoi) prepareCrowdSnapshot(shouldClear bool) {
+ 	}
+ }
+ 
+-// prepare 准备阶段，处理缓冲区的数据更新
+-// 功能：根据缓冲区数据更新AOI内的人员和车辆状态，包括添加/移除人员和停靠车辆
+-// 说明：处理上一时刻的缓冲区操作，更新内部数据结构，为输出准备数据列表
+ func (a *Aoi) prepare() {
+ 	// 根据buffer更新人的情况
+ 	for _, item := range a.removePersonBuffer {
+@@ -249,16 +238,11 @@ func (a *Aoi) prepare() {
+ 	}
+ }
+ 
+-// update 更新阶段，执行AOI的模拟逻辑
+-// 功能：执行AOI的模拟更新逻辑，目前为空实现，预留扩展接口
+-// 参数：dt-时间步长
+ func (a *Aoi) update(dt float64) {
+ 	// a.station.Update()
+ }
+ 
+-// ID 获取AOI的唯一标识符
+-// 功能：返回AOI的ID，用于标识和查找特定的AOI
+-// 返回：AOI的ID，如果AOI为nil则返回-1
++// 获取Aoi ID
+ func (a *Aoi) ID() int32 {
+ 	if a == nil {
+ 		return -1
+@@ -266,16 +250,12 @@ func (a *Aoi) ID() int32 {
+ 	return a.id
+ }
+ 
+-// Centroid 获取AOI的几何中心点坐标
+-// 功能：返回AOI多边形的几何中心点，用于定位和计算
+-// 返回：AOI中心点的坐标
++// 获取Aoi中心点坐标
+ func (a *Aoi) Centroid() geometry.Point {
+ 	return a.centroid
+ }
+ 
+-// Boundary 获取AOI的边界坐标列表
+-// 功能：返回AOI的边界点列表，用于空间计算和可视化
+-// 返回：边界点坐标列表，如果AOI没有面积则panic
++// 获取Aoi边界坐标
+ func (a *Aoi) Boundary() []geometry.Point {
+ 	if a.area == nil {
+ 		log.Panicf("aoi %d has no boundary", a.id)
+@@ -283,10 +263,7 @@ func (a *Aoi) Boundary() []geometry.Point {
+ 	return a.boundary
+ }
+ 
+-// Contains 判断给定点是否在AOI内部
+-// 功能：使用点在多边形内的算法判断指定坐标是否在AOI边界内
+-// 参数：p-待判断的点坐标
+-// 返回：true表示点在AOI内，false表示在AOI外
++// 判断给定点是否在Aoi内
+ func (a *Aoi) Contains(p geometry.Point) bool {
+ 	if a.area == nil {
+ 		return false
+@@ -294,31 +271,22 @@ func (a *Aoi) Contains(p geometry.Point) bool {
+ 	return p.InPolygon2D(a.boundary)
+ }
+ 
+-// DrivingLanes 获取AOI连接的行车道映射
+-// 功能：返回AOI连接的所有行车道，以车道ID为键的映射表
+-// 返回：行车道ID到车道对象的映射
++// 获取Aoi连接到的行车道（Lane ID -> ILane）
+ func (a *Aoi) DrivingLanes() map[int32]entity.ILane {
+ 	return a.drivingLanes
+ }
+ 
+-// WalkingLanes 获取AOI连接的步行道映射
+-// 功能：返回AOI连接的所有步行道，以车道ID为键的映射表
+-// 返回：步行道ID到车道对象的映射
++// 获取Aoi连接到的步行道（Lane ID -> ILane）
+ func (a *Aoi) WalkingLanes() map[int32]entity.ILane {
+ 	return a.walkingLanes
+ }
+ 
+-// LaneSs 获取AOI连接的所有车道位置映射
+-// 功能：返回AOI连接的所有车道在道路上的位置信息
+-// 返回：车道ID到道路位置S坐标的映射
++// 获取Aoi连接到的所有Lane上的位置（Lane ID -> S）
+ func (a *Aoi) LaneSs() map[int32]float64 {
+ 	return a.laneSs
+ }
+ 
+-// DrivingS 获取指定行车道在AOI连接点的位置
+-// 功能：根据行车道ID返回该车道连接到AOI的位置坐标
+-// 参数：laneID-行车道ID
+-// 返回：车道在道路上的S坐标，如果车道不存在则panic
++// 输入行车道ID，返回对应的S坐标
+ func (a *Aoi) DrivingS(laneID int32) float64 {
+ 	if s, ok := a.laneSs[laneID]; !ok {
+ 		log.Panicf("no lane %d with aoi %d", laneID, a.id)
+@@ -328,10 +296,7 @@ func (a *Aoi) DrivingS(laneID int32) float64 {
+ 	}
+ }
+ 
+-// WalkingS 获取指定步行道在AOI连接点的位置
+-// 功能：根据步行道ID返回该车道连接到AOI的位置坐标
+-// 参数：laneID-步行道ID
+-// 返回：车道在道路上的S坐标，如果车道不存在则panic
++// 输入步行道ID，返回对应的S坐标
+ func (a *Aoi) WalkingS(laneID int32) float64 {
+ 	if s, ok := a.laneSs[laneID]; !ok {
+ 		log.Panicf("no lane %d with aoi %d", laneID, a.id)
+@@ -341,16 +306,12 @@ func (a *Aoi) WalkingS(laneID int32) float64 {
+ 	}
+ }
+ 
+-// HeadCount 获取AOI内的人员总数
+-// 功能：统计当前在AOI内的所有人员数量
+-// 返回：AOI内的人员总数
++// 获取Aoi内的人数
+ func (a *Aoi) HeadCount() int32 {
+ 	return int32(len(a.persons))
+ }
+ 
+-// GetSleepXYByRandom 随机获取一个楼电梯间位置
+-// 功能：从预定义的楼电梯间位置中随机选择一个，用于室内行人模拟
+-// 返回：随机选择的楼电梯间坐标，如果没有定义则返回AOI中心点
++// 随机从sleep points里选一个点
+ func (a *Aoi) GetSleepXYByRandom() geometry.Point {
+ 	if len(a.sleepPoints) == 0 {
+ 		// 回落到中心点
+@@ -359,10 +320,7 @@ func (a *Aoi) GetSleepXYByRandom() geometry.Point {
+ 	return a.sleepPoints[a.generator.IntnSafe(len(a.sleepPoints))]
+ }
+ 
+-// GetRandomXY 在AOI范围内生成随机坐标点
+-// 功能：使用三角剖分算法在AOI多边形内生成随机点，用于行人路径规划
+-// 算法：将AOI三角剖分，按面积概率选择三角形，在三角形内随机取点
+-// 返回：AOI内的随机坐标点
++// 获取Aoi范围内随机点
+ func (a *Aoi) GetRandomXY() geometry.Point {
+ 	if len(a.boundary) == 1 {
+ 		return a.boundary[0]
+@@ -392,10 +350,7 @@ func (a *Aoi) GetRandomXY() geometry.Point {
+ 	return p
+ }
+ 
+-// GetPoiXY 获取指定POI的坐标位置
+-// 功能：根据POI ID返回该POI在AOI内的坐标位置
+-// 参数：poiID-POI的唯一标识符
+-// 返回：POI的坐标位置，如果POI不存在则panic
++// 输入poi ID，返回对应的坐标
+ func (a *Aoi) GetPoiXY(poiID int32) geometry.Point {
+ 	if poi, ok := a.pois[poiID]; !ok {
+ 		log.Panicf("no poi %d with aoi %d", poiID, a.id)
+@@ -405,10 +360,7 @@ func (a *Aoi) GetPoiXY(poiID int32) geometry.Point {
+ 	}
+ }
+ 
+-// GetGateXY 获取指定车道的出入口坐标
+-// 功能：根据车道ID返回该车道连接到AOI的出入口坐标
+-// 参数：laneID-车道ID
+-// 返回：出入口的坐标位置，如果车道没有出入口则panic
++// 输入Lane ID，返回该Aoi道路连接点对应的Aoi边界上的坐标
+ func (a *Aoi) GetGateXY(laneID int32) geometry.Point {
+ 	xy, ok := a.gates[laneID]
+ 	if !ok {
+@@ -417,10 +369,7 @@ func (a *Aoi) GetGateXY(laneID int32) geometry.Point {
+ 	return xy
+ }
+ 
+-// AtAnyGate 判断给定点是否在任何出入口附近
+-// 功能：检查指定坐标是否在AOI的任何一个出入口的范围内
+-// 参数：xy-待检查的坐标点
+-// 返回：true表示在出入口附近，false表示不在
++// 判断给定点是否在某个门口处
+ func (a *Aoi) AtAnyGate(xy geometry.Point) bool {
+ 	for _, g := range a.gates {
+ 		if geometry.Distance(xy, g) < gateSize/2 {
+@@ -430,45 +379,32 @@ func (a *Aoi) AtAnyGate(xy geometry.Point) bool {
+ 	return false
+ }
+ 
+-// Crowds 获取AOI内所有室内行人的列表
+-// 功能：返回当前在AOI内进行室内行走的所有人员列表
+-// 返回：室内行人列表，用于室内行人模拟
++// 获取aoi内的所有室内行人
+ func (a *Aoi) Crowds() []entity.IPerson {
+ 	return a.crowdList
+ }
+ 
+-// CrowdSnapshots 获取AOI内所有室内行人的快照数据
+-// 功能：返回室内行人的状态快照，用于室内行人行为计算
+-// 返回：人员到快照的映射表
++// 获取aoi内所有室内行人的snapshot
+ func (a *Aoi) CrowdSnapshots() map[entity.IPerson]entity.CrowdSnapshot {
+ 	return a.crowdSnapshots
+ }
+ 
+-// Persons 获取AOI内所有人员的列表
+-// 功能：返回当前在AOI内的所有人员列表，包括室内和室外人员
+-// 返回：AOI内所有人员的列表
++// 获取aoi内的所有人
+ func (a *Aoi) Persons() []entity.IPerson {
+ 	return a.personList
+ }
+ 
+-// ParkingVehicles 获取AOI内所有停靠车辆的列表
+-// 功能：返回当前在AOI内停靠的所有车辆列表
+-// 返回：停靠车辆列表
++// 获取所有停在aoi的车
+ func (a *Aoi) ParkingVehicles() []entity.IPerson {
+ 	return a.parkingVehiclesList
+ }
+ 
+-// EnableCrowd 判断是否启用室内行人模拟
+-// 功能：检查当前AOI是否启用了室内行人模拟功能
+-// 返回：true表示启用，false表示未启用
++// 判断是否开启室内行人模拟
+ func (a *Aoi) EnableCrowd() bool {
+ 	return a.enableIndoor
+ }
+ 
+-// AddPerson 添加人员到AOI缓冲区
+-// 功能：将人员添加到AOI的添加缓冲区，在下一时刻的prepare阶段处理
+-// 参数：p-要添加的人员，isCrowd-是否为室内行人
+-// 说明：使用缓冲区机制避免并发访问冲突
++// 添加人到Aoi
+ func (a *Aoi) AddPerson(p entity.IPerson, isCrowd bool) {
+ 	item := aoiBufferItem{P: p, IsCrowd: isCrowd}
+ 	a.addPersonBufferMtx.Lock()
+@@ -476,20 +412,14 @@ func (a *Aoi) AddPerson(p entity.IPerson, isCrowd bool) {
+ 	a.addPersonBufferMtx.Unlock()
+ }
+ 
+-// RemovePerson 从AOI移除人员到缓冲区
+-// 功能：将人员添加到AOI的移除缓冲区，在下一时刻的prepare阶段处理
+-// 参数：p-要移除的人员，isCrowd-是否为室内行人
+-// 说明：使用缓冲区机制避免并发访问冲突
++// 从Aoi中移除人
+ func (a *Aoi) RemovePerson(p entity.IPerson, isCrowd bool) {
+ 	a.removePersonBufferMtx.Lock()
+ 	a.removePersonBuffer = append(a.removePersonBuffer, aoiBufferItem{P: p, IsCrowd: isCrowd})
+ 	a.removePersonBufferMtx.Unlock()
+ }
+ 
+-// AddParkingVehicle 添加停靠车辆到AOI缓冲区
+-// 功能：将停靠车辆添加到AOI的添加缓冲区，在下一时刻的prepare阶段处理
+-// 参数：p-要添加的停靠车辆
+-// 说明：使用缓冲区机制避免并发访问冲突
++// 添加停靠车辆到Aoi
+ func (a *Aoi) AddParkingVehicle(p entity.IPerson) {
+ 	item := entity.ParkingBufferItem{P: p}
+ 	a.addParkingVehicleBufferMtx.Lock()
+@@ -497,10 +427,7 @@ func (a *Aoi) AddParkingVehicle(p entity.IPerson) {
+ 	a.addParkingVehicleBufferMtx.Unlock()
+ }
+ 
+-// RemoveParkingVehicle 从AOI移除停靠车辆到缓冲区
+-// 功能：将停靠车辆添加到AOI的移除缓冲区，在下一时刻的prepare阶段处理
+-// 参数：p-要移除的停靠车辆
+-// 说明：使用缓冲区机制避免并发访问冲突
++// 从Aoi中移除停靠车辆
+ func (a *Aoi) RemoveParkingVehicle(p entity.IPerson) {
+ 	item := entity.ParkingBufferItem{P: p}
+ 	a.removeParkingVehicleBufferMtx.Lock()
+@@ -508,20 +435,14 @@ func (a *Aoi) RemoveParkingVehicle(p entity.IPerson) {
+ 	a.removeParkingVehicleBufferMtx.Unlock()
+ }
+ 
+-// UpdateSublineLaneID 更新公交线路对应的车道ID
+-// 功能：更新指定公交线路连接到当前AOI的车道ID映射关系
+-// 参数：sublineID-公交线路ID，laneID-车道ID
+-// 说明：使用互斥锁保证线程安全
++// 更新连接到指定subline的lane id
+ func (a *Aoi) UpdateSublineLaneID(sublineID, laneID int32) {
+ 	a.updateSublineToLaneMtx.Lock()
+ 	a.sublineToLaneID[sublineID] = laneID
+ 	a.updateSublineToLaneMtx.Unlock()
+ }
+ 
+-// GetSublineLaneID 获取公交线路对应的车道ID
+-// 功能：根据公交线路ID返回连接到当前AOI的车道ID
+-// 参数：sublineID-公交线路ID
+-// 返回：对应的车道ID，如果线路不存在则panic
++// 获得线路连接到当前AOI的lane id
+ func (a *Aoi) GetSublineLaneID(sublineID int32) int32 {
+ 	laneID, ok := a.sublineToLaneID[sublineID]
+ 	if !ok {
+@@ -529,17 +450,10 @@ func (a *Aoi) GetSublineLaneID(sublineID int32) int32 {
+ 	}
+ 	return laneID
+ }
+-
+-// ToBasePb 获取AOI的基础protobuf数据
+-// 功能：返回AOI的原始protobuf数据，用于数据序列化和传输
+-// 返回：AOI的基础protobuf对象
+ func (a *Aoi) ToBasePb() *mapv2.Aoi {
+ 	return a.base
+ }
+ 
+-// toGeoJSON 将AOI转换为GeoJSON格式
+-// 功能：将AOI的几何信息转换为GeoJSON Feature对象，用于地理数据可视化
+-// 返回：GeoJSON Feature对象，包含AOI的边界多边形和属性信息
+ func (a *Aoi) toGeoJSON() *geojson.Feature {
+ 	if a.area == nil {
+ 		return nil
+@@ -562,9 +476,7 @@ func (a *Aoi) toGeoJSON() *geojson.Feature {
+ 	return feature
+ }
+ 
+-// toCommonOutput 生成common格式的输出数据
+-// 功能：将AOI的状态信息转换为common输出格式，包含人员数量和密度信息
+-// 返回：common格式的AOI输出数据，如果AOI没有面积则返回nil
++// 产生为common输出格式数据
+ func (a *Aoi) toCommonOutput() *common.Aoi {
+ 	if a.area == nil {
+ 		return nil
+@@ -577,9 +489,7 @@ func (a *Aoi) toCommonOutput() *common.Aoi {
+ 	return out
+ }
+ 
+-// toSimpleOutput 生成simple格式的输出数据
+-// 功能：将AOI的状态信息转换为simple输出格式，包含简化的统计信息
+-// 返回：simple格式的AOI输出数据，如果AOI没有面积则返回nil
++// 产生为simple输出格式的数据
+ func (a *Aoi) toSimpleOutput() *simple.Aoi {
+ 	if a.area == nil {
+ 		return nil
+diff --git a/entity/aoi/doc.go b/entity/aoi/doc.go
+old mode 100644
+new mode 100755
+diff --git a/entity/aoi/logger.go b/entity/aoi/logger.go
+old mode 100644
+new mode 100755
+diff --git a/entity/aoi/manager.go b/entity/aoi/manager.go
+old mode 100644
+new mode 100755
+diff --git a/entity/aoi/manageroutput.go b/entity/aoi/manageroutput.go
+old mode 100644
+new mode 100755
+diff --git a/entity/aoi/managerrpc.go b/entity/aoi/managerrpc.go
+old mode 100644
+new mode 100755
+diff --git a/entity/contexttype.go b/entity/contexttype.go
+old mode 100644
+new mode 100755
+diff --git a/entity/doc.go b/entity/doc.go
+old mode 100644
+new mode 100755
+diff --git a/entity/entitytype.go b/entity/entitytype.go
+old mode 100644
+new mode 100755
+diff --git a/entity/junction/doc.go b/entity/junction/doc.go
+old mode 100644
+new mode 100755
+diff --git a/entity/junction/grid.go b/entity/junction/grid.go
+old mode 100644
+new mode 100755
+diff --git a/entity/junction/grid_test.go b/entity/junction/grid_test.go
+old mode 100644
+new mode 100755
+diff --git a/entity/junction/junction.go b/entity/junction/junction.go
+old mode 100644
+new mode 100755
+diff --git a/entity/junction/logger.go b/entity/junction/logger.go
+old mode 100644
+new mode 100755
+diff --git a/entity/junction/manager.go b/entity/junction/manager.go
+old mode 100644
+new mode 100755
+diff --git a/entity/junction/manageroutput.go b/entity/junction/manageroutput.go
+old mode 100644
+new mode 100755
+diff --git a/entity/junction/managerrpc.go b/entity/junction/managerrpc.go
+old mode 100644
+new mode 100755
+diff --git a/entity/junction/trafficlight/doc.go b/entity/junction/trafficlight/doc.go
+old mode 100644
+new mode 100755
+diff --git a/entity/junction/trafficlight/local.go b/entity/junction/trafficlight/local.go
+old mode 100644
+new mode 100755
+diff --git a/entity/junction/trafficlight/logger.go b/entity/junction/trafficlight/logger.go
+old mode 100644
+new mode 100755
+diff --git a/entity/junction/trafficlight/max_pressure.go b/entity/junction/trafficlight/max_pressure.go
+old mode 100644
+new mode 100755
+diff --git a/entity/junction/type.go b/entity/junction/type.go
+old mode 100644
+new mode 100755
+diff --git a/entity/lane/doc.go b/entity/lane/doc.go
+old mode 100644
+new mode 100755
+diff --git a/entity/lane/lane.go b/entity/lane/lane.go
+old mode 100644
+new mode 100755
+diff --git a/entity/lane/logger.go b/entity/lane/logger.go
+old mode 100644
+new mode 100755
+diff --git a/entity/lane/manager.go b/entity/lane/manager.go
+old mode 100644
+new mode 100755
+diff --git a/entity/lane/managerrpc.go b/entity/lane/managerrpc.go
+old mode 100644
+new mode 100755
+diff --git a/entity/lane/util.go b/entity/lane/util.go
+old mode 100644
+new mode 100755
+diff --git a/entity/managertype.go b/entity/managertype.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/controller.go b/entity/person/controller.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/controlleraccpolicy.go b/entity/person/controlleraccpolicy.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/controllerlanechange.go b/entity/person/controllerlanechange.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/controllermodel.go b/entity/person/controllermodel.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/controllersample.go b/entity/person/controllersample.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/controllerutil.go b/entity/person/controllerutil.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/crowd.go b/entity/person/crowd.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/doc.go b/entity/person/doc.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/emission.go b/entity/person/emission.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/logger.go b/entity/person/logger.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/manager.go b/entity/person/manager.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/manageroutput.go b/entity/person/manageroutput.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/managerrpc.go b/entity/person/managerrpc.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/orca.go b/entity/person/orca.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/passenger.go b/entity/person/passenger.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/passenger/logger.go b/entity/person/passenger/logger.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/pedestrian.go b/entity/person/pedestrian.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/person.go b/entity/person/person.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/personruntime.go b/entity/person/personruntime.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/route/local.go b/entity/person/route/local.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/route/logger.go b/entity/person/route/logger.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/route/multimodal.go b/entity/person/route/multimodal.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/route/passenger.go b/entity/person/route/passenger.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/route/pedestrian.go b/entity/person/route/pedestrian.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/route/router.go b/entity/person/route/router.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/route/rpc.go b/entity/person/route/rpc.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/route/util.go b/entity/person/route/util.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/route/vehicle.go b/entity/person/route/vehicle.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/schedule/logger.go b/entity/person/schedule/logger.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/schedule/schedule.go b/entity/person/schedule/schedule.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/schedule/util.go b/entity/person/schedule/util.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/subway.go b/entity/person/subway.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/taxi.go b/entity/person/taxi.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/taximanager.go b/entity/person/taximanager.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/vehicle.go b/entity/person/vehicle.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/vehicleaction.go b/entity/person/vehicleaction.go
+old mode 100644
+new mode 100755
+diff --git a/entity/person/vehiclemicrostatics.go b/entity/person/vehiclemicrostatics.go
+old mode 100644
+new mode 100755
+diff --git "a/entity/person/\345\237\216\345\270\202\346\250\241\346\213\237\345\231\250Golang\347\211\210\346\234\254\351\251\276\350\275\246\346\250\241\345\236\213\350\257\264\346\230\216.md" "b/entity/person/\345\237\216\345\270\202\346\250\241\346\213\237\345\231\250Golang\347\211\210\346\234\254\351\251\276\350\275\246\346\250\241\345\236\213\350\257\264\346\230\216.md"
+old mode 100644
+new mode 100755
+diff --git a/entity/poi/doc.go b/entity/poi/doc.go
+old mode 100644
+new mode 100755
+diff --git a/entity/poi/manager.go b/entity/poi/manager.go
+old mode 100644
+new mode 100755
+diff --git a/entity/poi/poi.go b/entity/poi/poi.go
+old mode 100644
+new mode 100755
+diff --git a/entity/road/doc.go b/entity/road/doc.go
+old mode 100644
+new mode 100755
+diff --git a/entity/road/logger.go b/entity/road/logger.go
+old mode 100644
+new mode 100755
+diff --git a/entity/road/manager.go b/entity/road/manager.go
+old mode 100644
+new mode 100755
+diff --git a/entity/road/manageroutput.go b/entity/road/manageroutput.go
+old mode 100644
+new mode 100755
+diff --git a/entity/road/managerrpc.go b/entity/road/managerrpc.go
+old mode 100644
+new mode 100755
+diff --git a/entity/road/road.go b/entity/road/road.go
+old mode 100644
+new mode 100755
+diff --git a/entity/subline/doc.go b/entity/subline/doc.go
+old mode 100644
+new mode 100755
+diff --git a/entity/subline/manager.go b/entity/subline/manager.go
+old mode 100644
+new mode 100755
+diff --git a/entity/subline/subline.go b/entity/subline/subline.go
+old mode 100644
+new mode 100755
+diff --git a/gen/emission/v1/emission.pb.go b/gen/emission/v1/emission.pb.go
+old mode 100644
+new mode 100755
+diff --git a/gen/lanestatistics/v1/lanestatistics.pb.go b/gen/lanestatistics/v1/lanestatistics.pb.go
+old mode 100644
+new mode 100755
+diff --git a/gen/microstatistics/v1/microstatistics.pb.go b/gen/microstatistics/v1/microstatistics.pb.go
+old mode 100644
+new mode 100755
+diff --git a/gen/roadstatistics/v1/roadstatistics.pb.go b/gen/roadstatistics/v1/roadstatistics.pb.go
+old mode 100644
+new mode 100755
+diff --git a/git.go b/git.go
+old mode 100644
+new mode 100755
+diff --git a/go.sum b/go.sum
+old mode 100644
+new mode 100755
+diff --git a/proto/README.md b/proto/README.md
+old mode 100644
+new mode 100755
+diff --git a/proto/protobuf/.gitignore b/proto/protobuf/.gitignore
+old mode 100644
+new mode 100755
+diff --git a/proto/protobuf/buf.gen.yaml b/proto/protobuf/buf.gen.yaml
+old mode 100644
+new mode 100755
+diff --git a/proto/protobuf/buf.yaml b/proto/protobuf/buf.yaml
+old mode 100644
+new mode 100755
+diff --git a/proto/protobuf/emission/v1/emission.proto b/proto/protobuf/emission/v1/emission.proto
+old mode 100644
+new mode 100755
+diff --git a/proto/protobuf/lanestatistics/v1/lanestatistics.proto b/proto/protobuf/lanestatistics/v1/lanestatistics.proto
+old mode 100644
+new mode 100755
+diff --git a/proto/protobuf/microstatistics/v1/microstatistics.proto b/proto/protobuf/microstatistics/v1/microstatistics.proto
+old mode 100644
+new mode 100755
+diff --git a/proto/protobuf/roadstatistics/v1/roadstatistics.proto b/proto/protobuf/roadstatistics/v1/roadstatistics.proto
+old mode 100644
+new mode 100755
+diff --git a/python/.gitignore b/python/.gitignore
+old mode 100644
+new mode 100755
+diff --git a/python/README.md b/python/README.md
+old mode 100644
+new mode 100755
+diff --git a/python/benchmark_demo.ipynb b/python/benchmark_demo.ipynb
+old mode 100644
+new mode 100755
+diff --git a/python/examples/.gitignore b/python/examples/.gitignore
+old mode 100644
+new mode 100755
+diff --git a/python/examples/control_pedestrians.py b/python/examples/control_pedestrians.py
+old mode 100644
+new mode 100755
+diff --git a/python/examples/control_vehicles.py b/python/examples/control_vehicles.py
+old mode 100644
+new mode 100755
+diff --git a/python/examples/framework.py b/python/examples/framework.py
+old mode 100644
+new mode 100755
+diff --git a/python/examples/routing.py b/python/examples/routing.py
+old mode 100644
+new mode 100755
+diff --git a/python/poetry.lock b/python/poetry.lock
+old mode 100644
+new mode 100755
+diff --git a/python/process_map_and_trip/README.md b/python/process_map_and_trip/README.md
+old mode 100644
+new mode 100755
+diff --git a/python/process_map_and_trip/download_mongodb.py b/python/process_map_and_trip/download_mongodb.py
+old mode 100644
+new mode 100755
+index 9e5e50a..af83e8b
+--- a/python/process_map_and_trip/download_mongodb.py
++++ b/python/process_map_and_trip/download_mongodb.py
+@@ -2,28 +2,40 @@
+ import pymongo
+ import geojson
+ from pathlib import Path
+-
++import argparse
+ # from mosstool.type import Map
+ from mosstool.util.format_converter import coll2pb, dict2pb
+-from mosstool.map.vis import VisMap
+ from pycityproto.city.map.v2.map_pb2 import Map
++from mosstool.type import Map, Person, Persons
++
+ 
+-MONGO_URI = "mongodb://root:qZ7ILv0Xs6VnJcPg12KU3AoYhWKb4Cla@172.16.40.166:27017"
+-MONGO_DB = "tsingroc"
+-MONGO_COLL = "map_pku_wuhan_demo_1015c"
+-PB_FILE = "../data/202410/18/map/map_pku_wuhan_demo_1015c.pb"
++def get_args():
++    parser = argparse.ArgumentParser()
++    parser.add_argument("--mongo_uri", type=str, required=True)
++    parser.add_argument("--map_db", type=str, required=True)
++    parser.add_argument("--map_coll", type=str, required=True)
++    parser.add_argument("--agents_coll", type=str, required=True)
++    parser.add_argument("--map_pb_path", type=str, required=True)
++    parser.add_argument("--agents_pb_path", type=str, required=True)
+ 
++    return parser.parse_args()
+ 
+-def main():
+-    client = pymongo.MongoClient(MONGO_URI)
+-    coll = client[MONGO_DB][MONGO_COLL]
++def cache_pb():
++    args = get_args()
++    client = pymongo.MongoClient(args.mongo_uri)
++    coll = client[args.map_db][args.map_coll]
++    agents_coll = client[args.map_db][args.agents_coll]
+     m = Map()
+     coll2pb(coll, m)
++    p = Persons()
++    coll2pb(agents_coll, p)
+ 
+     #pb = dict2pb(m, Map())
+-    with open(PB_FILE, "wb") as f:
++    with open(args.map_pb_path, "wb") as f:
+         f.write(m.SerializeToString())
+ 
++    with open(args.agents_pb_path, "wb") as f:
++        f.write(p.SerializeToString())
+ 
+-if __name__ == "__main__":
+-    main()
+\ No newline at end of file
++if __name__ == '__main__':
++    cache_pb()
+\ No newline at end of file
+diff --git a/python/process_map_and_trip/extract_map_info.py b/python/process_map_and_trip/extract_map_info.py
+old mode 100644
+new mode 100755
+index bdd6830..07d3952
+--- a/python/process_map_and_trip/extract_map_info.py
++++ b/python/process_map_and_trip/extract_map_info.py
+@@ -7,7 +7,7 @@ import argparse
+ from pymongo import MongoClient
+ 
+ from pycitydata.map import Map
+-
++from pycityproto.city.map.v2 import map_pb2
+ 
+ def get_args():
+     parser = argparse.ArgumentParser()
+@@ -17,7 +17,9 @@ def get_args():
+ 
+     parser.add_argument("--output_db", type=str, required=True)
+     parser.add_argument("--out_coll", type=str, required=True)
+-
++    parser.add_argument("--cache_dir", type=str, required=True)
++    parser.add_argument("--cache_path", type=str, required=True)
++    parser.add_argument("--pb_path", type=str, required=True)
+     return parser.parse_args()
+ 
+ 
+@@ -27,6 +29,9 @@ def main():
+         mongo_uri=args.mongo_uri,
+         mongo_db=args.map_db,
+         mongo_coll=args.map_coll,
++        cache_dir=args.cache_dir,
++        cache_path=args.cache_path,
++        pb_path=args.pb_path,
+     )
+     print("完成地图信息加载")
+ 
+diff --git a/python/process_map_and_trip/split_persons_into_trips.py b/python/process_map_and_trip/split_persons_into_trips.py
+old mode 100644
+new mode 100755
+diff --git a/python/pycitysim/__init__.py b/python/pycitysim/__init__.py
+old mode 100644
+new mode 100755
+diff --git a/python/pycitysim/routing/__init__.py b/python/pycitysim/routing/__init__.py
+old mode 100644
+new mode 100755
+diff --git a/python/pycitysim/routing/client.py b/python/pycitysim/routing/client.py
+old mode 100644
+new mode 100755
+diff --git a/python/pycitysim/sidecar/__init__.py b/python/pycitysim/sidecar/__init__.py
+old mode 100644
+new mode 100755
+diff --git a/python/pycitysim/sidecar/sidecarv2.py b/python/pycitysim/sidecar/sidecarv2.py
+old mode 100644
+new mode 100755
+diff --git a/python/pycitysim/sim/__init__.py b/python/pycitysim/sim/__init__.py
+old mode 100644
+new mode 100755
+diff --git a/python/pycitysim/sim/aoi_service.py b/python/pycitysim/sim/aoi_service.py
+old mode 100644
+new mode 100755
+diff --git a/python/pycitysim/sim/client.py b/python/pycitysim/sim/client.py
+old mode 100644
+new mode 100755
+diff --git a/python/pycitysim/sim/clock_service.py b/python/pycitysim/sim/clock_service.py
+old mode 100644
+new mode 100755
+diff --git a/python/pycitysim/sim/junction_service.py b/python/pycitysim/sim/junction_service.py
+old mode 100644
+new mode 100755
+diff --git a/python/pycitysim/sim/lane_service.py b/python/pycitysim/sim/lane_service.py
+old mode 100644
+new mode 100755
+diff --git a/python/pycitysim/sim/light_service.py b/python/pycitysim/sim/light_service.py
+old mode 100644
+new mode 100755
+diff --git a/python/pycitysim/sim/person_service.py b/python/pycitysim/sim/person_service.py
+old mode 100644
+new mode 100755
+diff --git a/python/pycitysim/sim/road_service.py b/python/pycitysim/sim/road_service.py
+old mode 100644
+new mode 100755
+diff --git a/python/pycitysim/utils/__init__.py b/python/pycitysim/utils/__init__.py
+old mode 100644
+new mode 100755
+diff --git a/python/pycitysim/utils/grpc.py b/python/pycitysim/utils/grpc.py
+old mode 100644
+new mode 100755
+diff --git a/python/pycitysim/utils/protobuf.py b/python/pycitysim/utils/protobuf.py
+old mode 100644
+new mode 100755
+diff --git a/python/pyproject.toml b/python/pyproject.toml
+old mode 100644
+new mode 100755
+diff --git a/python/trafficlight_rl/README.md b/python/trafficlight_rl/README.md
+old mode 100644
+new mode 100755
+diff --git a/python/trafficlight_rl/engine.py b/python/trafficlight_rl/engine.py
+old mode 100644
+new mode 100755
+index a81042f..45a0a3c
+--- a/python/trafficlight_rl/engine.py
++++ b/python/trafficlight_rl/engine.py
+@@ -32,7 +32,7 @@ def find_free_port() -> int:
+     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+         s.bind(("", 0))
+         s.listen(1)
+-        port = s.getsockname()[1]
++        port = s.getsockname()[ 1 ]
+     return port
+ 
+ 
+@@ -46,16 +46,8 @@ def encode_to_base64(input_string: str) -> str:
+ class SimulatorConfig:
+     """Configuration for the simulet-go simulator."""
+ 
+-    def __init__(
+-        self,
+-        map_file: str,
+-        agent_file: str,
+-        start_step: int = 0,
+-        total_step: int = 3600,
+-        interval: int = 1,
+-        use_max_pressure: bool = False,
+-        **kwargs,
+-    ):
++    def __init__(self, map_file: str, agent_file: str, start_step: int = 0, total_step: int = 3600, interval: int = 1,
++            use_max_pressure: bool = False, **kwargs, ):
+         self.map_file = os.path.abspath(map_file)
+         with open(self.map_file, "rb") as f:
+             self.map_data = Map.FromString(f.read())
+@@ -68,28 +60,11 @@ class SimulatorConfig:
+ 
+     def to_yaml(self) -> str:
+         """Generate YAML configuration for simulet-go."""
+-        config_dict = {
+-            "input": {
+-                "map": {"file": self.map_file},
+-                "person": {"file": self.agent_file},
+-            },
+-            "control": {
+-                "step": {
+-                    "start": self.start_step,
+-                    "total": self.total_step + 1,
+-                    "interval": self.interval,
+-                },
+-                "skip_overtime_trip_when_init": True,
+-                "enable_platoon": False,
+-                "enable_indoor": False,
+-                "prefer_fixed_light": not self.use_max_pressure,
+-                "enable_collision_avoidance": False,
+-                "enable_go_astray": False,
+-                "lane_change_model": "mobil",
+-                **self.kwargs,
+-            },
+-            "output": {},
+-        }
++        config_dict = {"input": {"map": {"file": self.map_file}, "person": {"file": self.agent_file}, },
++            "control": {"step": {"start": self.start_step, "total": self.total_step + 1, "interval": self.interval, },
++                "skip_overtime_trip_when_init": True, "enable_platoon": False, "enable_indoor": False,
++                "prefer_fixed_light": not self.use_max_pressure, "enable_collision_avoidance": False,
++                "enable_go_astray": False, "lane_change_model": "mobil", **self.kwargs, }, "output": {}, }
+         return yaml.dump(config_dict, allow_unicode=True)
+ 
+ 
+@@ -105,13 +80,13 @@ class Engine:
+         self.config = config
+         self.map_data = config.map_data
+         self.log_dir = log_dir
+-        self.client: Optional[CityClient] = None
+-        self.simulator_proc: Optional[Popen] = None
+-        self.syncer_proc: Optional[Popen] = None
+-        self.sidecar: Optional[OnlyClientSidecar] = None
+-        self.sim_addr: Optional[str] = None
+-        self.syncer_addr: Optional[str] = None
+-        self.checkpoints: Dict[str, Any] = {}
++        self.client: Optional[ CityClient ] = None
++        self.simulator_proc: Optional[ Popen ] = None
++        self.syncer_proc: Optional[ Popen ] = None
++        self.sidecar: Optional[ OnlyClientSidecar ] = None
++        self.sim_addr: Optional[ str ] = None
++        self.syncer_addr: Optional[ str ] = None
++        self.checkpoints: Dict[ str, Any ] = {}
+         self.current_step = 0
+         self.is_running = False
+         self._map_data = None
+@@ -119,10 +94,7 @@ class Engine:
+ 
+         # Initialize logging
+         os.makedirs(log_dir, exist_ok=True)
+-        logging.basicConfig(
+-            level=logging.INFO,
+-            format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+-        )
++        logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", )
+         self.logger = logging.getLogger(__name__)
+ 
+         self.lane_id2index = {lane.id: i for i, lane in enumerate(self.map_data.lanes)}
+@@ -141,43 +113,23 @@ class Engine:
+         config_base64 = encode_to_base64(self.config.to_yaml())
+ 
+         # Start syncer (if available)
+-        syncer_path = os.path.expanduser("~/.local/bin/syncer")
++        syncer_path = os.path.expanduser("/home/nkk/nkk/work/src/syncer/syncer")  # Todo hard code
+         if os.path.exists(syncer_path):
+             self.syncer_proc = Popen(
+-                [
+-                    syncer_path,
+-                    "-address",
+-                    f"localhost:{syncer_port}",
+-                    "-app",
+-                    "city",
+-                    "-app",
+-                    "engine",
+-                ]
+-            )
++                [ syncer_path, "-address", f"localhost:{syncer_port}", "-app", "city", "-app", "engine", ])
+             self.logger.info(f"Started syncer at {self.syncer_addr}")
+             time.sleep(1)
+ 
+         # Start simulet-go
+-        simulet_path = os.path.expanduser("~/.local/bin/simulet-go")
++        simulet_path = os.path.expanduser("/home/nkk/nkk/work/src/simulet-go/simulet-go")  # Todo hard code
+         if not os.path.exists(simulet_path):
+             simulet_path = "./simulet-go"  # Try relative path
+ 
+-        commands = [
+-            simulet_path,
+-            "-config-data",
+-            config_base64,
+-            "-job",
+-            "traffic_light_optimization",
+-            "-listen",
+-            self.sim_addr,
+-            "-output",
+-            self.log_dir,
+-            "-log.level",
+-            "info",
+-        ]
++        commands = [ simulet_path, "-config-data", config_base64, "-job", "traffic_light_optimization", "-listen",
++            self.sim_addr, "-output", self.log_dir, "-log.level", "info", ]
+ 
+         if self.syncer_proc:
+-            commands.extend(["-syncer", f"http://{self.syncer_addr}"])
++            commands.extend([ "-syncer", f"http://{self.syncer_addr}" ])
+ 
+         self.simulator_proc = Popen(commands)
+         self.logger.info(f"Started simulet-go at {self.sim_addr}")
+@@ -231,28 +183,31 @@ class Engine:
+         """Get the map data from the simulator."""
+         return self.map_data
+ 
+-    def get_junction_phase_lanes(self) -> List[List[Tuple[List[int], List[int]]]]:
++    def get_junction_phase_lanes(self, junction_ids) -> List[ List[ Tuple[ List[ int ], List[ int ] ] ] ]:
+         """
+         Get the `index` of the `in` and `out` lanes of each phase of each junction
+         """
+         from pycityproto.city.map.v2.light_pb2 import LightState
+         from pycityproto.city.map.v2.map_pb2 import LaneType
+ 
+-        result = []
+-
++        result = [ ]
+         for junction in self.map_data.junctions:
+-            junction_phases = []
++            junction_phases = [ ]
+ 
++            if len(junction_ids) > 0:
++                if junction.id not in junction_ids:
++                    continue
+             # Get phases - prioritize fixed_program.phases over phases
+-            phases_to_use = []
++            phases_to_use = [ ]
+             if junction.HasField("fixed_program") and junction.fixed_program.phases:
+                 phases_to_use = junction.fixed_program.phases
+             elif junction.phases:
+                 phases_to_use = junction.phases
+ 
+             for phase in phases_to_use:
+-                phase_in_lanes = []
+-                phase_out_lanes = []
++                phase_in_lanes = [ ]
++                phase_out_lanes = [ ]
++
+ 
+                 # Get states from the phase
+                 states = phase.states
+@@ -262,7 +217,7 @@ class Engine:
+                     if state == LightState.LIGHT_STATE_GREEN:
+                         # This lane is green in this phase
+                         if i < len(junction.lane_ids):
+-                            lane_id = junction.lane_ids[i]
++                            lane_id = junction.lane_ids[ i ]
+ 
+                             # Find the corresponding lane in map_data.lanes
+                             lane = None
+@@ -271,22 +226,19 @@ class Engine:
+                                     lane = l
+                                     break
+ 
+-                            if (
+-                                lane is not None
+-                                and lane.type == LaneType.LANE_TYPE_DRIVING
+-                            ):
++                            if (lane is not None and lane.type == LaneType.LANE_TYPE_DRIVING):
+                                 # Get predecessor lanes (in_lanes)
+                                 for pred_conn in lane.predecessors:
+                                     pred_lane_id = pred_conn.id
+                                     if pred_lane_id in self.lane_id2index:
+-                                        pred_index = self.lane_id2index[pred_lane_id]
++                                        pred_index = self.lane_id2index[ pred_lane_id ]
+                                         phase_in_lanes.append(pred_index)
+ 
+                                 # Get successor lanes (out_lanes)
+                                 for succ_conn in lane.successors:
+                                     succ_lane_id = succ_conn.id
+                                     if succ_lane_id in self.lane_id2index:
+-                                        succ_index = self.lane_id2index[succ_lane_id]
++                                        succ_index = self.lane_id2index[ succ_lane_id ]
+                                         phase_out_lanes.append(succ_index)
+ 
+                 # Remove duplicates and sort
+@@ -295,23 +247,27 @@ class Engine:
+ 
+                 junction_phases.append((phase_in_lanes, phase_out_lanes))
+ 
++
+             result.append(junction_phases)
+ 
++
+         return result
+ 
+-    def get_junction_inout_lanes(self) -> Tuple[List[List[int]], List[List[int]]]:
++    def get_junction_inout_lanes(self, junction_ids) -> Tuple[ List[ List[ int ] ], List[ List[ int ] ] ]:
+         """
+         Get the `index` of the `in` and `out` lanes of each junction
+         """
+         from pycityproto.city.map.v2.map_pb2 import LaneType
+ 
+-        in_lanes = []
+-        out_lanes = []
++        in_lanes = [ ]
++        out_lanes = [ ]
+ 
+         for junction in self.map_data.junctions:
+-            junction_in_lanes = []
+-            junction_out_lanes = []
+-
++            junction_in_lanes = [ ]
++            junction_out_lanes = [ ]
++            if len(junction_ids) > 0:
++                if junction.id not in junction_ids:
++                    continue
+             # 遍历junction的所有车道
+             for lane_id in junction.lane_ids:
+                 # 在map_data.lanes中找到对应的lane
+@@ -321,72 +277,125 @@ class Engine:
+                         lane = l
+                         break
+ 
++
+                 if lane is not None and lane.type == LaneType.LANE_TYPE_DRIVING:
+                     # 获取前驱车道 (进入车道)
+                     for pred_conn in lane.predecessors:
+                         pred_lane_id = pred_conn.id
+                         if pred_lane_id in self.lane_id2index:
+-                            pred_index = self.lane_id2index[pred_lane_id]
++                            pred_index = self.lane_id2index[ pred_lane_id ]
+                             junction_in_lanes.append(pred_index)
+ 
+                     # 获取后继车道 (离开车道)
+                     for succ_conn in lane.successors:
+                         succ_lane_id = succ_conn.id
+                         if succ_lane_id in self.lane_id2index:
+-                            succ_index = self.lane_id2index[succ_lane_id]
++                            succ_index = self.lane_id2index[ succ_lane_id ]
+                             junction_out_lanes.append(succ_index)
+ 
+-            # 去重并排序
++                # 去重并排序
+             junction_in_lanes = sorted(list(set(junction_in_lanes)))
+             junction_out_lanes = sorted(list(set(junction_out_lanes)))
+ 
+             in_lanes.append(junction_in_lanes)
+             out_lanes.append(junction_out_lanes)
+ 
+-        return (in_lanes, out_lanes)
++        return in_lanes, out_lanes
+ 
+-    def get_lane_lengths(self) -> List[float]:
++
++    def get_lane_lengths(self, _target_lanes) -> List[ float ]:
+         """Get the length of each lane."""
+-        return [l.length for l in self.map_data.lanes]
++        from pycityproto.city.map.v2.map_pb2 import LaneType
+ 
+-    def get_junction_phase_counts(self) -> List[int]:
++        lane_length = []
++        if len(_target_lanes) > 0:
++            for index in _target_lanes:
++                lane = self.map_data.lanes[index]
++                if lane is not None and lane.type == LaneType.LANE_TYPE_DRIVING:
++                    lane_length.append(lane.length)
++        else:
++            for l in self.map_data.lanes:
++                    lane_length.append(l.length)
++
++        return lane_length
++
++
++    def get_junction_phase_counts(self, junction_ids) -> List[ int ]:
+         """Get the number of phases for each junction."""
+         if not self.is_running:
+             raise RuntimeError("Simulator not running")
+ 
+-        phase_counts = []
++        phase_counts = [ ]
++
+         for j in self.map_data.junctions:
++            if len(junction_ids) > 0:
++                if j.id not in junction_ids:
++                    continue
+             phase_counts.append(len(j.phases))
+ 
+         return phase_counts
+ 
+-    async def get_lane_vehicle_counts(self) -> np.ndarray:
++
++    async def get_lane_vehicle_counts(self, _target_lanes) -> np.ndarray:
+         """Get the number of waiting vehicles for each lane."""
++        from pycityproto.city.map.v2.map_pb2 import LaneType
++
+         if not self.is_running:
+             raise RuntimeError("Simulator not running")
++        lanes = [ ]
++        if len(_target_lanes) > 0:
++            for index in _target_lanes:
++                lane = self.map_data.lanes[ index ]
++                if lane is not None and lane.type == LaneType.LANE_TYPE_DRIVING:
++                    lanes.append(lane.id)
++        else:
++            for lane in self.map_data.lanes:
++                lanes.append(lane.id)
+ 
+         assert self.client is not None
+         res = await self.client.lane_service.GetLane({"exclude_person": True})
+         assert isinstance(res, dict)
+-        arr = np.zeros(len(self.map_data.lanes), dtype=np.int32)
+-        for lane in res["states"]:
+-            arr[self.lane_id2index[lane["id"]]] = lane["vehicle_cnt"]
++        #arr = np.zeros(len(self.map_data.lanes), dtype=np.int32)
++        arr = np.zeros(len(lanes), dtype=np.int32)
++        i = 0
++        for lane in res[ "states" ]:
++            if lane[ "id" ] not in lanes:
++                continue
++            arr[ i ] = lane[ "vehicle_cnt" ]
++            i += 1
+         return arr
+ 
+-    async def get_lane_waiting_vehicle_counts(self) -> np.ndarray:
++
++    async def get_lane_waiting_vehicle_counts(self, _target_lanes) -> np.ndarray:
+         """Get the number of waiting vehicles for each lane."""
++        from pycityproto.city.map.v2.map_pb2 import LaneType
++
+         if not self.is_running:
+             raise RuntimeError("Simulator not running")
++        lanes = [ ]
++        if len(_target_lanes) > 0:
++            for index in _target_lanes:
++                lane = self.map_data.lanes[ index ]
++                if lane is not None and lane.type == LaneType.LANE_TYPE_DRIVING:
++                    lanes.append(lane.id)
++        else:
++            for lane in self.map_data.lanes:
++                lanes.append(lane.id)
+ 
+         assert self.client is not None
+         res = await self.client.lane_service.GetLane({"exclude_person": True})
+         assert isinstance(res, dict)
+-        arr = np.zeros(len(self.map_data.lanes), dtype=np.int32)
+-        for lane in res["states"]:
+-            arr[self.lane_id2index[lane["id"]]] = lane["total_queuing_vehicle_cnt"]
++        arr = np.zeros(len(lanes), dtype=np.int32)
++        i = 0
++        for lane in res[ "states" ]:
++            if lane[ "id" ] not in lanes:
++                continue
++            arr[ i ] = lane[ "total_queuing_vehicle_cnt" ]
++            i += 1
+         return arr
+ 
+-    async def set_tl_phase_batch(self, junction_indices: List[int], actions: List[int]):
++
++    async def set_tl_phase_batch(self, junction_indices: List[ int ], actions: List[ int ]):
+         """Set traffic light phases for multiple junctions."""
+         if not self.is_running:
+             raise RuntimeError("Simulator not running")
+@@ -399,19 +408,14 @@ class Engine:
+         self.logger.debug(f"Setting TL phases: {dict(zip(junction_indices, actions))}")
+ 
+         assert self.client is not None
+-        tasks = []
++        tasks = [ ]
+         for junction_index, action in zip(junction_indices, actions):
+-            tasks.append(
+-                self.client.light_service.SetTrafficLightPhase(
+-                    {
+-                        "junction_id": self.map_data.junctions[junction_index].id,
+-                        "phase_index": action,
+-                        "time_remaining": 1e99,
+-                    }
+-                )
+-            )
++            tasks.append(self.client.light_service.SetTrafficLightPhase(
++                {"junction_id": self.map_data.junctions[ junction_index ].id, "phase_index": action,
++                    "time_remaining": 1e99, }))
+         await asyncio.gather(*tasks)
+ 
++
+     def next_step(self, step_size: int = 1):
+         """Advance simulation by the specified number of steps."""
+         if not self.is_running:
+@@ -425,6 +429,7 @@ class Engine:
+             self.sidecar.notify_step_ready()
+             self.sidecar.step()
+ 
++
+     async def get_departed_vehicle_average_traveling_time(self) -> float:
+         """Get average traveling time for departed vehicles."""
+         if not self.is_running:
+@@ -434,8 +439,9 @@ class Engine:
+         res = await self.client.person_service.GetGlobalStatistics({})
+         print("get_departed_vehicle_average_traveling_time: ", res)
+         assert isinstance(res, dict)
+-        departed_vehicles = res["num_completed_trips"] + res["num_vehicles"]
+-        return res["running_total_travel_time"] / departed_vehicles
++        departed_vehicles = res[ "num_completed_trips" ] + res[ "num_vehicles" ]
++        return res[ "running_total_travel_time" ] / departed_vehicles
++
+ 
+     async def get_finished_vehicle_average_traveling_time(self) -> float:
+         """Get average traveling time for finished vehicles."""
+@@ -445,7 +451,8 @@ class Engine:
+         res = await self.client.person_service.GetGlobalStatistics({})
+         print("get_finished_vehicle_average_traveling_time: ", res)
+         assert isinstance(res, dict)
+-        return res["completed_avg_travel_time"]
++        return res[ "completed_avg_travel_time" ]
++
+ 
+     async def get_finished_vehicle_count(self) -> int:
+         """Get count of finished vehicles."""
+@@ -455,29 +462,26 @@ class Engine:
+         res = await self.client.person_service.GetGlobalStatistics({})
+         print("get_finished_vehicle_count: ", res)
+         assert isinstance(res, dict)
+-        return res["num_completed_trips"]
++        return res[ "num_completed_trips" ]
++
++
++# Utility methods
++def get_current_step(self) -> int:
++    """Get current simulation step."""
++    return self.current_step
++
+ 
+-    # Utility methods
+-    def get_current_step(self) -> int:
+-        """Get current simulation step."""
+-        return self.current_step
++def get_simulation_time(self) -> float:
++    """Get current simulation time in seconds."""
++    return self.current_step * self.config.interval
+ 
+-    def get_simulation_time(self) -> float:
+-        """Get current simulation time in seconds."""
+-        return self.current_step * self.config.interval
+ 
+-    def is_simulation_running(self) -> bool:
+-        """Check if simulation is running."""
+-        return self.is_running
++def is_simulation_running(self) -> bool:
++    """Check if simulation is running."""
++    return self.is_running
+ 
+ 
+-def get_engine(
+-    map_file: str,
+-    agent_file: str,
+-    start_step: int = 0,
+-    total_step: int = 3600,
+-    **kwargs,
+-) -> Engine:
++def get_engine(map_file: str, agent_file: str, start_step: int = 0, total_step: int = 3600, **kwargs, ) -> Engine:
+     """
+     Create and initialize an Engine instance.
+ 
+@@ -491,13 +495,8 @@ def get_engine(
+     Returns:
+         Engine: Initialized engine instance
+     """
+-    config = SimulatorConfig(
+-        map_file=map_file,
+-        agent_file=agent_file,
+-        start_step=start_step,
+-        total_step=total_step,
+-        **kwargs,
+-    )
++    config = SimulatorConfig(map_file=map_file, agent_file=agent_file, start_step=start_step, total_step=total_step,
++        **kwargs, )
+ 
+     engine = Engine(config)
+     engine._start_simulator()
+diff --git a/python/trafficlight_rl/preprocess_map.py b/python/trafficlight_rl/preprocess_map.py
+old mode 100644
+new mode 100755
+diff --git a/python/trafficlight_rl/run_maxpressure.py b/python/trafficlight_rl/run_maxpressure.py
+old mode 100644
+new mode 100755
+diff --git a/python/trafficlight_rl/run_mplight.py b/python/trafficlight_rl/run_mplight.py
+old mode 100644
+new mode 100755
+diff --git a/python/trafficlight_rl/run_ppo.py b/python/trafficlight_rl/run_ppo.py
+old mode 100644
+new mode 100755
+index 7125105..88a740a
+--- a/python/trafficlight_rl/run_ppo.py
++++ b/python/trafficlight_rl/run_ppo.py
+@@ -14,6 +14,7 @@ from torch import nn, optim
+ from torch.distributions.categorical import Categorical
+ from torch.utils.tensorboard import SummaryWriter
+ from tqdm import tqdm
++from torchsummary import summary
+ 
+ NN_INPUT_SCALER = 5
+ 
+@@ -81,7 +82,7 @@ def parse_args():
+     parser.add_argument("--load-step", type=int, default=-1)
+     parser.add_argument("--num-steps", type=int, default=128, help="env rollout steps")
+     parser.add_argument(
+-        "--save-interval", type=int, default=1000, help="checkpoint save interval"
++        "--save_interval", type=int, default=100, help="checkpoint save interval"
+     )
+ 
+     parser.add_argument("--debug", action="store_true")
+@@ -108,7 +109,7 @@ class Env:
+         start_step,
+         step_size,
+         step_count,
+-        log_dir,
++        log_dir, junction_ids,
+         max_veh_cnt=200,
+     ):
+         self.log_dir = log_dir
+@@ -119,15 +120,26 @@ class Env:
+             start_step=start_step,
+             total_step=(step_count+1) * step_size,
+         )
++        self.junction_ids = junction_ids
+         self.j_ids = j_ids = [
+-            i for i, j in enumerate(eng.get_junction_phase_counts()) if j > 1
++            i for i, j in enumerate(eng.get_junction_phase_counts(self.junction_ids)) if j > 1
+         ]
+-        l = eng.get_junction_inout_lanes()[0]
+-        self.in_lanes = [l[i] for i in j_ids]
+-        self.lane_lengths = np.maximum(1, eng.get_lane_lengths())
++
++        in_lane, out_lane = eng.get_junction_inout_lanes(self.junction_ids)
++        self.in_lanes = [in_lane[i] for i in j_ids]
++        self.out_lanes = [out_lane[i] for i in j_ids]
++        self.target_lanes = []
++        if len(self.junction_ids) > 0:
++            for i in j_ids:
++                for j in self.in_lanes[i]:
++                    self.target_lanes.append(j)
++                for n in self.out_lanes[i]:
++                    self.target_lanes.append(n)
++            self.target_lanes = sorted(list(self.target_lanes))
++        self.lane_lengths = np.maximum(1, eng.get_lane_lengths(self.target_lanes))
+ 
+         # 计算观测车道
+-        jpl = eng.get_junction_phase_lanes()
++        jpl = eng.get_junction_phase_lanes(self.junction_ids)
+         jpl = [jpl[j] for j in j_ids]
+         l_ids = {l for i in jpl for j in i for k in j for l in k}
+         self.l_ids = l_ids = sorted(l_ids)
+@@ -165,8 +177,8 @@ class Env:
+         self.eng._start_simulator()
+ 
+     async def observe(self):
+-        c1 = await self.eng.get_lane_vehicle_counts()
+-        c2 = await self.eng.get_lane_waiting_vehicle_counts()
++        c1 = await self.eng.get_lane_vehicle_counts(self.target_lanes)
++        c2 = await self.eng.get_lane_waiting_vehicle_counts(self.target_lanes)
+         obs = np.stack(
+             [
+                 self._clip_veh_cnt(c1),
+@@ -183,8 +195,13 @@ class Env:
+         await self.eng.set_tl_phase_batch(self.j_ids, action)
+         self.eng.next_step(self.step_size)
+         s = await self.observe()
+-        cnt = self._clip_veh_cnt(await self.eng.get_lane_waiting_vehicle_counts())
+-        r = np.array([-np.mean(cnt[i]) for i in self.in_lanes])
++        cnt = self._clip_veh_cnt(await self.eng.get_lane_waiting_vehicle_counts(self.target_lanes))
++        if len(self.junction_ids) > 0:
++            for j in self.j_ids:
++                for index, id in enumerate(self.in_lanes[j]):
++                    r = np.array([ -np.mean(cnt[ index ])])
++        else:
++            r = np.array([ -np.mean(cnt[ i ]) for i in self.in_lanes ])
+         self.info["reward"] = np.mean(r)
+         self._step += 1
+         done = False
+@@ -259,8 +276,10 @@ class Model(nn.Module):
+         return j_value
+ 
+     def get_action_and_value(self, x, action=None, sample=True, action_only=False):
++        actor_lane_cnt = self.actor(x)
++        actor_lane_cnt = actor_lane_cnt.squeeze(-1)
+         # B x L
+-        l_value = pad_tensor(self.actor(x).squeeze(-1))
++        l_value = pad_tensor(actor_lane_cnt)
+         # B x P
+         p_value = pad_tensor(
+             l_value[:, self.p2l_in].mean(2) - l_value[:, self.p2l_out].mean(2),
+@@ -351,6 +370,9 @@ async def main():
+     torch.set_float32_matmul_precision("medium")
+     device = torch.device("cuda")
+ 
++    #junction_ids = [ 300000026, 300000027 ]
++    junction_ids = [ 300000026]
++    junction_ids = [ ]
+     env = Env(
+         map_file=args.map,
+         agent_file=args.agent,
+@@ -358,6 +380,7 @@ async def main():
+         step_size=args.interval,
+         step_count=args.steps // args.interval,
+         log_dir=path,
++        junction_ids=junction_ids
+     )
+     dim_mlp = [int(i) for i in args.mlp.split(",")]
+     agent = Model(env, dim_mlp).to(device)
+@@ -402,7 +425,7 @@ async def main():
+                 obs[step] = next_obs
+                 dones[step] = next_done
+                 with torch.no_grad():
+-                    action, log_prob, _, value = agent.get_action_and_value(
++                    action, log_prob, entropy, value = agent.get_action_and_value(
+                         next_obs.unsqueeze(0)
+                     )
+                     values[step] = value
+@@ -590,8 +613,8 @@ async def main():
+             if not args.debug:
+                 with open(f"{path}/msg.log", "w") as f:
+                     f.write(msg)
+-            # if global_step >= next_save_step:
+-            #     torch.save(agent.state_dict(), f'{path}/ckpts/{global_step}.pt')
++            if global_step >= next_save_step:
++                 torch.save(agent.state_dict(), f'{path}/ckpts/{global_step}.pt')
+     writer.close()
+ 
+ 
+diff --git a/task/logger.go b/task/logger.go
+old mode 100644
+new mode 100755
+diff --git a/task/task.go b/task/task.go
+old mode 100644
+new mode 100755
+diff --git a/task/util.go b/task/util.go
+old mode 100644
+new mode 100755
+diff --git a/utils/config/config.go b/utils/config/config.go
+old mode 100644
+new mode 100755
+diff --git a/utils/config/doc.go b/utils/config/doc.go
+old mode 100644
+new mode 100755
+diff --git a/utils/config/logger.go b/utils/config/logger.go
+old mode 100644
+new mode 100755
+diff --git a/utils/config/type.go b/utils/config/type.go
+old mode 100644
+new mode 100755
+diff --git a/utils/container/array.go b/utils/container/array.go
+old mode 100644
+new mode 100755
+diff --git a/utils/container/doc.go b/utils/container/doc.go
+old mode 100644
+new mode 100755
+diff --git a/utils/container/list.go b/utils/container/list.go
+old mode 100644
+new mode 100755
+diff --git a/utils/container/list_test.go b/utils/container/list_test.go
+old mode 100644
+new mode 100755
+diff --git a/utils/container/priority_queue.go b/utils/container/priority_queue.go
+old mode 100644
+new mode 100755
+diff --git a/utils/debug/stat.go b/utils/debug/stat.go
+old mode 100644
+new mode 100755
+diff --git a/utils/debug/stat_linux.go b/utils/debug/stat_linux.go
+old mode 100644
+new mode 100755
+diff --git a/utils/doc.go b/utils/doc.go
+old mode 100644
+new mode 100755
+diff --git a/utils/input/doc.go b/utils/input/doc.go
+old mode 100644
+new mode 100755
+diff --git a/utils/input/logger.go b/utils/input/logger.go
+old mode 100644
+new mode 100755
+diff --git a/utils/input/util.go b/utils/input/util.go
+old mode 100644
+new mode 100755
+diff --git a/utils/logfile/csv.go b/utils/logfile/csv.go
+old mode 100644
+new mode 100755
+diff --git a/utils/logfile/doc.go b/utils/logfile/doc.go
+old mode 100644
+new mode 100755
+diff --git a/utils/logfile/group.go b/utils/logfile/group.go
+old mode 100644
+new mode 100755
+diff --git a/utils/logfile/interface.go b/utils/logfile/interface.go
+old mode 100644
+new mode 100755
+diff --git a/utils/logfile/logger.go b/utils/logfile/logger.go
+old mode 100644
+new mode 100755
+diff --git a/utils/logfile/trip_lifetime.go b/utils/logfile/trip_lifetime.go
+old mode 100644
+new mode 100755
+diff --git a/utils/output/common/aoi.go b/utils/output/common/aoi.go
+old mode 100644
+new mode 100755
+diff --git a/utils/output/common/logger.go b/utils/output/common/logger.go
+old mode 100644
+new mode 100755
+diff --git a/utils/output/common/output.go b/utils/output/common/output.go
+old mode 100644
+new mode 100755
+diff --git a/utils/output/common/person.go b/utils/output/common/person.go
+old mode 100644
+new mode 100755
+diff --git a/utils/output/common/road.go b/utils/output/common/road.go
+old mode 100644
+new mode 100755
+diff --git a/utils/output/common/stat.go b/utils/output/common/stat.go
+old mode 100644
+new mode 100755
+diff --git a/utils/output/common/tl.go b/utils/output/common/tl.go
+old mode 100644
+new mode 100755
+diff --git a/utils/output/common/vehicle.go b/utils/output/common/vehicle.go
+old mode 100644
+new mode 100755
+diff --git a/utils/output/doc.go b/utils/output/doc.go
+old mode 100644
+new mode 100755
+diff --git a/utils/output/logger.go b/utils/output/logger.go
+old mode 100644
+new mode 100755
+diff --git a/utils/output/output.go b/utils/output/output.go
+old mode 100644
+new mode 100755
+diff --git a/utils/output/simple/aoi.go b/utils/output/simple/aoi.go
+old mode 100644
+new mode 100755
+diff --git a/utils/output/simple/doc.go b/utils/output/simple/doc.go
+old mode 100644
+new mode 100755
+diff --git a/utils/output/simple/global.go b/utils/output/simple/global.go
+old mode 100644
+new mode 100755
+diff --git a/utils/output/simple/junction.go b/utils/output/simple/junction.go
+old mode 100644
+new mode 100755
+diff --git a/utils/output/simple/lane.go b/utils/output/simple/lane.go
+old mode 100644
+new mode 100755
+diff --git a/utils/output/simple/logger.go b/utils/output/simple/logger.go
+old mode 100644
+new mode 100755
+diff --git a/utils/output/simple/output.go b/utils/output/simple/output.go
+old mode 100644
+new mode 100755
+diff --git a/utils/output/simple/person.go b/utils/output/simple/person.go
+old mode 100644
+new mode 100755
+diff --git a/utils/output/simple/road.go b/utils/output/simple/road.go
+old mode 100644
+new mode 100755
+diff --git a/utils/output/simple/tl.go b/utils/output/simple/tl.go
+old mode 100644
+new mode 100755
+diff --git a/utils/output/simple/vehicle.go b/utils/output/simple/vehicle.go
+old mode 100644
+new mode 100755
+diff --git a/utils/projector/doc.go b/utils/projector/doc.go
+old mode 100644
+new mode 100755
+diff --git a/utils/projector/logger.go b/utils/projector/logger.go
+old mode 100644
+new mode 100755
+diff --git a/utils/projector/projector_noproj.go b/utils/projector/projector_noproj.go
+old mode 100644
+new mode 100755
+diff --git a/utils/projector/projector_proj.go b/utils/projector/projector_proj.go
+old mode 100644
+new mode 100755
+diff --git a/utils/randengine/doc.go b/utils/randengine/doc.go
+old mode 100644
+new mode 100755
+diff --git a/utils/randengine/randengine.go b/utils/randengine/randengine.go
+old mode 100644
+new mode 100755
+diff --git a/utils/util.go b/utils/util.go
+old mode 100644
+new mode 100755
+diff --git "a/\346\236\204\345\273\272\350\257\264\346\230\216.md" "b/\346\236\204\345\273\272\350\257\264\346\230\216.md"
+old mode 100644
+new mode 100755
+diff --git "a/\351\205\215\347\275\256\346\226\207\344\273\266\346\240\274\345\274\217\350\257\264\346\230\216.md" "b/\351\205\215\347\275\256\346\226\207\344\273\266\346\240\274\345\274\217\350\257\264\346\230\216.md"
+old mode 100644
+new mode 100755

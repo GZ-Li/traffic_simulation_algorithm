@@ -1,0 +1,1 @@
+/home/nkk/work/src/python/.venv/bin/python get_od_eta_batch.py --warmup_steps 10 --max_probe_steps 30 --departure_stagger_steps 0 --inject_batch_size 20 --inject_batch_gap_steps 5

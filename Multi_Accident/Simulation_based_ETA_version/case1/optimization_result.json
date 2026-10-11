@@ -1,0 +1,53 @@
+{
+  "LP_status": "Optimal",
+  "max_response_time": 240.0,
+  "optimized_assignment": {
+    "Hospital 200000480": [
+      "Accident 200007001"
+    ],
+    "Hospital 200000154": [
+      "Accident 200000387"
+    ],
+    "Hospital 200000033": [
+      "Accident 200000869"
+    ]
+  },
+  "greedy_assignment": {
+    "Hospital 200000033": [
+      "Accident 200007001",
+      "Accident 200000387",
+      "Accident 200000869"
+    ]
+  },
+  "response_times": {
+    "Hospital 200000480": {
+      "Accident 200007001": 120,
+      "Accident 200000387": 300,
+      "Accident 200000869": 390
+    },
+    "Hospital 200000154": {
+      "Accident 200007001": 120,
+      "Accident 200000387": 240,
+      "Accident 200000869": 330
+    },
+    "Hospital 200000033": {
+      "Accident 200007001": 90,
+      "Accident 200000387": 90,
+      "Accident 200000869": 210
+    }
+  },
+  "greedy_finish_times": {
+    "Accident 200007001": 90,
+    "Accident 200000387": 180,
+    "Accident 200000869": 390
+  },
+  "optimized_finish_times": {
+    "Accident 200007001": 120,
+    "Accident 200000387": 240,
+    "Accident 200000869": 210
+  },
+  "greedy_makespan": 390,
+  "optimized_makespan": 240,
+  "improvement": 150,
+  "improvement_percentage": 38.46153846153847
+}

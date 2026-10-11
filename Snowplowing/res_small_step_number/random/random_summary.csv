@@ -1,0 +1,11 @@
+﻿strategy,evaluation_mode,interval_index,interval_name,cleaned_lane_count,snowed_lane_count,global_avg_speed
+random,independent_interval,1,interval_1,478,6641,9.818132023591264
+random,independent_interval,2,interval_2,830,6289,10.036112844445123
+random,independent_interval,3,interval_3,1122,5997,10.217737566697368
+random,independent_interval,4,interval_4,1403,5716,10.38054632296007
+random,independent_interval,5,interval_5,1589,5530,10.489694717953316
+random,independent_interval,6,interval_6,1753,5366,10.58777235318014
+random,independent_interval,7,interval_7,1882,5237,10.667093116254668
+random,independent_interval,8,interval_8,2018,5101,10.750460890348656
+random,independent_interval,9,interval_9,2159,4960,10.83136027084022
+random,independent_interval,10,interval_10,2275,4844,10.904062134733037

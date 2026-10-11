@@ -1,0 +1,28 @@
+[
+  {
+    "scenario": "all_snowed",
+    "baseline_snowed_speed": 3.0,
+    "raised_cleaned_speed": 20.0,
+    "cleaned_lane_count": 0,
+    "global_avg_speed": 3.2014014549058962,
+    "filled_weighted_avg_speed": 3.2489192305118717,
+    "speed_sample_count": 1,
+    "ATT": 867.5517022626348,
+    "Throughput": 894,
+    "road_count": 2634,
+    "lane_count": 7119
+  },
+  {
+    "scenario": "all_cleaned",
+    "baseline_snowed_speed": 3.0,
+    "raised_cleaned_speed": 20.0,
+    "cleaned_lane_count": 7119,
+    "global_avg_speed": 17.9439430049577,
+    "filled_weighted_avg_speed": 18.064251226226038,
+    "speed_sample_count": 1,
+    "ATT": 561.4343412983718,
+    "Throughput": 2613,
+    "road_count": 2634,
+    "lane_count": 7119
+  }
+]

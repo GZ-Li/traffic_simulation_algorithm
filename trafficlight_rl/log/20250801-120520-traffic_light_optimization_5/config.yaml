@@ -1,0 +1,31 @@
+control:
+  enable_collision_avoidance: false
+  enable_go_astray: false
+  enable_indoor: false
+  enable_platoon: false
+  lane_change_model: mobil
+  microscopic_range:
+    max_latitude: 30.7
+    max_longitude: 115.0
+    min_latitude: 30.3
+    min_longitude: 114.0
+  prefer_fixed_light: false
+  skip_overtime_trip_when_init: true
+  step:
+    interval: 1
+    start: 0
+    total: 7
+input:
+  map:
+    col: map_pku_wuhan_demo_1015c_rl
+    db: tsingroc
+  person:
+    col: person_test_20250724_1015cc
+    db: tsingroc
+  uri: mongodb://root:qZ7ILv0Xs6VnJcPg12KU3AoYhWKb4Cla@172.16.40.166:27017
+output:
+  simple:
+    road_status_interval: 1
+    road_status_v_min: 0
+  target:
+    sql: postgres://postgres:QSo084HA7Sji9jsm73KjRUcTGWynUsxu@172.16.40.166:5432/simulation

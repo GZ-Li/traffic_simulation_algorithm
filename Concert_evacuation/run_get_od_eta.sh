@@ -1,0 +1,1 @@
+cd /home/nkk/work/src/python/Multi_Accident/Simulation_based_ETA_version && /home/nkk/work/src/python/.venv/bin/python get_od_eta.py --warmup_steps 10 --max_probe_steps 60 --departure_stagger_steps 0

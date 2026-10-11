@@ -1,0 +1,1 @@
+road_clearance_simulation.py --exp 20250731_max_pressure --mongo_uri 数据库链接 --map_db 数据库名称 --map_coll 数据库集合 --agent_db agent数据库 --agent_coll agent数据库名称 --output_sql_dsn 输出位置 --output_bbox 114,30.3,115,30.7

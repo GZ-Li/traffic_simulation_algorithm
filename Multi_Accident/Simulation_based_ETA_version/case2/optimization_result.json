@@ -1,0 +1,99 @@
+{
+  "LP_status": "Optimal",
+  "max_response_time": 180.0,
+  "optimized_assignment": {
+    "Hospital 200000480": [
+      "Accident 200000575",
+      "Accident 200000396",
+      "Accident 200000387"
+    ],
+    "Hospital 200000154": [
+      "Accident 200000869",
+      "Accident 200000567",
+      "Accident 200000160"
+    ],
+    "Hospital 200000033": [
+      "Accident 200000601",
+      "Accident 200007001",
+      "Accident 200000823"
+    ]
+  },
+  "greedy_assignment": {
+    "Hospital 200000154": [
+      "Accident 200000869",
+      "Accident 200000567",
+      "Accident 200007001",
+      "Accident 200000387",
+      "Accident 200000160"
+    ],
+    "Hospital 200000480": [
+      "Accident 200000575",
+      "Accident 200000396"
+    ],
+    "Hospital 200000033": [
+      "Accident 200000601",
+      "Accident 200000823"
+    ]
+  },
+  "response_times": {
+    "Hospital 200000480": {
+      "Accident 200000869": 180,
+      "Accident 200000575": 120,
+      "Accident 200000396": 120,
+      "Accident 200000567": 180,
+      "Accident 200000601": 330,
+      "Accident 200007001": 120,
+      "Accident 200000387": 180,
+      "Accident 200000823": 330,
+      "Accident 200000160": 150
+    },
+    "Hospital 200000154": {
+      "Accident 200000869": 150,
+      "Accident 200000575": 9999,
+      "Accident 200000396": 270,
+      "Accident 200000567": 60,
+      "Accident 200000601": 330,
+      "Accident 200007001": 90,
+      "Accident 200000387": 120,
+      "Accident 200000823": 360,
+      "Accident 200000160": 60
+    },
+    "Hospital 200000033": {
+      "Accident 200000869": 9999,
+      "Accident 200000575": 150,
+      "Accident 200000396": 9999,
+      "Accident 200000567": 9999,
+      "Accident 200000601": 180,
+      "Accident 200007001": 120,
+      "Accident 200000387": 360,
+      "Accident 200000823": 90,
+      "Accident 200000160": 9999
+    }
+  },
+  "greedy_finish_times": {
+    "Accident 200000869": 150,
+    "Accident 200000567": 210,
+    "Accident 200007001": 300,
+    "Accident 200000387": 420,
+    "Accident 200000160": 480,
+    "Accident 200000575": 120,
+    "Accident 200000396": 240,
+    "Accident 200000601": 180,
+    "Accident 200000823": 270
+  },
+  "optimized_finish_times": {
+    "Accident 200000575": 120,
+    "Accident 200000396": 240,
+    "Accident 200000387": 420,
+    "Accident 200000869": 150,
+    "Accident 200000567": 210,
+    "Accident 200000160": 270,
+    "Accident 200000601": 180,
+    "Accident 200007001": 300,
+    "Accident 200000823": 390
+  },
+  "greedy_makespan": 480,
+  "optimized_makespan": 420,
+  "improvement": 60,
+  "improvement_percentage": 12.5
+}

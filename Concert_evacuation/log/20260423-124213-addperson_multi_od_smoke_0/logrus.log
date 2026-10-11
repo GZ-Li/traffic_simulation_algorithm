@@ -1,0 +1,131 @@
+[simulet] [2026-04-23 12:42:13.6378] [INFO] {Input:{URI:mongodb://root:qZ7ILv0Xs6VnJcPg12KU3AoYhWKb4Cla@172.16.40.166:27017 Map:{DB:tsingroc Col:map_pku_wuhan_demo_1015c_rl Cache: OnlyCache:false File:} Person:0xc00030cd20 RouteStatus:<nil>} Control:{Step:{Start:0 Total:10861 Interval:1 Subloop:<nil>} MicroscopicRange:<nil> NoSignalRanges:[] SkipOvertimeTripWhenInit:true EnablePlatoon:false EnableIndoor:false Dump:<nil> VehicleMicroStatistics:<nil> LaneStatistics:<nil> RoadStatistics:<nil> Stat:<nil> IndoorStroll:<nil> DisableIndoorAoiIDs:[] PreferFixedLight:false KeepAllRedWhenHasVehicle:false EnableCollisionAvoidance:false EnableGoAstray:false LaneChangeModel:0xc000380180} Output:{Target:{SQL: CSV:} EnableCommon:false Simple:<nil>} TLS:<nil>}
+[input] [2026-04-23 12:42:13.6401] [INFO] enable input cache at data/
+[input] [2026-04-23 12:42:13.6552] [INFO] start fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2026-04-23 12:42:14.0236] [INFO] finish fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2026-04-23 12:42:14.0251] [INFO] start fetching from tsingroc.person_test_20250724_1015cc
+[input] [2026-04-23 12:42:14.2314] [INFO] finish fetching from tsingroc.person_test_20250724_1015cc
+[simulet/task] [2026-04-23 12:42:14.2515] [INFO] Lane: 16860
+[simulet/task] [2026-04-23 12:42:14.2516] [INFO] Road: 2634
+[simulet/task] [2026-04-23 12:42:14.2516] [INFO] Junction: 1588
+[simulet/task] [2026-04-23 12:42:14.2516] [INFO] AOI: 0
+[simulet/task] [2026-04-23 12:42:14.2517] [INFO] Person: 8783
+[sidecar] [2026-04-23 12:42:14.2516] [INFO] sidecar rpc listening at http://localhost:59629/
+[simulet/task] [2026-04-23 12:42:17.1039] [INFO] STEP: 100(0:1:40.00) #persons: (8783|0) avg v: 11.63 CPU: 110.89 MEM: 294.57MB
+[simulet/task] [2026-04-23 12:42:17.6614] [INFO] STEP: 200(0:3:20.00) #persons: (8783|0) avg v: 11.62 CPU: 663.64 MEM: 332.79MB
+[simulet/task] [2026-04-23 12:42:18.2297] [INFO] STEP: 300(0:5:0.00) #persons: (8783|0) avg v: 11.59 CPU: 649.12 MEM: 334.52MB
+[schedule] [2026-04-23 12:42:20.1594] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15484 s:1}}, lane 15484 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1596] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15517 s:1}}, lane 15517 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1597] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15367 s:1}}, lane 15367 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1597] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16162 s:1}}, lane 16162 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1597] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:74827 s:1}}, lane 74827 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1598] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16464 s:1}}, lane 16464 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1599] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17045 s:1}}, lane 17045 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1599] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17337 s:1}}, lane 17337 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1601] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15834 s:1}}, lane 15834 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1598] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16127 s:1}}, lane 16127 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1600] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16848 s:1}}, lane 16848 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1603] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15454 s:1}}, lane 15454 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1603] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16051 s:1}}, lane 16051 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1611] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17361 s:1}}, lane 17361 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1612] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16449 s:1}}, lane 16449 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1613] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16639 s:1}}, lane 16639 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1614] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15454 s:1}}, lane 15454 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1614] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16488 s:1}}, lane 16488 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1615] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15506 s:1}}, lane 15506 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1614] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16382 s:1}}, lane 16382 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1617] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16219 s:1}}, lane 16219 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1618] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16561 s:1}}, lane 16561 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1616] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16561 s:1}}, lane 16561 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1619] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15454 s:1}}, lane 15454 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1620] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16378 s:1}}, lane 16378 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1621] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16412 s:1}}, lane 16412 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1621] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17452 s:1}}, lane 17452 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1622] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16203 s:1}}, lane 16203 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1623] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16311 s:1}}, lane 16311 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1621] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16462 s:1}}, lane 16462 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1622] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15514 s:1}}, lane 15514 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1624] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15484 s:1}}, lane 15484 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1623] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16597 s:1}}, lane 16597 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1625] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15514 s:1}}, lane 15514 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1626] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17504 s:1}}, lane 17504 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1626] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16181 s:1}}, lane 16181 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1625] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17504 s:1}}, lane 17504 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1627] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:74717 s:1}}, lane 74717 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1628] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16438 s:1}}, lane 16438 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1629] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16955 s:1}}, lane 16955 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1629] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17450 s:1}}, lane 17450 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1630] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:74758 s:1}}, lane 74758 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1631] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16909 s:1}}, lane 16909 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1632] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15858 s:1}}, lane 15858 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1631] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16506 s:1}}, lane 16506 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1633] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15517 s:1}}, lane 15517 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1633] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:74277 s:1}}, lane 74277 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1634] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16687 s:1}}, lane 16687 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1634] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17515 s:1}}, lane 17515 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1635] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16101 s:1}}, lane 16101 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1635] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16785 s:1}}, lane 16785 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1633] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15303 s:1}}, lane 15303 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1637] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:74782 s:1}}, lane 74782 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1638] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16422 s:1}}, lane 16422 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1639] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16048 s:1}}, lane 16048 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1640] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17276 s:1}}, lane 17276 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1641] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16378 s:1}}, lane 16378 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1641] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15964 s:1}}, lane 15964 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1642] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16991 s:1}}, lane 16991 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1643] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15658 s:1}}, lane 15658 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1643] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:74717 s:1}}, lane 74717 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1644] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16245 s:1}}, lane 16245 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1645] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15303 s:1}}, lane 15303 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1646] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16422 s:1}}, lane 16422 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1646] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15433 s:1}}, lane 15433 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1647] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17515 s:1}}, lane 17515 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1649] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16687 s:1}}, lane 16687 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1632] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17406 s:1}}, lane 17406 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1653] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16583 s:1}}, lane 16583 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1654] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15948 s:1}}, lane 15948 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1654] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16127 s:1}}, lane 16127 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1655] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17333 s:1}}, lane 17333 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1656] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17142 s:1}}, lane 17142 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1657] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17344 s:1}}, lane 17344 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1631] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17056 s:1}}, lane 17056 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1659] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16464 s:1}}, lane 16464 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1660] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17504 s:1}}, lane 17504 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1661] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15329 s:1}}, lane 15329 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1662] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16464 s:1}}, lane 16464 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1662] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16655 s:1}}, lane 16655 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1663] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16203 s:1}}, lane 16203 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1664] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16382 s:1}}, lane 16382 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1665] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16866 s:1}}, lane 16866 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1665] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16162 s:1}}, lane 16162 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1666] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15725 s:1}}, lane 15725 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1668] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17276 s:1}}, lane 17276 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1668] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:71007 s:1}}, lane 71007 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1630] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16596 s:1}}, lane 16596 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1670] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16613 s:1}}, lane 16613 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1671] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16043 s:1}}, lane 16043 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1672] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15517 s:1}}, lane 15517 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1673] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16542 s:1}}, lane 16542 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1674] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17231 s:1}}, lane 17231 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1676] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15359 s:1}}, lane 15359 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1677] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16776 s:1}}, lane 16776 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1678] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16101 s:1}}, lane 16101 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1679] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:74141 s:1}}, lane 74141 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1680] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17344 s:1}}, lane 17344 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1636] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:71007 s:1}}, lane 71007 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1682] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17114 s:1}}, lane 17114 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1682] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17337 s:1}}, lane 17337 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1683] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15587 s:1}}, lane 15587 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1684] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16991 s:1}}, lane 16991 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1685] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16162 s:1}}, lane 16162 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 12:42:20.1685] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15918 s:1}}, lane 15918 is not driving lane, skip it, skip it
+[simulet/task] [2026-04-23 12:46:48.2098] [INFO] STEP: 400(0:6:40.00) #persons: (10283|0) avg v: 11.56 CPU: 13.00 MEM: 544.74MB
+[simulet/task] [2026-04-23 12:50:49.5552] [INFO] STEP: 500(0:8:20.00) #persons: (10283|0) avg v: 11.52 CPU: 13.19 MEM: 656.02MB
+[simulet/task] [2026-04-23 12:53:58.5423] [INFO] STEP: 600(0:10:0.00) #persons: (10283|0) avg v: 11.47 CPU: 13.67 MEM: 590.08MB
+[simulet/task] [2026-04-23 13:01:46.2410] [INFO] STEP: 700(0:11:40.00) #persons: (10283|0) avg v: 11.43 CPU: 13.12 MEM: 545.77MB
+[simulet/task] [2026-04-23 13:07:52.2573] [INFO] STEP: 800(0:13:20.00) #persons: (10283|0) avg v: 11.38 CPU: 13.35 MEM: 677.84MB
+[simulet/task] [2026-04-23 13:13:05.7208] [INFO] STEP: 900(0:15:0.00) #persons: (10283|0) avg v: 11.33 CPU: 13.53 MEM: 728.17MB
+[simulet/task] [2026-04-23 13:24:05.7807] [INFO] STEP: 1000(0:16:40.00) #persons: (10283|0) avg v: 11.28 CPU: 13.38 MEM: 693.82MB
+[simulet/task] [2026-04-23 13:33:13.7864] [INFO] STEP: 1100(0:18:20.00) #persons: (10283|0) avg v: 11.24 CPU: 13.40 MEM: 768.23MB
+[simulet/task] [2026-04-23 13:41:47.5310] [INFO] STEP: 1200(0:20:0.00) #persons: (10283|0) avg v: 11.19 CPU: 13.63 MEM: 660.04MB
+[simulet] [2026-04-23 13:50:41.2098] [INFO] stopping...
+[simulet/task] [2026-04-23 13:50:41.4919] [INFO] engine complete

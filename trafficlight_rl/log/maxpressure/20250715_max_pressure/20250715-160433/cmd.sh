@@ -1,0 +1,1 @@
+/home/nkk/nkk/work/src/simulet-go/python/trafficlight_rl/run_maxpressure.py --exp 20250715_max_pressure --map ../data/map_wuhan__20250509_rl.pb --agent ../data/person_test_2025_0509a.pb

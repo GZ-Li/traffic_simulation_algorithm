@@ -1,0 +1,33 @@
+[simulet] [2026-04-23 15:07:24.3127] [INFO] {Input:{URI:mongodb://root:qZ7ILv0Xs6VnJcPg12KU3AoYhWKb4Cla@172.16.40.166:27017 Map:{DB:tsingroc Col:map_pku_wuhan_demo_1015c_rl Cache: OnlyCache:false File:} Person:0xc00030cd20 RouteStatus:<nil>} Control:{Step:{Start:0 Total:15973 Interval:1 Subloop:<nil>} MicroscopicRange:<nil> NoSignalRanges:[] SkipOvertimeTripWhenInit:true EnablePlatoon:false EnableIndoor:false Dump:<nil> VehicleMicroStatistics:<nil> LaneStatistics:<nil> RoadStatistics:<nil> Stat:<nil> IndoorStroll:<nil> DisableIndoorAoiIDs:[] PreferFixedLight:false KeepAllRedWhenHasVehicle:false EnableCollisionAvoidance:false EnableGoAstray:false LaneChangeModel:0xc000400180} Output:{Target:{SQL: CSV:} EnableCommon:false Simple:<nil>} TLS:<nil>}
+[input] [2026-04-23 15:07:24.3151] [INFO] enable input cache at data/
+[input] [2026-04-23 15:07:24.3312] [INFO] start fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2026-04-23 15:07:24.3998] [INFO] finish fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2026-04-23 15:07:24.4018] [INFO] start fetching from tsingroc.person_test_20250724_1015cc
+[input] [2026-04-23 15:07:24.4439] [INFO] finish fetching from tsingroc.person_test_20250724_1015cc
+[sidecar] [2026-04-23 15:07:24.4640] [INFO] sidecar rpc listening at http://localhost:42797/
+[simulet/task] [2026-04-23 15:07:24.4640] [INFO] Lane: 16860
+[simulet/task] [2026-04-23 15:07:24.4642] [INFO] Road: 2634
+[simulet/task] [2026-04-23 15:07:24.4643] [INFO] Junction: 1588
+[simulet/task] [2026-04-23 15:07:24.4643] [INFO] AOI: 0
+[simulet/task] [2026-04-23 15:07:24.4643] [INFO] Person: 8783
+[schedule] [2026-04-23 15:07:27.4916] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17051 s:1}}, lane 17051 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 15:07:27.4929] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16191 s:1}}, lane 16191 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 15:07:27.4932] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16817 s:1}}, lane 16817 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 15:07:27.4934] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17516 s:1}}, lane 17516 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 15:07:27.4936] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16180 s:1}}, lane 16180 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 15:07:27.4937] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:17216 s:1}}, lane 17216 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 15:07:27.4939] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16219 s:1}}, lane 16219 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 15:07:27.4940] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16072 s:1}}, lane 16072 is not driving lane, skip it, skip it
+[simulet/task] [2026-04-23 15:08:45.5034] [INFO] STEP: 100(0:1:40.00) #persons: (8833|0) avg v: 11.63 CPU: 13.02 MEM: 545.57MB
+[simulet/task] [2026-04-23 15:09:52.0433] [INFO] STEP: 200(0:3:20.00) #persons: (8833|0) avg v: 11.62 CPU: 14.17 MEM: 551.23MB
+[simulet/task] [2026-04-23 15:10:35.3918] [INFO] STEP: 300(0:5:0.00) #persons: (8833|0) avg v: 11.59 CPU: 17.90 MEM: 478.80MB
+[schedule] [2026-04-23 15:10:42.7764] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16264 s:1}}, lane 16264 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 15:10:42.7766] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16817 s:1}}, lane 16817 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 15:10:42.7767] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15673 s:1}}, lane 15673 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 15:10:42.7767] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16818 s:1}}, lane 16818 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 15:10:42.7768] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:16818 s:1}}, lane 16818 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 15:10:42.7770] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:74752 s:1}}, lane 74752 is not driving lane, skip it, skip it
+[schedule] [2026-04-23 15:10:42.7770] [WARNING] invalid trip mode:TRIP_MODE_DRIVE_ONLY end:{lane_position:{lane_id:15303 s:1}}, lane 15303 is not driving lane, skip it, skip it
+[simulet/task] [2026-04-23 15:12:47.2285] [INFO] STEP: 400(0:6:40.00) #persons: (8883|0) avg v: 11.56 CPU: 13.70 MEM: 563.05MB
+[simulet] [2026-04-23 15:13:22.0646] [INFO] stopping...
+[simulet/task] [2026-04-23 15:13:22.0696] [INFO] engine complete

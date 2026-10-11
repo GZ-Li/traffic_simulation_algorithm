@@ -1,0 +1,16 @@
+[simulet] [2026-04-23 13:05:52.5712] [INFO] {Input:{URI:mongodb://root:qZ7ILv0Xs6VnJcPg12KU3AoYhWKb4Cla@172.16.40.166:27017 Map:{DB:tsingroc Col:map_pku_wuhan_demo_1015c_rl Cache: OnlyCache:false File:} Person:0xc00030cd20 RouteStatus:<nil>} Control:{Step:{Start:0 Total:311 Interval:1 Subloop:<nil>} MicroscopicRange:<nil> NoSignalRanges:[] SkipOvertimeTripWhenInit:true EnablePlatoon:false EnableIndoor:false Dump:<nil> VehicleMicroStatistics:<nil> LaneStatistics:<nil> RoadStatistics:<nil> Stat:<nil> IndoorStroll:<nil> DisableIndoorAoiIDs:[] PreferFixedLight:false KeepAllRedWhenHasVehicle:false EnableCollisionAvoidance:false EnableGoAstray:false LaneChangeModel:0xc000400180} Output:{Target:{SQL: CSV:} EnableCommon:false Simple:<nil>} TLS:<nil>}
+[input] [2026-04-23 13:05:52.5735] [ERROR] disable input cache because invalid dir data/ (not exist or file)
+[input] [2026-04-23 13:05:52.5930] [INFO] start fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2026-04-23 13:05:52.9700] [INFO] finish fetching from tsingroc.map_pku_wuhan_demo_1015c_rl
+[input] [2026-04-23 13:05:52.9715] [INFO] start fetching from tsingroc.person_test_20250724_1015cc
+[input] [2026-04-23 13:05:53.1666] [INFO] finish fetching from tsingroc.person_test_20250724_1015cc
+[simulet/task] [2026-04-23 13:05:53.1857] [INFO] Lane: 16860
+[simulet/task] [2026-04-23 13:05:53.1857] [INFO] Road: 2634
+[simulet/task] [2026-04-23 13:05:53.1858] [INFO] Junction: 1588
+[simulet/task] [2026-04-23 13:05:53.1858] [INFO] AOI: 0
+[simulet/task] [2026-04-23 13:05:53.1858] [INFO] Person: 8783
+[sidecar] [2026-04-23 13:05:53.1859] [INFO] sidecar rpc listening at http://localhost:55961/
+[simulet/task] [2026-04-23 13:05:56.8974] [INFO] STEP: 100(0:1:40.00) #persons: (8783|0) avg v: 11.60 CPU: 109.91 MEM: 338.32MB
+[simulet/task] [2026-04-23 13:05:58.2826] [INFO] STEP: 200(0:3:20.00) #persons: (8783|0) avg v: 11.56 CPU: 306.47 MEM: 379.89MB
+[simulet] [2026-04-23 13:06:04.2812] [INFO] stopping...
+[sidecar] [2026-04-23 13:06:05.2847] [PANIC] unavailable: unexpected EOF

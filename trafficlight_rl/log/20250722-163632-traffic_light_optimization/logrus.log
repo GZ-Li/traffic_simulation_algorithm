@@ -1,0 +1,13 @@
+[simulet] [2025-07-22 16:36:32.5720] [INFO] {Input:{URI: Map:{DB: Col: Cache: OnlyCache:false File:/home/nkk/nkk/work/src/simulet-go/python/data/map_pku_wuhan_demo_1015c_rl.pb} Person:0xc0003f6000 RouteStatus:<nil>} Control:{Step:{Start:0 Total:3631 Interval:1 Subloop:<nil>} MicroscopicRange:<nil> NoSignalRanges:[] SkipOvertimeTripWhenInit:true EnablePlatoon:false EnableIndoor:false Dump:<nil> VehicleMicroStatistics:<nil> LaneStatistics:<nil> RoadStatistics:<nil> Stat:<nil> IndoorStroll:<nil> DisableIndoorAoiIDs:[] PreferFixedLight:true KeepAllRedWhenHasVehicle:false EnableCollisionAvoidance:false EnableGoAstray:false LaneChangeModel:0xc000392160} Output:{Target:{SQL: CSV:} EnableCommon:false Simple:<nil>} TLS:<nil>}
+[input] [2025-07-22 16:36:32.5741] [ERROR] disable input cache because invalid dir data/ (not exist or file)
+[simulet/task] [2025-07-22 16:36:32.8146] [INFO] Lane: 16860
+[simulet/task] [2025-07-22 16:36:32.8146] [INFO] Road: 2634
+[simulet/task] [2025-07-22 16:36:32.8146] [INFO] Junction: 1588
+[simulet/task] [2025-07-22 16:36:32.8146] [INFO] AOI: 0
+[simulet/task] [2025-07-22 16:36:32.8146] [INFO] Person: 39586
+[sidecar] [2025-07-22 16:36:32.8147] [INFO] sidecar rpc listening at http://localhost:35145/
+[simulet/task] [2025-07-22 16:36:44.3201] [INFO] STEP: 100(0:1:40.00) #persons: (39586|0) avg v: 11.62 CPU: 82.54 MEM: 898.49MB
+[simulet/task] [2025-07-22 16:36:51.6837] [INFO] STEP: 200(0:3:20.00) #persons: (39586|0) avg v: 11.58 CPU: 111.01 MEM: 1036.49MB
+[simulet/task] [2025-07-22 16:36:59.1595] [INFO] STEP: 300(0:5:0.00) #persons: (39586|0) avg v: 11.52 CPU: 110.16 MEM: 1058.49MB
+[simulet/task] [2025-07-22 16:37:08.6606] [INFO] STEP: 400(0:6:40.00) #persons: (39586|0) avg v: 11.45 CPU: 89.47 MEM: 1156.14MB
+[simulet] [2025-07-22 16:38:31.8076] [INFO] stopping...

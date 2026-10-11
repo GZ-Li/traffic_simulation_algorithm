@@ -1,0 +1,15 @@
+{
+  "order": [
+    "300000545",
+    "300001682",
+    "300001249",
+    "300001252"
+  ],
+  "interval": 10,
+  "warmup_steps": 0,
+  "eval_steps": 30,
+  "max_clean_at_once": 2,
+  "flooded_speed": 2.0,
+  "normal_speed": 20.0,
+  "strategy_file": "/home/nkk/work/src/python/Waterlogging/waterlogging_strategy.json"
+}

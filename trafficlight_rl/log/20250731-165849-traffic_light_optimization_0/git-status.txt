@@ -1,0 +1,26 @@
+位于分支 nkk_dev
+您的分支与上游分支 'origin/nkk_dev' 一致。
+
+要提交的变更：
+  （使用 "git restore --staged <文件>..." 以取消暂存）
+	新文件：   ../process_map_and_trip/download_mongodb.py
+	新文件：   tmp.json
+
+尚未暂存以备提交的变更：
+  （使用 "git add <文件>..." 更新要提交的内容）
+  （使用 "git restore <文件>..." 丢弃工作区的改动）
+	修改：     engine.py
+	修改：     run_maxpressure.py
+	修改：     run_ppo.py
+	修改：     tmp.json
+
+未跟踪的文件:
+  （使用 "git add <文件>..." 以包含要提交的内容）
+	../../.idea/
+	../../config.yaml
+	../../configs/config.yaml
+	../../pkg/
+	../.idea/
+	../../simu_go.sh
+	../../simulet-go
+
